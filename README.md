@@ -9,6 +9,7 @@ sudo apt-get install i3 thunar terminator dmenu conky feh volumeicon-alsa
 git clone git@github.com:jetho/i3-WM-config.git ~/.i3/
 mkdir -p ~/.config/terminator
 mv ~/.i3/terminator-config ~/.config/terminator/config
+sudo chmod u+x ~/.i3/*.sh
 </pre>
 
 
