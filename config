@@ -163,6 +163,8 @@ exec sh ~/.fehbg &
 # start conky
 exec conky -c ~/.i3/conkyrc &
 
+exec ~/.i3/startup_tray_programs.sh &
+
 # additional key bindings
 bindsym $mod+Shift+V exec gvim
 bindsym $mod+I exec x-www-browser
