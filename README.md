@@ -22,7 +22,7 @@ mv ~/.i3/terminator-config ~/.config/terminator/config
 #### Enable password-less sudo for logout, reboot and shutdown
 - insert the following lines into /etc/sudoers using visudo as root:
 <pre>
-User_alias SHUTDOWN=user1,user2,user3   # replace user1, user2 etc. with the real user names
+User_alias SHUTDOWN=user1,user2,user3   # replace user1, user2 etc. with real user names
 Cmnd_Alias HALT = /sbin/shutdown, /sbin/reboot, /usr/local/sbin/psadadmin
 SHUTDOWN ALL= (ALL) NOPASSWD: HALT
 </pre>
