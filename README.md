@@ -7,6 +7,7 @@ My personal configuration for the i3 Window Manager.
 <pre>
 sudo apt-get install i3 thunar terminator dmenu conky feh
 git clone git@github.com:jetho/i3-WM-config.git ~/.i3/
+mkdir -p ~/.config/terminator
 mv ~/.i3/terminator-config ~/.config/terminator/config
 </pre>
 
