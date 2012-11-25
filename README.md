@@ -13,7 +13,7 @@ mv ~/.i3/terminator-config ~/.config/terminator/config
 
 Set Wallpaper:
 --------------
-<pre>feh --bg-scale <image></pre>
+<pre>feh --bg-scale \<image\></pre>
 
 Set default terminal:
 ---------------------
