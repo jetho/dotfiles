@@ -1,0 +1,106 @@
+# Awesome needed a few tweaks =)
+# Default Fonts
+use_xft yes
+xftfont URW Gothic L:bold:size=8
+override_utf8_locale yes
+
+# Performance Settings
+update_interval 1
+total_run_times 0
+double_buffer yes
+no_buffers yes
+net_avg_samples 2
+text_buffer_size 1024
+
+# Window Settings
+own_window no
+own_window_transparent yes
+own_window_type normal
+#own_window_type desktop
+#own_window_type override
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+# Window border
+draw_borders no
+draw_shades no
+
+# Default Color
+default_color C5C5C5
+
+# Colors
+color0 darkred
+color1 C5C5C5
+color2 747170
+color3 085dad
+
+# Size and position
+minimum_size 200 600
+gap_x 30
+gap_y 80
+alignment top_left
+
+TEXT
+${font URW Gothic L:bold:size=16}${color darkred}Debian GNU${color whitesmoke}/${color2}Linux${font}
+${font URW Gothic L:size=10}${color darkorange}The Universal Operating System${font}
+
+${GOTO 50}${font URW Gothic L:bold:size=10}${color0}System${font}${color2}
+
+${GOTO 50}Kernel:${GOTO 100}$kernel
+${GOTO 50}Uptime:${GOTO 100}$uptime
+
+${GOTO 50}CPU 1:${GOTO 100}${cpubar cpu1 10,75}
+${GOTO 50}CPU 2:${GOTO 100}${cpubar cpu2 10,75}
+
+${GOTO 50}Processes:${GOTO 110}$processes
+${GOTO 50}Running:${GOTO 110}$running_processes
+
+${GOTO 50}RAM:${GOTO 100}$mem / $memmax
+${GOTO 100}${membar 10,75}
+
+${GOTO 50}SWAP:${GOTO 100}$swap / $swapmax
+${GOTO 100}${swapbar 10,75}
+
+${GOTO 50}${font URW Gothic L:bold:size=10}${color0}Top Processes${font}${color2}
+
+${GOTO 130}CPU use${color2}
+${GOTO 50}${top name 1} ${GOTO 140}${top cpu 1}
+${GOTO 50}${top name 2} ${GOTO 140}${top cpu 2}
+${GOTO 50}${top name 3} ${GOTO 140}${top cpu 3}
+${GOTO 50}${top name 4} ${GOTO 140}${top cpu 4}
+${GOTO 50}${top name 5} ${GOTO 140}${top cpu 5}
+${GOTO 50}${top name 6} ${GOTO 140}${top cpu 6}
+${GOTO 50}${top name 7} ${GOTO 140}${top cpu 7}
+${GOTO 50}${top name 8} ${GOTO 140}${top cpu 8}
+${GOTO 50}${top name 9} ${GOTO 140}${top cpu 9}
+${GOTO 50}${top name 10} ${GOTO 140}${top cpu 10}
+
+${GOTO 130}MEM use${color2}
+${GOTO 50}${top_mem name 1} ${GOTO 140}${top_mem mem 1}
+${GOTO 50}${top_mem name 2} ${GOTO 140}${top_mem mem 2}
+${GOTO 50}${top_mem name 3} ${GOTO 140}${top_mem mem 3}
+${GOTO 50}${top_mem name 4} ${GOTO 140}${top_mem mem 4}
+${GOTO 50}${top_mem name 5} ${GOTO 140}${top_mem mem 5}
+${GOTO 50}${top_mem name 6} ${GOTO 140}${top_mem mem 6}
+${GOTO 50}${top_mem name 7} ${GOTO 140}${top_mem mem 7}
+${GOTO 50}${top_mem name 8} ${GOTO 140}${top_mem mem 8}
+${GOTO 50}${top_mem name 9} ${GOTO 140}${top_mem mem 9}
+${GOTO 50}${top_mem name 10} ${GOTO 140}${top_mem mem 10}
+
+
+${GOTO 50}${font URW Gothic L:bold:size=10}${color0}Disks${font}${color2}
+
+${GOTO 50}Root:${GOTO 100}${fs_used /} / ${fs_size /}
+${GOTO 100}${fs_bar 10,100 /}
+${GOTO 50}Data:${GOTO 100}${fs_used /mnt/daten} / ${fs_size /mnt/daten}
+${GOTO 100}${fs_bar 10,100 /mnt/daten}
+
+${GOTO 50}${font URW Gothic L:bold:size=10}${color0}Network${font}${color2}
+
+${GOTO 50}Local IP:${GOTO 100}${addr eth1}
+${GOTO 50}Public IP:${GOTO 100}${execi 10000 wget -O - -q myip.dk | grep 'IP Address' | egrep -o '[0-9.]+.[0-9]+'}
+
+${GOTO 50}Upload:${GOTO 115}${upspeedgraph eth1 10,75 B7B2AD B7B2AD}
+${GOTO 50}Total:${GOTO 115}${totalup eth1}
+
+${GOTO 50}Download:${GOTO 115}${downspeedgraph eth1 10,75 B7B2AD B7B2AD}
+${GOTO 50}Total:${GOTO 115}${totaldown eth1}
