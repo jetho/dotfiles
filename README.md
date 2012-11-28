@@ -24,9 +24,12 @@ sudo chmod u+x ~/.i3/*.sh
 #### Enable password-less sudo for logout, reboot and shutdown
 - insert the following lines into /etc/sudoers using visudo as root:
 <pre>
-User_alias SHUTDOWN=user1,user2,user3   # replace user1, user2 etc. with real user names
-Cmnd_Alias HALT = /sbin/shutdown, /sbin/reboot, /usr/local/sbin/psadadmin
-SHUTDOWN ALL= (ALL) NOPASSWD: HALT
+# User alias specification
+User_Alias HALT = user1, user2     # replace user1, user2 etc. with real user names
+# Cmnd alias specification
+Cmnd_Alias DOWN = /sbin/shutdown, /sbin/reboot
+# User privilege specification
+HALT ALL = NOPASSWD: DOWN
 </pre>
 
 
