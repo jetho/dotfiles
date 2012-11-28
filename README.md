@@ -22,7 +22,7 @@ sudo chmod u+x ~/.i3/*.sh
 
 
 #### Colorful bash prompt
-echo 'PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "' > ~/.bashrc
+<pre>echo 'PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "' >> ~/.bashrc</pre>
 
 
 #### Enable password-less sudo for logout, reboot and shutdown
