@@ -21,6 +21,10 @@ sudo chmod u+x ~/.i3/*.sh
 <pre>sudo update-alternatives --config x-terminal-emulator</pre>
 
 
+#### Colorful bash prompt
+echo 'PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "' > ~/.bashrc
+
+
 #### Enable password-less sudo for logout, reboot and shutdown
 - insert the following lines into /etc/sudoers using visudo as root:
 <pre>
