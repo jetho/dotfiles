@@ -2,12 +2,10 @@
 [keybindings]
 [profiles]
   [[default]]
+    background_darkness = 0.88
     scrollbar_position = hidden
-    background_darkness = 0.71
     background_type = transparent
-    foreground_color = "#ffffff"
     show_titlebar = False
-    background_color = "#300a24"
 [layouts]
   [[default]]
     [[[child1]]]

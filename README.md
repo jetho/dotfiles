@@ -5,10 +5,11 @@ My personal configuration for the i3 Window Manager.
 
 #### Install Instructions
 <pre>
-sudo apt-get install i3 thunar terminator dmenu ranger feh volumeicon-alsa 
+sudo apt-get install i3 thunar terminator dmenu ranger feh volumeicon-alsa zsh
 git clone git@github.com:jetho/i3-WM-config.git ~/.i3/
 mkdir -p ~/.config/terminator
 mv ~/.i3/terminator-config ~/.config/terminator/config
+chsh -s $(which zsh)    # set zsh as default shell
 sudo chmod u+x ~/.i3/*.sh
 </pre>
 
@@ -17,12 +18,17 @@ sudo chmod u+x ~/.i3/*.sh
 <pre>feh --bg-scale &lt;image&gt;</pre>
 
 
-#### Set default terminal
+#### Set default terminal emulator
 <pre>sudo update-alternatives --config x-terminal-emulator</pre>
 
 
-#### Colorful bash prompt
-<pre>echo 'PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "' >> ~/.bashrc</pre>
+#### Pimp my zsh
+<pre>
+curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+</pre>
+Edit .zshrc to change the zsh theme. For example:
+<pre>ZSH_THEME="tjkirch"</pre>
+Here's a list of the available themes: https://github.com/robbyrussell/oh-my-zsh/wiki/themes
 
 
 #### Enable password-less sudo for logout, reboot and shutdown
