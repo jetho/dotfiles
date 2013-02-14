@@ -7,7 +7,7 @@ short_units yes
 
 TEXT
 ^fg(\#ffa500)Kernel: ^fg()${kernel} ^fg(\#ff0000)|  \
-^fg(\#AEB404)Uptime: ^fg()${uptime} ^fg(\#ff0000)|  \
+^fg(\#AEB404)Uptime: ^fg()${uptime_short} ^fg(\#ff0000)|  \
 ^fg(\#81BEF7)CPU: ^fg()$cpu% ^fg(\#ff0000)|  \
 ^fg(\#ffd700)RAM: ^fg()${memperc}% ^fg(\#ff0000)|  \
 ^fg(\#F7BE81)Root: ^fg()${fs_used /} / ${fs_size /} ^fg(\#ff0000)|  \
