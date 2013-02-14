@@ -80,6 +80,7 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindcode $mod+d focus child
 
+
 # switch to workspace
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
@@ -150,19 +151,23 @@ bindsym Escape mode "default"
 
 bindsym $mod+r mode "resize"
 
+
 # i3bar at top of screen
 bar {
-position top
-workspace_buttons yes
+	position top
+	workspace_buttons yes
 }
 
-# i3bar at bottom of screen
-bar {
-status_command i3status --config ~/.i3/i3status.conf
-position bottom
-workspace_buttons no
-tray_output none
-}
+bar {    
+	status_command conky -c ~/.i3/conkyrc | dzen2 -y '1000'
+    	position          bottom
+    	mode              dock
+    	workspace_buttons no   
+    	font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+    	tray_output none
+}	
+
+
 
 # additional key bindings
 bindsym $mod+Shift+V exec gvim
@@ -179,7 +184,8 @@ exec sh ~/.fehbg &
 exec --no-startup-id unclutter 
 
 exec --no-startup-id /usr/bin/volumeicon &
-exec --no-startup-id /usr/bin/xfce4-power-manager &
-exec --no-startup-id update-notifier &
+exec --no-startup-id nm-applet &
+#exec --no-startup-id /usr/bin/xfce4-power-manager &
+#exec --no-startup-id update-notifier &
 #exec --no-startup-id /usr/bin/wicd-client &
 

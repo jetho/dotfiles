@@ -5,7 +5,7 @@ My personal configuration for the i3 Window Manager.
 
 #### Install Instructions
 <pre>
-sudo apt-get install i3 thunar terminator dmenu ranger feh volumeicon-alsa zsh
+sudo apt-get install i3 conky dzen2 thunar terminator dmenu ranger feh volumeicon-alsa zsh
 git clone git@github.com:jetho/i3-WM-config.git ~/.i3/
 mkdir -p ~/.config/terminator
 mv ~/.i3/terminator-config ~/.config/terminator/config
