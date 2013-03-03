@@ -14,6 +14,10 @@ sudo chmod u+x ~/.i3/*.sh
 </pre>
 
 
+#### Disabling the nautilus desktop window
+<pre>gsettings set org.gnome.desktop.background show-desktop-icons false</pre>
+
+
 #### Set Wallpaper
 <pre>feh --bg-scale &lt;image&gt;</pre>
 
