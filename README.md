@@ -31,7 +31,7 @@ sudo chmod u+x ~/.i3/*.sh
 curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 </pre>
 Edit .zshrc to change the zsh theme. For example:
-<pre>ZSH_THEME="tjkirch"</pre>
+<pre>ZSH_THEME="bira"</pre>
 Here's a list of the available themes: https://github.com/robbyrussell/oh-my-zsh/wiki/themes
 
 
