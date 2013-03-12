@@ -62,3 +62,10 @@ HALT ALL = NOPASSWD: DOWN
 - WIN + T => ranger
 - WIN + Shift + T => thunar
 - WIN + SHIFT + S => Shutdown
+
+
+#### Screenshots
+[![empty desktop](https://github.com/jetho/i3wm-Config/raw/master/screenshots/screenshot1.png)](https://github.com/jetho/i3wm-Config/raw/master/screenshots/screenshot1.png)
+[![two windows](https://github.com/jetho/i3wm-Config/raw/master/screenshots/screenshot2.png)](https://github.com/jetho/i3wm-Config/raw/master/screenshots/screenshot2.png)
+[![three windows](https://github.com/jetho/i3wm-Config/raw/master/screenshots/screenshot3.png)](https://github.com/jetho/i3wm-Config/raw/master/screenshots/screenshot3.png)
+
