@@ -1,3 +1,5 @@
+" change theme
 colorscheme hybrid
 
+" show line numbers
 set nu
