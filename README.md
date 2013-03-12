@@ -11,6 +11,7 @@ mkdir -p ~/.config/terminator
 mv ~/.i3/terminator-config ~/.config/terminator/config
 chsh -s $(which zsh)    # set zsh as default shell
 sudo chmod u+x ~/.i3/*.sh
+rm -R ~/.i3/screenshots
 </pre>
 
 
@@ -65,7 +66,7 @@ HALT ALL = NOPASSWD: DOWN
 
 
 #### Screenshots
-[![empty desktop](https://github.com/jetho/i3wm-Config/raw/master/screenshots/screenshot1.png)](https://github.com/jetho/i3wm-Config/raw/master/screenshots/screenshot1.png)
-[![two windows](https://github.com/jetho/i3wm-Config/raw/master/screenshots/screenshot2.png)](https://github.com/jetho/i3wm-Config/raw/master/screenshots/screenshot2.png)
-[![three windows](https://github.com/jetho/i3wm-Config/raw/master/screenshots/screenshot3.png)](https://github.com/jetho/i3wm-Config/raw/master/screenshots/screenshot3.png)
+[![empty desktop](https://github.com/jetho/i3wm-Config/raw/master/screenshots/screenshot1-th.png)](https://github.com/jetho/i3wm-Config/raw/master/screenshots/screenshot1.png)
+[![two windows](https://github.com/jetho/i3wm-Config/raw/master/screenshots/screenshot2-th.png)](https://github.com/jetho/i3wm-Config/raw/master/screenshots/screenshot2.png)
+[![three windows](https://github.com/jetho/i3wm-Config/raw/master/screenshots/screenshot3-th.png)](https://github.com/jetho/i3wm-Config/raw/master/screenshots/screenshot3.png)
 
