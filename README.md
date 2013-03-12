@@ -1,4 +1,4 @@
-# i3-WM-config
+# i3wm-Config
 
 My personal configuration for the i3 Window Manager. 
 
