@@ -1,0 +1,3 @@
+colorscheme hybrid
+
+set nu

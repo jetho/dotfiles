@@ -35,6 +35,15 @@ Edit .zshrc to change the zsh theme. For example:
 Here's a list of the available themes: https://github.com/robbyrussell/oh-my-zsh/wiki/themes
 
 
+#### Customizing Vim
+<pre>
+git clone git://github.com/jetho/vimrc.git ~/.vim_runtime
+sh ~/.vim_runtime/install_awesome_vimrc.sh
+git clone https://github.com/w0ng/vim-hybrid.git ~/.vim_runtime/sources_forked/hybrid
+mv ~/.i3/vim-config.vim ~/.vim_runtime/my_configs.vim
+</pre>
+
+
 #### Enable password-less sudo for logout, reboot and shutdown
 - insert the following lines into /etc/sudoers using visudo as root:
 <pre>
