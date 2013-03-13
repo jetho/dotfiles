@@ -5,4 +5,4 @@ colorscheme wombat
 set nu
 
 " change font
-set guifont=Consolas
+set guifont=Monospace\ 11
