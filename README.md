@@ -40,8 +40,16 @@ Here's a list of the available themes: https://github.com/robbyrussell/oh-my-zsh
 <pre>
 git clone git://github.com/jetho/vimrc.git ~/.vim_runtime
 sh ~/.vim_runtime/install_awesome_vimrc.sh
-git clone https://github.com/vim-scripts/Wombat.git ~/.vim_runtime/sources_forked/wombat
+git clone https://github.com/vim-scripts/Wombat.git ~/.vim_runtime/sources_non_forked/wombat
 mv ~/.i3/vim-config ~/.vim_runtime/my_configs.vim
+
+# for Scala Dev
+DIR=~/.vim_runtime/sources_non_forked/scala
+mkdir -p $DIR/{ftdetect,indent,syntax,plugin} 
+for d in ftdetect indent syntax ; do 
+wget --no-check-certificate -O $DIR/$d/scala.vim https://raw.github.com/scala/scala-dist/master/tool-support/src/vim/$d/scala.vim
+done
+wget --no-check-certificate -O $DIR/plugin/31-create-scala.vim https://raw.github.com/scala/scala-dist/master/tool-support/src/vim/plugin/31-create-scala.vim
 </pre>
 
 
