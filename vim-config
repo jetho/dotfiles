@@ -1,5 +1,8 @@
 " change theme
-colorscheme hybrid
+colorscheme wombat
 
 " show line numbers
 set nu
+
+" change font
+set guifont=Consolas

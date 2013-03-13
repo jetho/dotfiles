@@ -40,7 +40,7 @@ Here's a list of the available themes: https://github.com/robbyrussell/oh-my-zsh
 <pre>
 git clone git://github.com/jetho/vimrc.git ~/.vim_runtime
 sh ~/.vim_runtime/install_awesome_vimrc.sh
-git clone https://github.com/w0ng/vim-hybrid.git ~/.vim_runtime/sources_forked/hybrid
+git clone https://github.com/vim-scripts/Wombat.git ~/.vim_runtime/sources_forked/wombat
 mv ~/.i3/vim-config ~/.vim_runtime/my_configs.vim
 </pre>
 
