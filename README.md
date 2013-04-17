@@ -30,6 +30,7 @@ rm -R ~/.i3/screenshots
 #### Pimp my zsh
 <pre>
 curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+mv ~/.i3/zshrc ~/.zshrc
 </pre>
 Edit .zshrc to change the zsh theme. For example:
 <pre>ZSH_THEME="bira"</pre>
