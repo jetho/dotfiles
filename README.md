@@ -52,6 +52,15 @@ wget --no-check-certificate -O $DIR/plugin/31-create-scala.vim https://raw.githu
 </pre>
 
 
+#### Haskell Dev
+<pre>
+sudo apt-get install ghc7 cabal-install
+cabal update && cabal install hoogle && cabal install pointfree && cabal install hlint 
+mkdir -p ~/.ghc
+mv ~/.i3/ghci.conf ~/.ghc/ghci.conf
+</pre>
+
+
 #### Enable password-less sudo for logout, reboot and shutdown
 - insert the following lines into /etc/sudoers using visudo as root:
 <pre>
