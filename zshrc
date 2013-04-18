@@ -41,3 +41,6 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/ga
 
 # vim key bindings
 set -o vi
+
+# enable history backward search in vim mode
+bindkey '^R' history-incremental-search-backward
