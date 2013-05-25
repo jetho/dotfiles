@@ -6,7 +6,7 @@ My personal configuration for the i3 Window Manager.
 #### Install Instructions
 <pre>
 sudo apt-get install i3 conky dzen2 thunar rxvt-unicode dmenu ranger feh volumeicon-alsa zsh
-git clone git@github.com:jetho/i3-WM-config.git ~/.i3/
+git clone git://github.com/jetho/i3-WM-config.git ~/.i3/
 cat ~/.i3/urxvt-config >> ~/.Xdefaults
 chsh -s $(which zsh)    # set zsh as default shell
 sudo chmod u+x ~/.i3/*.sh
@@ -29,7 +29,10 @@ rm -R ~/.i3/screenshots
 #### Pimp my zsh
 <pre>
 curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+mkdir -p ~/.oh-my-zsh/custom/plugins
+git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins
 mv ~/.i3/zshrc ~/.zshrc
+source ~/.zshrc
 </pre>
 Edit .zshrc to change the zsh theme. For example:
 <pre>ZSH_THEME="bira"</pre>
