@@ -1,6 +1,6 @@
-# i3wm-Config
+# debian-and-i3wm-Config
 
-My personal configuration for the i3 Window Manager. 
+My personal setup for Debian and the i3 Window Manager. 
 
 
 #### Install Instructions
@@ -30,7 +30,7 @@ rm -R ~/.i3/screenshots
 <pre>
 curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 mkdir -p ~/.oh-my-zsh/custom/plugins
-git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins
+git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 mv ~/.i3/zshrc ~/.zshrc
 source ~/.zshrc
 </pre>
