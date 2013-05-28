@@ -14,7 +14,7 @@ rm -R ~/.i3/screenshots
 </pre>
 
 
-#### Disabling the nautilus desktop window
+#### Disabling the nautilus desktop window (if gnome is installed)
 <pre>gsettings set org.gnome.desktop.background show-desktop-icons false</pre>
 
 
