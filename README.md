@@ -1,6 +1,6 @@
 # debian-and-i3wm-Config
 
-My personal setup for Debian and the i3 Window Manager. 
+My workstation setup for Debian and the i3 Window Manager. 
 
 
 #### Install Instructions
