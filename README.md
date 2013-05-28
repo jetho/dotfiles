@@ -5,7 +5,7 @@ My workstation setup for Debian and the i3 Window Manager.
 
 #### Install Instructions
 <pre>
-sudo apt-get install i3 conky dzen2 thunar rxvt-unicode dmenu ranger feh volumeicon-alsa zsh
+sudo apt-get install git-core i3 conky dzen2 thunar rxvt-unicode dmenu ranger feh volumeicon-alsa zsh
 git clone git://github.com/jetho/i3-WM-config.git ~/.i3/
 cat ~/.i3/urxvt-config >> ~/.Xdefaults
 chsh -s $(which zsh)    # set zsh as default shell
