@@ -42,5 +42,8 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/ga
 # vim key bindings
 bindkey -v
 
-# enable history backward search in vim mode
+# enable zsh searching in vim mode
 bindkey '^R' history-incremental-search-backward
+bindkey "^F" history-incremental-search-forward
+bindkey "^P" history-search-backward
+bindkey "^N" history-search-forward

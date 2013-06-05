@@ -35,7 +35,7 @@ mv ~/.i3/zshrc ~/.zshrc
 source ~/.zshrc
 </pre>
 Edit .zshrc to change the zsh theme. For example:
-<pre>ZSH_THEME="bira"</pre>
+<pre>ZSH_THEME="clean"</pre>
 Here's a list of the available themes: https://github.com/robbyrussell/oh-my-zsh/wiki/themes
 
 
