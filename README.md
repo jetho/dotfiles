@@ -1,79 +1,85 @@
 # debian-and-i3wm-Config
 
-My workstation setup for Debian and the i3 Window Manager. 
+My workstation setup for Debian (Testing) and the i3 Window Manager. 
 
+#### Installing a minimal Debian System
+Use the Debian Netinstall ISO for installing a minimal Debian System: http://www.debian.org/distrib/netinst
+Install only the "Standard System Utilities" and "Laptop" if needed!
 
-#### Install Instructions
+#### Setup Script (see setup.sh)
 <pre>
-sudo apt-get install git-core i3 conky dzen2 thunar rxvt-unicode dmenu ranger feh volumeicon-alsa zsh
-git clone git://github.com/jetho/debian-and-i3wm-Config.git ~/.i3/
-cat ~/.i3/urxvt-config >> ~/.Xdefaults
-chsh -s $(which zsh)    # set zsh as default shell
-sudo chmod u+x ~/.i3/*.sh
-rm -R ~/.i3/screenshots
-</pre>
+#!/bin/bash
 
+cd
 
-#### Disabling the nautilus desktop window (if gnome is installed)
-<pre>gsettings set org.gnome.desktop.background show-desktop-icons false</pre>
+echo "Installing Software .."
+# install software
+sudo apt-get update
+sudo apt-get install `cat apps`
 
+echo "Setting zsh as default shell .."
+chsh -s `which zsh`
 
-#### Set Wallpaper
-<pre>feh --bg-scale &lt;image&gt;</pre>
+echo "Setting urxvt as default terminal emulator .."
+sudo update-alternatives --set x-terminal-emulator /usr/bin/urxvt
 
-
-#### Set default terminal emulator
-<pre>sudo update-alternatives --config x-terminal-emulator</pre>
-
-
-#### Pimp my zsh
-<pre>
-curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
-mkdir -p ~/.oh-my-zsh/custom/plugins
-git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-mv ~/.i3/zshrc ~/.zshrc
-source ~/.zshrc
-</pre>
-Edit .zshrc to change the zsh theme. For example:
-<pre>ZSH_THEME="clean"</pre>
-Here's a list of the available themes: https://github.com/robbyrussell/oh-my-zsh/wiki/themes
-
-
-#### Customizing Vim
-<pre>
+echo "Pimping Vim .."
 git clone git://github.com/jetho/vimrc.git ~/.vim_runtime
 sh ~/.vim_runtime/install_awesome_vimrc.sh
 git clone https://github.com/vim-scripts/Wombat.git ~/.vim_runtime/sources_non_forked/wombat
-mv ~/.i3/vim-config ~/.vim_runtime/my_configs.vim
 
-# for Scala Dev
+echo "Oh my zsh!"
+curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+mkdir -p ~/.oh-my-zsh/custom/plugins
+git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+
+echo "Preparing Vim for Scala Dev .."
 DIR=~/.vim_runtime/sources_non_forked/vim-scala
 mkdir -p $DIR/{ftdetect,indent,syntax,plugin} 
 for d in ftdetect indent syntax ; do wget --no-check-certificate -O $DIR/$d/scala.vim https://raw.github.com/scala/scala-dist/master/tool-support/src/vim/$d/scala.vim ;done
 wget --no-check-certificate -O $DIR/plugin/31-create-scala.vim https://raw.github.com/scala/scala-dist/master/tool-support/src/vim/plugin/31-create-scala.vim
-</pre>
 
-
-#### Haskell Dev
-<pre>
-sudo apt-get install ghc7 cabal-install
+echo "Installing basics for Haskell Dev .."
 cabal update && cabal install hoogle && cabal install pointfree && cabal install hlint 
-mkdir -p ~/.ghc
-mv ~/.i3/ghci.conf ~/.ghc/ghci.conf
+
+echo "Applying personal configs .."
+git clone git://github.com/jetho/debian-and-i3wm-Config.git ~/setup_tmp
+rsync -avh ~/setup_tmp/dotfiles/ ~
+sudo chmod u+x ~/.i3/*.sh
+cd && sh .fehbg 
+rm -R ~/setup_tmp
+echo "Setup finished! Please reboot!"
 </pre>
 
-
-#### Enable password-less sudo for logout, reboot and shutdown
-- insert the following lines into /etc/sudoers using visudo as root:
+#### Enable password-less sudo for reboot, shutdown and network monitoring
+- append the following lines to /etc/sudoers using "sudo visudo":
 <pre>
 # User alias specification
-User_Alias HALT = user1, user2     # replace user1, user2 etc. with real user names
+User_Alias      USERS  = user1, user2     # replace user1, user2 etc. with real user names
 # Cmnd alias specification
-Cmnd_Alias DOWN = /sbin/shutdown, /sbin/reboot
+Cmnd_Alias      SHUTDOWN = /sbin/shutdown, /sbin/reboot, /sbin/halt
+Cmnd_Alias      MONITORING = /usr/sbin/iftop, /usr/sbin/iptraf-ng, /usr/sbin/iotop
 # User privilege specification
-HALT ALL = NOPASSWD: DOWN
+USERS ALL=(ALL) NOPASSWD: MONITORING, SHUTDOWN
 </pre>
 
+#### Favorite Firefox Add-ons
+<pre>
+HTTPS Everywhere https://www.eff.org/https-everywhere
+Adblock Edge https://addons.mozilla.org/en-us/firefox/addon/adblock-edge/
+Omnibar https://addons.mozilla.org/en-us/firefox/addon/omnibar/
+Disconnect https://disconnect.me/
+RequestPolicy https://addons.mozilla.org/en-us/firefox/addon/requestpolicy/
+NoScript https://addons.mozilla.org/en-us/firefox/addon/noscript/
+Vimperator https://addons.mozilla.org/en-us/firefox/addon/vimperator/
+Custom Tab Width https://addons.mozilla.org/en-us/firefox/addon/custom-tab-width/
+Tile Tabs https://addons.mozilla.org/en-us/firefox/addon/tile-tabs/
+GreaseMonkey https://addons.mozilla.org/en-us/firefox/addon/greasemonkey/
+Pocket https://addons.mozilla.org/en-us/firefox/addon/read-it-later/
+DownThemAll! https://addons.mozilla.org/en-us/firefox/addon/downthemall/
+Session Manager https://addons.mozilla.org/en-us/firefox/addon/session-manager/
+BetterPrivacy https://addons.mozilla.org/en-us/firefox/addon/betterprivacy/
+</pre>
 
 #### Additional key bindings available
 - WIN + SHIFT + V => gvim
@@ -81,10 +87,5 @@ HALT ALL = NOPASSWD: DOWN
 - WIN + T => ranger
 - WIN + Shift + T => thunar
 - WIN + SHIFT + S => Shutdown
-
-
-#### Screenshots
-[![empty desktop](https://github.com/jetho/i3wm-Config/raw/master/screenshots/screenshot1-th.png)](https://github.com/jetho/i3wm-Config/raw/master/screenshots/screenshot1.png)
-[![two windows](https://github.com/jetho/i3wm-Config/raw/master/screenshots/screenshot2-th.png)](https://github.com/jetho/i3wm-Config/raw/master/screenshots/screenshot2.png)
-[![three windows](https://github.com/jetho/i3wm-Config/raw/master/screenshots/screenshot3-th.png)](https://github.com/jetho/i3wm-Config/raw/master/screenshots/screenshot3.png)
+- Print => create screenshot and save into ~/Pictures
 

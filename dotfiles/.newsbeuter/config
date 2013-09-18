@@ -1,0 +1,32 @@
+articlelist-format "%4i %f %D %6L %?T?;%-17T; ?%t"
+auto-reload yes
+browser firefox
+cache-file "~/.newsbeuter/cache.db"
+cleanup-on-quit yes
+download-retries 3
+max-items 500
+mark-as-read-on-hover yes
+refresh-on-startup yes
+reload-time 30
+reload-threads 3
+save-path "~/feeds"
+search-highlight-colors black yellow bold
+confirm-exit yes
+
+
+# vimlike bindings
+unbind-key ^B
+bind-key ^B pageup
+unbind-key ^F
+bind-key ^F pagedown
+bind-key k up
+bind-key j down
+bind-key h quit
+unbind-key l 
+bind-key l open
+bind-key L toggle-show-read-feeds
+
+# colors
+color listnormal_unread green default 
+color info cyan black bold 
+

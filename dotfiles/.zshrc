@@ -32,18 +32,16 @@ ZSH_THEME="clean"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git zsh-syntax-highlighting)
+plugins=(vi-mode history-substring-search git zsh-syntax-highlighting cabal colored-man history scala sbt)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 
-# vim key bindings
-bindkey -v
-
 # enable zsh searching in vim mode
 bindkey '^R' history-incremental-search-backward
 bindkey "^F" history-incremental-search-forward
 bindkey "^P" history-search-backward
 bindkey "^N" history-search-forward
+
