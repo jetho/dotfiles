@@ -1,6 +1,6 @@
 ## debian-and-i3wm-Config
 
-My workstation setup for Debian (Testing) and the i3 Window Manager. 
+My workstation setup with Debian (Testing) and the i3 Window Manager. 
 
 #### Installing a minimal Debian System
 Use the Debian Netinstall ISO for installing a minimal Debian System: http://www.debian.org/distrib/netinst
@@ -86,4 +86,3 @@ USERS ALL=(ALL) NOPASSWD: MONITORING, SHUTDOWN
 - WIN + Shift + T => thunar
 - WIN + SHIFT + S => Shutdown
 - Print => create screenshot and save into ~/Pictures
-
