@@ -13,7 +13,6 @@ Install only the "Standard System Utilities" and "Laptop" if needed!
 cd
 
 echo "Installing Software .."
-# install software
 sudo apt-get update
 sudo apt-get install $(< apps)
 

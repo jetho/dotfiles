@@ -3,7 +3,6 @@
 cd
 
 echo "Installing Software .."
-# install software
 sudo apt-get update
 sudo apt-get install $(< apps)
 
