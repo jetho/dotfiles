@@ -7,7 +7,7 @@ Use the Debian Netinstall ISO for installing a minimal Debian System: http://www
 Install only the "Standard System Utilities" and "Laptop" if needed!
 
 #### Setup Script (see setup.sh)
-<pre>
+```bash
 #!/bin/bash
 
 cd
@@ -49,7 +49,7 @@ sudo chmod u+x ~/.i3/*.sh
 cd && sh .fehbg 
 rm -R ~/setup_tmp
 echo "Setup finished! Please reboot!"
-</pre>
+ ```
 
 #### Enable password-less sudo for reboot, shutdown and network monitoring
 - append the following lines to /etc/sudoers using "sudo visudo":
