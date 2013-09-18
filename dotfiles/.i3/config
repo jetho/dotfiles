@@ -197,7 +197,6 @@ bindsym $mod+T exec urxvtc -e ranger
 bindsym $mod+Shift+T exec thunar
 bindsym Print exec --no-startup-id scrot -e 'mv $f ~/Pictures/ 2>/dev/null'
 bindsym $mod+Shift+S exec sudo shutdown -h now
-#bindsym $mod+Shift+S exec ~/.i3/shutdown.sh
 
 # set wallpaper
 exec sh ~/.fehbg &
@@ -205,7 +204,7 @@ exec sh ~/.fehbg &
 # Autostart
 exec --no-startup-id unclutter 
 exec --no-startup-id urxvtd -q -f
-exec --no-startup-id volwheel
+exec --no-startup-id volumeicon
 exec --no-startup-id wicd-gtk --tray
 exec --no-startup-id xfce4-power-manager
 
