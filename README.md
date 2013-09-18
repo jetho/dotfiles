@@ -15,7 +15,7 @@ cd
 echo "Installing Software .."
 # install software
 sudo apt-get update
-sudo apt-get install `cat apps`
+sudo apt-get install $(< apps)
 
 echo "Setting zsh as default shell .."
 chsh -s `which zsh`
@@ -58,7 +58,7 @@ echo "Setup finished! Please reboot!"
 User_Alias      USERS  = user1, user2     # replace user1, user2 etc. with real user names
 # Cmnd alias specification
 Cmnd_Alias      SHUTDOWN = /sbin/shutdown, /sbin/reboot, /sbin/halt
-Cmnd_Alias      MONITORING = /usr/sbin/iftop, /usr/sbin/iptraf-ng, /usr/sbin/iotop
+Cmnd_Alias      MONITORING = /usr/sbin/iftop, /usr/sbin/iotop
 # User privilege specification
 USERS ALL=(ALL) NOPASSWD: MONITORING, SHUTDOWN
 </pre>
