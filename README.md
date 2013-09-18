@@ -64,20 +64,20 @@ USERS ALL=(ALL) NOPASSWD: MONITORING, SHUTDOWN
 </pre>
 
 #### Favorite Firefox Add-ons
-- HTTPS Everywhere https://www.eff.org/https-everywhere
-- Adblock Edge https://addons.mozilla.org/en-us/firefox/addon/adblock-edge/
-- Omnibar https://addons.mozilla.org/en-us/firefox/addon/omnibar/
-- Disconnect https://disconnect.me/
-- RequestPolicy https://addons.mozilla.org/en-us/firefox/addon/requestpolicy/
-- NoScript https://addons.mozilla.org/en-us/firefox/addon/noscript/
-- Vimperator https://addons.mozilla.org/en-us/firefox/addon/vimperator/
-- Custom Tab Width https://addons.mozilla.org/en-us/firefox/addon/custom-tab-width/
-- Tile Tabs https://addons.mozilla.org/en-us/firefox/addon/tile-tabs/
-- GreaseMonkey https://addons.mozilla.org/en-us/firefox/addon/greasemonkey/
-- Pocket https://addons.mozilla.org/en-us/firefox/addon/read-it-later/
-- DownThemAll! https://addons.mozilla.org/en-us/firefox/addon/downthemall/
-- Session Manager https://addons.mozilla.org/en-us/firefox/addon/session-manager/
-- BetterPrivacy https://addons.mozilla.org/en-us/firefox/addon/betterprivacy/
+- [HTTPS Everywhere](https://www.eff.org/https-everywhere)
+- [Adblock Edge](https://addons.mozilla.org/en-us/firefox/addon/adblock-edge/)
+- [Omnibar](https://addons.mozilla.org/en-us/firefox/addon/omnibar/)
+- [Disconnect](https://disconnect.me/)
+- [RequestPolicy](https://addons.mozilla.org/en-us/firefox/addon/requestpolicy/)
+- [NoScript](https://addons.mozilla.org/en-us/firefox/addon/noscript/)
+- [Vimperator](https://addons.mozilla.org/en-us/firefox/addon/vimperator/)
+- [Custom Tab Width](https://addons.mozilla.org/en-us/firefox/addon/custom-tab-width/)
+- [Tile Tabs](https://addons.mozilla.org/en-us/firefox/addon/tile-tabs/)
+- [GreaseMonkey](https://addons.mozilla.org/en-us/firefox/addon/greasemonkey/)
+- [Pocket](https://addons.mozilla.org/en-us/firefox/addon/read-it-later/)
+- [DownThemAll!](https://addons.mozilla.org/en-us/firefox/addon/downthemall/)
+- [Session Manager](https://addons.mozilla.org/en-us/firefox/addon/session-manager/)
+- [BetterPrivacy](https://addons.mozilla.org/en-us/firefox/addon/betterprivacy/)
 
 #### Additional key bindings available
 - WIN + SHIFT + V => gvim
