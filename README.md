@@ -57,7 +57,7 @@ echo "Setup finished! Please reboot!"
 User_Alias      USERS  = user1, user2     # replace user1, user2 etc. with real user names
 # Cmnd alias specification
 Cmnd_Alias      SHUTDOWN = /sbin/shutdown, /sbin/reboot, /sbin/halt
-Cmnd_Alias      MONITORING = /usr/sbin/iftop, /usr/sbin/iotop
+Cmnd_Alias      MONITORING = /usr/sbin/iftop, /usr/sbin/iotop, /usr/sbin/nethogs
 # User privilege specification
 USERS ALL=(ALL) NOPASSWD: MONITORING, SHUTDOWN
 </pre>

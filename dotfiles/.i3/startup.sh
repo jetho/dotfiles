@@ -15,9 +15,9 @@ i3-msg exec "urxvtc -title ncmpcpp -e ncmpcpp" && sleep 0.2
 
 i3-msg workspace 7:sys
 i3-msg exec "urxvtc -title htop -e htop" && sleep 1
-i3-msg exec "urxvtc -title iftop -e sudo iftop -n -B -i eth0" && sleep 1
+i3-msg exec "urxvtc -title slurm -e slurm -i eth0" && sleep 1
 i3-msg split v
-i3-msg exec "urxvtc -title iotop -e sudo iotop" && sleep 1
+i3-msg exec "urxvtc -title nethogs -e sudo nethogs -d 3 eth0" && sleep 1
 
 i3-msg workspace 1:term
 i3-msg exec urxvtc
