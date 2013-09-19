@@ -100,7 +100,7 @@ song_window_title_format = "{%a - }{%t}|{%f}"
 ## - color is optional (if you want the default one, type [])
 ##
 #
-song_columns_list_format = "(15)[white]{a} (53)[green]{t} (6)[yellow]{l} (35)[cyan]{b}"
+song_columns_list_format = "(6)[yellow]{l} (15)[white]{a} (53)[green]{t} (35)[cyan]{b}"
 #
 ##### various settings #####
 #
