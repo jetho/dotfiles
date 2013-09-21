@@ -27,6 +27,8 @@ iftop
 iotop
 keepassx
 lftp
+libghc-xmonad-contrib-dev
+libghc-xmonad-dev
 lshw
 mediainfo
 mpc
@@ -67,7 +69,6 @@ wicd
 wireshark
 xfce4-power-manager
 xmonad
-xmonad-contrib
 xorg
 zathura
 zsh
