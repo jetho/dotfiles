@@ -1,6 +1,6 @@
-## debian-and-i3wm-Config
+## debian-and-xmonad-Config
 
-My workstation setup with Debian (Testing) and the i3 Window Manager. 
+My workstation setup with Debian (Testing) and the XMonad Window Manager. 
 
 #### Installing a minimal Debian System
 Use the Debian Netinstall ISO for installing a minimal Debian System: http://www.debian.org/distrib/netinst
@@ -42,9 +42,9 @@ echo "Installing basics for Haskell Dev .."
 cabal update && cabal install hoogle && cabal install pointfree && cabal install hlint 
 
 echo "Applying personal configs .."
-git clone git://github.com/jetho/debian-and-i3wm-Config.git ~/setup_tmp
+git clone git://github.com/jetho/debian-and-xmonad-Config.git ~/setup_tmp
 rsync -avh ~/setup_tmp/dotfiles/ ~
-sudo chmod u+x ~/.i3/*.sh
+sudo chmod u+x ~/.xmonad/bin/*.sh
 cd && sh .fehbg 
 rm -R ~/setup_tmp
 echo "Setup finished! Please reboot!"
@@ -79,9 +79,10 @@ USERS ALL=(ALL) NOPASSWD: MONITORING, SHUTDOWN
 - [BetterPrivacy](https://addons.mozilla.org/en-us/firefox/addon/betterprivacy/)
 
 #### Additional key bindings available
+- WIN + V => vim
 - WIN + SHIFT + V => gvim
-- WIN + I => default browser (configure default browser: "sudo update-alternatives --config x-www-browser")
-- WIN + T => ranger
-- WIN + Shift + T => thunar
+- WIN + SHIFT + I => firefox
+- WIN + SHIFT + F => ranger
+- WIN + SHIFT + T => thunar
 - WIN + SHIFT + S => Shutdown
 - Print => create screenshot and save into ~/Pictures

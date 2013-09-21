@@ -1,0 +1,1 @@
+ ^ca(1,ncmpcpp stop)^i(/home/jens/.xmonad/xbm/stop.xbm)^ca() ^ca(1,ncmpcpp toggle)^i(/home/jens/.xmonad/xbm/playpause.xbm)^ca() ^ca(1,ncmpcpp prev)^i(/home/jens/.xmonad/xbm/prev.xbm)^ca() ^ca(1, ncmpcpp next) ^i(/home/jens/.xmonad/xbm/next.xbm)^ca()

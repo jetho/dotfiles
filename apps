@@ -10,9 +10,9 @@ bitlbee
 cabal-install
 conky
 curl
-dmenu
 dstat
 dtrx
+dzen2
 feh
 ffmpeg
 filezilla
@@ -21,7 +21,6 @@ git-core
 haskell-platform
 highlight
 htop
-i3
 icedove
 iceweasel
 iftop
@@ -47,7 +46,8 @@ ranger
 rxvt-unicode
 scrot
 slim
-slurm
+slock
+suckless-tools
 tcpdump
 thunar
 tor
@@ -66,6 +66,8 @@ weechat
 wicd
 wireshark
 xfce4-power-manager
+xmonad
+xmonad-contrib
 xorg
 zathura
 zsh
