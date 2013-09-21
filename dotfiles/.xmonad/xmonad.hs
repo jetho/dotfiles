@@ -76,10 +76,13 @@ myManageHook = composeAll . concat $
 myUrgencyHook = withUrgencyHook dzenUrgencyHook	{ args = ["-y 1000"] }
 
 
-myLayoutHook = (spaced tall) ||| simpleTabbed ||| Full ||| (spaced $ Mirror tall) ||| (spaced Grid) 
+myLayoutHook = spacedTall ||| simpleTabbed ||| Full ||| spacedMirrorTall ||| spacedGrid 
 	where
 		tall = ResizableTall 1 (3/100) (3/5) []
 		spaced = spacing 5
+		spacedTall = spaced tall
+		spacedMirrorTall = spaced $ Mirror tall
+		spacedGrid = spaced Grid
 
 
 myDzenPP h = defaultPP
@@ -137,7 +140,10 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((0,                          0x1008ff14  ), spawn "ncmpcpp toggle")
     , ((0,                          0x1008ff17  ), spawn "ncmpcpp next")
     , ((0,                          0x1008ff16  ), spawn "ncmpcpp prev")
- 
+    , ((0,                          0x1008ff15  ), spawn "ncmpcpp stop")
+    , ((modMask,                    xK_Page_Up  ), spawn "ncmpcpp volume +5")
+    , ((modMask,                    xK_Page_Down), spawn "ncmpcpp volume -5")
+
     -- layouts
     , ((modMask,                    xK_space    ), sendMessage NextLayout)
     , ((modMask .|. shiftMask,      xK_space    ), setLayout $ XMonad.layoutHook conf)          -- reset layout on current desktop to default
