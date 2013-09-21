@@ -24,7 +24,7 @@ ${if_match ${fs_free_perc /}>=50}^fg(\#F0DC64)${else}#
 ${if_match ${fs_free_perc /}>=25}^fg(\#FF9933)${else}#
 ${if_match ${fs_free_perc /}}<25}^fg(\#FF3333)${else}#
 ${endif}${endif}${endif}${endif}${fs_free /}^fg(\#BBBBBB) #
-${if_up enp3s0}^i(/home/jens/.xmonad/xbm/lan.xbm) ^fg(\#AAF096)${addrs enp3s0}${endif}^fg(\#BBBBBB) #
+${if_up enp3s0}^i(/home/jens/.xmonad/xbm/lan.xbm) ^fg(\#AAF096)${addrs eth0}${endif}^fg(\#BBBBBB) #
 ${if_up wlan0}#
 ${if_match ${wireless_link_qual_perc wlan0} >= 80}^fg(\#AAF096)^i(/home/jens/.xmonad/xbm/wireless5.xbm) ${wireless_essid wlan0} ${else}#
 ${if_match ${wireless_link_qual_perc wlan0} >= 60}^fg(\#F0DC64)^i(/home/jens/.xmonad/xbm/wireless4.xbm) ${wireless_essid wlan0} ${else}#

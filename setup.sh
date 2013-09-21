@@ -32,9 +32,9 @@ echo "Installing basics for Haskell Dev .."
 cabal update && cabal install hoogle && cabal install pointfree && cabal install hlint 
 
 echo "Applying personal configs .."
-git clone git://github.com/jetho/debian-and-i3wm-Config.git ~/setup_tmp
+git clone git://github.com/jetho/debian-and-xmonad-Config.git ~/setup_tmp
 rsync -avh ~/setup_tmp/dotfiles/ ~
-sudo chmod u+x ~/.i3/*.sh
+sudo chmod u+x ~/.xmonad/bin/*.sh
 cd && sh .fehbg
 rm -R ~/setup_tmp
 echo "Setup finished! Please reboot!"
