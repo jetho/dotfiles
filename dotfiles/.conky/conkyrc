@@ -26,12 +26,12 @@ ${if_match ${fs_free_perc /}}<25}^fg(\#FF3333)${else}#
 ${endif}${endif}${endif}${endif}${fs_free /}^fg(\#BBBBBB) #
 ${if_up eth0}^i(/home/jens/.xmonad/xbm/lan.xbm) ^fg(\#AAF096)${addrs eth0}${endif}^fg(\#BBBBBB) #
 ${if_up wlan0}#
-${if_match ${wireless_link_qual_perc wlan0} >= 80}^fg(\#AAF096)^i(/home/jens/.xmonad/xbm/wireless5.xbm) ${wireless_essid wlan0} ${else}#
-${if_match ${wireless_link_qual_perc wlan0} >= 60}^fg(\#F0DC64)^i(/home/jens/.xmonad/xbm/wireless4.xbm) ${wireless_essid wlan0} ${else}#
-${if_match ${wireless_link_qual_perc wlan0} >= 40}^fg(\#FF9933)^i(/home/jens/.xmonad/xbm/wireless3.xbm) ${wireless_essid wlan0} ${else}#
-${if_match ${wireless_link_qual_perc wlan0} >= 20}^fg(\#FF3333)^i(/home/jens/.xmonad/xbm/wireless2.xbm) ${wireless_essid wlan0} ${else}#
+${if_match ${wireless_link_qual_perc wlan0} >= 80}^fg(\#AAF096)^i(/home/jens/.xmonad/xbm/wireless5.xbm) ${wireless_essid wlan0}${else}#
+${if_match ${wireless_link_qual_perc wlan0} >= 60}^fg(\#F0DC64)^i(/home/jens/.xmonad/xbm/wireless4.xbm) ${wireless_essid wlan0}${else}#
+${if_match ${wireless_link_qual_perc wlan0} >= 40}^fg(\#FF9933)^i(/home/jens/.xmonad/xbm/wireless3.xbm) ${wireless_essid wlan0}${else}#
+${if_match ${wireless_link_qual_perc wlan0} >= 20}^fg(\#FF3333)^i(/home/jens/.xmonad/xbm/wireless2.xbm) ${wireless_essid wlan0}${else}#
 ${if_match ${wireless_link_qual_perc wlan0} >=  1}^fg(\#FFFFFF)^i(/home/jens/.xmonad/xbm/wireless1.xbm) ${wireless_essid wlan0}#
-${endif}${endif}${endif}${endif}${endif}
+${endif}${endif}${endif}${endif}${endif}#
 ^fg(\#AAF096) ${addrs wlan0}# 
 ${endif}^fg(\#FFFFFF) #
 ^i(/home/jens/.xmonad/xbm/calendar.xbm) ^fg(\#FFFFFF)${time %d/%m/%y }^fg(\#BBBBBB)^i(/home/jens/.xmonad/xbm/time.xbm) ^fg(\#FFFFFF)${time %H}${blink :}${time %M } ^fg(\#BBBBBB)# 
