@@ -1,6 +1,9 @@
 # ~/.xmonad/autostart.sh
 #!/bin/sh
 
+# set the cursor
+xsetroot -cursor_name left_ptr
+
 # Programs to launch at startup
 sh ~/.fehbg &
 
