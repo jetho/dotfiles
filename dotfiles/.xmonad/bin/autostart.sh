@@ -10,14 +10,14 @@ sh ~/.fehbg &
 # Programs which will run after Xmonad has started
 firefox &
 urxvt &
-urxvt -name weechat_startup -e weechat-curses &
-urxvt -name ncmpcpp_startup -e ncmpcpp &
-urxvt -name mutt_startup -e mutt &
+urxvt -name weechat -e weechat-curses &
+urxvt -name ncmpcpp -e ncmpcpp &
+urxvt -name mutt -e mutt &
 sleep 2 
-urxvt -name newsbeuter_startup -e newsbeuter & 
+urxvt -name newsbeuter -e newsbeuter & 
 sleep 2
-urxvt -name nethogs_startup -e sudo nethogs -d3 eth0 &
+urxvt -name nethogs -e sudo nethogs -d3 eth0 &
 sleep 2  
-urxvt -name slurm_startup -e slurm -i eth0 &
-urxvt -name htop_startup -e htop &
+urxvt -name slurm -e slurm -i eth0 &
+urxvt -name htop -e htop &
 
