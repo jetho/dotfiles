@@ -9,7 +9,7 @@ import System.IO
 import XMonad.Actions.DynamicWorkspaces
 import XMonad.Prompt
 import qualified XMonad.StackSet as W
-import qualified Data.Map	 as M
+import qualified Data.Map    as M
 import XMonad.Layout.PerWorkspace
 import XMonad.Util.EZConfig
 import XMonad.Layout.Spacing
@@ -20,12 +20,10 @@ import XMonad.Actions.CycleWS
 import System.Exit
 import XMonad.Prompt.RunOrRaise (runOrRaisePrompt)
 
-
 userDir = "/home/jens/"
 bitmapDir = userDir ++ ".xmonad/xbm/"
 myTerminal = "urxvt"
 conkyDir = userDir ++ ".conky/"
-
 
 myStatusBar = "dzen2 -ta l -x 0 -y 0 -w 720 -h 16 -fn inconsolata-12 -fg #ffffff -bg black"
 musicBar = "cat " ++ conkyDir ++ "musicBar | dzen2 -p -x 720 -y 0 -w 80 -h 16 -fn inconsolata-12 -fg yellow -bg black"
@@ -54,28 +52,28 @@ myManageHook = composeAll . concat $
     , [(className =? x <||> title =? x <||> resource =? x) --> doShift "9" | x <- my9Shifts]
     ]
     where
-    -- Hook used to push floating windows back into the layout
-    -- This is used for gimp windwos to force them into a layout.
-    doSink = ask >>= \w -> liftX (reveal w) >> doF (W.sink w)
-    -- Float dialogs, Download windows and Save dialogs
-    myCFloats = ["Sysinfo", "XMessage"]
-    myTFloats = ["Downloads", "Save As..."]
-    myRFloats = ["Dialog"]
-    mySinks = ["gimp"]
-    myFullscreens = ["vlc", "Wine", "rdesktop"]
-    -- Define default workspaces for some programs
-    my1Shifts = []
-    my2Shifts = ["Iceweasel"]
-    my3Shifts = ["Eclipse", "eclipse"]
-    my4Shifts = ["newsbeuter", "mutt"]
-    my5Shifts = ["weechat"]
-    my6Shifts = ["ncmpcpp"]
-    my7Shifts = ["htop", "slurm", "nethogs"]
-    my8Shifts = []
-    my9Shifts = []
+        -- Hook used to push floating windows back into the layout
+        -- This is used for gimp windwos to force them into a layout.
+        doSink = ask >>= \w -> liftX (reveal w) >> doF (W.sink w)
+        -- Float dialogs, Download windows and Save dialogs
+        myCFloats = ["Sysinfo", "XMessage"]
+        myTFloats = ["Downloads", "Save As..."]
+        myRFloats = ["Dialog"]
+        mySinks = ["gimp"]
+        myFullscreens = ["vlc", "Wine", "rdesktop"]
+        -- Define default workspaces for some programs
+        my1Shifts = []
+        my2Shifts = ["Iceweasel"]
+        my3Shifts = ["Eclipse", "eclipse"]
+        my4Shifts = ["newsbeuter", "mutt"]
+        my5Shifts = ["weechat"]
+        my6Shifts = ["ncmpcpp"]
+        my7Shifts = ["htop", "slurm", "nethogs"]
+        my8Shifts = []
+        my9Shifts = []
 
 
-myUrgencyHook = withUrgencyHook dzenUrgencyHook	{ args = ["-y 1000"] }
+myUrgencyHook = withUrgencyHook dzenUrgencyHook { args = ["-y 1000"] }
 
 
 myLayoutHook = onWorkspace "2:www" browseLayout $ defaultLayout
@@ -90,27 +88,27 @@ myLayoutHook = onWorkspace "2:www" browseLayout $ defaultLayout
 
 
 myDzenPP h = defaultPP
-	{ ppCurrent = wrap ("^fg(#ffffff)^bg(#333333)^i(" ++ bitmapDir ++ "corner.xbm)^fg(orange)") "^bg()^fg()" 
-	, ppVisible = wrap ("^fg(#ffffff)^i(" ++ bitmapDir ++ "corner.xbm)^fg(#ffffff)") "^fg()"
-	, ppHidden = wrap ("^i(" ++ bitmapDir ++ "corner.xbm)^fg(#AAAAAA)") "^fg()"
-	, ppHiddenNoWindows = \wsId -> if wsId `notElem` myWorkspaces then "" else wrap ("^fg(#666666)^i(" ++ bitmapDir ++ "corner.xbm)") "^fg()" wsId 
-	, ppUrgent = wrap "^fg(#ffffff)" "^fg()" 
-	, ppSep = " | "
-	, ppWsSep = " "
-	, ppTitle = wrap (bwWrapper "-[ ") (bwWrapper " ]-") . dzenColor ("#c8e7a8") "" 
-	, ppLayout = dzenColor ("magenta") "" .
-		(\x -> 
+    { ppCurrent = wrap ("^fg(#ffffff)^bg(#333333)^i(" ++ bitmapDir ++ "corner.xbm)^fg(orange)") "^bg()^fg()" 
+    , ppVisible = wrap ("^fg(#ffffff)^i(" ++ bitmapDir ++ "corner.xbm)^fg(#ffffff)") "^fg()"
+    , ppHidden = wrap ("^i(" ++ bitmapDir ++ "corner.xbm)^fg(#AAAAAA)") "^fg()"
+    , ppHiddenNoWindows = \wsId -> if wsId `notElem` myWorkspaces then "" else wrap ("^fg(#666666)^i(" ++ bitmapDir ++ "corner.xbm)") "^fg()" wsId 
+    , ppUrgent = wrap "^fg(#ffffff)" "^fg()" 
+    , ppSep = " | "
+    , ppWsSep = " "
+    , ppTitle = wrap (bwWrapper "-[ ") (bwWrapper " ]-") . dzenColor ("#c8e7a8") "" 
+    , ppLayout = dzenColor ("magenta") "" .
+        (\x -> 
             (case x of
-		        "Full" -> "^i(" ++ bitmapDir ++ "layout_full.xbm)"
-		        "Spacing 5 ResizableTall" -> "^i(" ++ bitmapDir ++ "layout_tall.xbm)"
-		        "Spacing 5 Mirror ResizableTall" -> "^i(" ++ bitmapDir ++ "layout_mirror_tall.xbm)"
-		        "Tabbed Simplest" -> "^i(" ++ bitmapDir ++ "layout_tabbed.xbm)"
-		        "Spacing 5 Grid" -> "^i(" ++ bitmapDir ++ "layout_grid.xbm)"
-		        _ -> x)
-		)
-	, ppOutput = hPutStrLn h
-	}
-	where 
+                "Full" -> "^i(" ++ bitmapDir ++ "layout_full.xbm)"
+                "Spacing 5 ResizableTall" -> "^i(" ++ bitmapDir ++ "layout_tall.xbm)"
+                "Spacing 5 Mirror ResizableTall" -> "^i(" ++ bitmapDir ++ "layout_mirror_tall.xbm)"
+                "Tabbed Simplest" -> "^i(" ++ bitmapDir ++ "layout_tabbed.xbm)"
+                "Spacing 5 Grid" -> "^i(" ++ bitmapDir ++ "layout_grid.xbm)"
+                _ -> x)
+        )
+    , ppOutput = hPutStrLn h
+    }
+    where 
         bwWrapper = dzenColor ("#ffffff") ("#000000") 
 
 
@@ -194,25 +192,24 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
         , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
 
 
-
 main = do
-	dzen <- spawnPipe myStatusBar
-	conkyexample <- spawnPipe rightBar
-	musicConky <- spawnPipe musicBar
-	spawn $ "sh " ++ userDir ++ ".xmonad/bin/autostart.sh"
-	xmonad $ myUrgencyHook $ defaultConfig
-		{ manageHook = myManageHook
-		, layoutHook = avoidStruts $ myLayoutHook 
-		, workspaces =  myWorkspaces ++ (map show [9..10])
-		, logHook = dynamicLogWithPP $ myDzenPP dzen 
-		, focusFollowsMouse = True
+    dzen <- spawnPipe myStatusBar
+    conkyexample <- spawnPipe rightBar
+    musicConky <- spawnPipe musicBar
+    spawn $ "sh " ++ userDir ++ ".xmonad/bin/autostart.sh"
+    xmonad $ myUrgencyHook $ defaultConfig
+        { manageHook = myManageHook
+        , layoutHook = avoidStruts $ myLayoutHook 
+        , workspaces =  myWorkspaces ++ (map show [9..10])
+        , logHook = dynamicLogWithPP $ myDzenPP dzen 
+        , focusFollowsMouse = True
         , keys = myKeys
-		, modMask = mod4Mask
-		, terminal = myTerminal
-		, normalBorderColor = "#444444"
-		, focusedBorderColor = "red"
-		, borderWidth = 1
-		}`additionalKeysP`
-        		[ ("M-b", sendMessage ToggleStruts), 
-			  ("<XF86ScreenSaver>", spawn "slock") ]
+        , modMask = mod4Mask
+        , terminal = myTerminal
+        , normalBorderColor = "#444444"
+        , focusedBorderColor = "red"
+        , borderWidth = 1
+        }`additionalKeysP`
+                [ ("M-b", sendMessage ToggleStruts), 
+              ("<XF86ScreenSaver>", spawn "slock") ]
 
