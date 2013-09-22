@@ -59,10 +59,10 @@ myManageHook = composeAll . concat $
     myTFloats = ["Downloads", "Save As..."]
     myRFloats = ["Dialog"]
     mySinks = ["gimp"]
-    myFullscreens = ["vlc", "feh", "firefox", "Wine", "rdesktop"]
+    myFullscreens = ["vlc", "feh", "Iceweasel", "Wine", "rdesktop"]
     -- Define default workspaces for some programs
     my1Shifts = []
-    my2Shifts = ["Firefox"]
+    my2Shifts = ["Iceweasel"]
     my3Shifts = ["Eclipse", "eclipse"]
     my4Shifts = ["newsbeuter_startup", "mutt_startup"]
     my5Shifts = ["weechat_startup"]
