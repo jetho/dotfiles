@@ -26,11 +26,14 @@ bitmapDir = userDir ++ ".xmonad/xbm/"
 myTerminal = "urxvt"
 conkyDir = userDir ++ ".conky/"
 
+
 myStatusBar = "dzen2 -ta l -x 0 -y 0 -w 720 -h 16 -fn inconsolata-12 -fg #ffffff -bg black"
 musicBar = "cat " ++ conkyDir ++ "musicBar | dzen2 -p -x 720 -y 0 -w 80 -h 16 -fn inconsolata-12 -fg yellow -bg black"
 rightBar = "conky -c " ++ conkyDir ++ "conkyrc | dzen2 -x 800 -h 16 -fn inconsolata-12 -y 0 -w 850 -ta r -fg #ffffff -bg black"
 
+
 myWorkspaces = ["1:term", "2:www", "3:dev", "4:news", "5:irc", "6:music", "7:sys", "8:misc"]
+
 
 myManageHook = composeAll . concat $
     [ [isDialog --> doFloat]
@@ -72,17 +75,18 @@ myManageHook = composeAll . concat $
     my9Shifts = []
 
 
-
 myUrgencyHook = withUrgencyHook dzenUrgencyHook	{ args = ["-y 1000"] }
 
 
-myLayoutHook = spacedTall ||| simpleTabbed ||| Full ||| spacedMirrorTall ||| spacedGrid 
-	where
-		tall = ResizableTall 1 (3/100) (3/5) []
-		spaced = spacing 5
-		spacedTall = spaced tall
-		spacedMirrorTall = spaced $ Mirror tall
-		spacedGrid = spaced Grid
+myLayoutHook = onWorkspace "2:www" browseLayout $ defaultLayout
+     where
+         tall = ResizableTall 1 (3/100) (3/5) []
+         spaced = spacing 5
+         spacedTall = spaced tall
+         spacedMirrorTall = spaced $ Mirror tall
+         spacedGrid = spaced Grid
+         browseLayout = simpleTabbed ||| Full ||| spacedTall ||| spacedMirrorTall ||| spacedGrid
+         defaultLayout = spacedTall ||| simpleTabbed ||| Full ||| spacedMirrorTall ||| spacedGrid   
 
 
 myDzenPP h = defaultPP
@@ -107,7 +111,7 @@ myDzenPP h = defaultPP
 	, ppOutput = hPutStrLn h
 	}
 	where 
-	bwWrapper = dzenColor ("#ffffff") ("#000000") 
+        bwWrapper = dzenColor ("#ffffff") ("#000000") 
 
 
 largeXPConfig = 
