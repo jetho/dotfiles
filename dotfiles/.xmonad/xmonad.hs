@@ -9,13 +9,14 @@ import System.IO
 import XMonad.Actions.DynamicWorkspaces
 import XMonad.Prompt
 import qualified XMonad.StackSet as W
-import qualified Data.Map    as M
+import qualified Data.Map as M
 import XMonad.Layout.PerWorkspace
 import XMonad.Util.EZConfig
 import XMonad.Layout.Spacing
 import XMonad.Layout.ResizableTile
 import XMonad.Layout.Tabbed
 import XMonad.Layout.Grid
+import XMonad.Layout.Magnifier
 import XMonad.Layout.NoBorders
 import XMonad.Actions.CycleWS
 import System.Exit
@@ -80,15 +81,20 @@ myManageHook = composeAll . concat $
 myUrgencyHook = withUrgencyHook dzenUrgencyHook { args = ["-y 1000"] }
 
 
-myLayoutHook = onWorkspace "2:www" browseLayout $ defaultLayout
+myLayoutHook = 
+     onWorkspace "3:dev" magnifiedLayout $ 
+     onWorkspace "2:www" browseLayout $ 
+     defaultLayout
      where
          tall = ResizableTall 1 (3/100) (3/5) []
          spaced = spacing 5
-         spacedTall = spaced tall
-         spacedMirrorTall = spaced $ Mirror tall
-         spacedGrid = spaced Grid
-         browseLayout = smartBorders $ simpleTabbed ||| Full ||| spacedTall ||| spacedMirrorTall ||| spacedGrid
-         defaultLayout = smartBorders $ spacedTall ||| simpleTabbed ||| Full ||| spacedMirrorTall ||| spacedGrid   
+         tiles = spaced tall
+         mirrorTiles = Mirror tiles
+         magnifiedTiles = magnifier' tiles
+         grid = spaced Grid
+         magnifiedLayout = smartBorders $ magnifiedTiles ||| simpleTabbed ||| Full ||| tiles ||| mirrorTiles ||| grid
+         browseLayout = smartBorders $ simpleTabbed ||| Full ||| magnifiedTiles ||| tiles ||| mirrorTiles ||| grid
+         defaultLayout = smartBorders $ tiles ||| simpleTabbed ||| Full ||| magnifiedTiles ||| mirrorTiles ||| grid   
 
 
 myDzenPP h = defaultPP
@@ -105,7 +111,8 @@ myDzenPP h = defaultPP
             (case x of
                 "Full" -> "^i(" ++ bitmapDir ++ "layout_full.xbm)"
                 "Spacing 5 ResizableTall" -> "^i(" ++ bitmapDir ++ "layout_tall.xbm)"
-                "Spacing 5 Mirror ResizableTall" -> "^i(" ++ bitmapDir ++ "layout_mirror_tall.xbm)"
+                "Magnifier NoMaster Spacing 5 ResizableTall" -> "^i(" ++ bitmapDir ++ "layout_mtall.xbm)"
+                "Mirror Spacing 5 ResizableTall" -> "^i(" ++ bitmapDir ++ "layout_mirror_tall.xbm)"
                 "Tabbed Simplest" -> "^i(" ++ bitmapDir ++ "layout_tabbed.xbm)"
                 "Spacing 5 Grid" -> "^i(" ++ bitmapDir ++ "layout_grid.xbm)"
                 _ -> x)
