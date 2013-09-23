@@ -16,14 +16,17 @@ import XMonad.Layout.Spacing
 import XMonad.Layout.ResizableTile
 import XMonad.Layout.Tabbed
 import XMonad.Layout.Grid
+import XMonad.Layout.NoBorders
 import XMonad.Actions.CycleWS
 import System.Exit
 import XMonad.Prompt.RunOrRaise (runOrRaisePrompt)
+
 
 userDir = "/home/jens/"
 bitmapDir = userDir ++ ".xmonad/xbm/"
 myTerminal = "urxvt"
 conkyDir = userDir ++ ".conky/"
+
 
 myStatusBar = "dzen2 -ta l -x 0 -y 0 -w 720 -h 16 -fn inconsolata-12 -fg #ffffff -bg black"
 musicBar = "cat " ++ conkyDir ++ "musicBar | dzen2 -p -x 720 -y 0 -w 80 -h 16 -fn inconsolata-12 -fg yellow -bg black"
@@ -39,19 +42,20 @@ myManageHook = composeAll . concat $
     , [className =? c --> doFloat | c <- myCFloats]
     , [title =? t --> doFloat | t <- myTFloats]
     , [resource =? r --> doFloat | r <- myRFloats]
-    , [(className =? x <||> title =? x <||> resource =? x) --> doSink | x <- mySinks]
-    , [(className =? x <||> title =? x <||> resource =? x) --> doFullFloat | x <- myFullscreens]
-    , [(className =? x <||> title =? x <||> resource =? x) --> doShift "1:term" | x <- my1Shifts]
-    , [(className =? x <||> title =? x <||> resource =? x) --> doShift "2:www" | x <- my2Shifts]
-    , [(className =? x <||> title =? x <||> resource =? x) --> doShift "3:dev" | x <- my3Shifts]
-    , [(className =? x <||> title =? x <||> resource =? x) --> doShift "4:news" | x <- my4Shifts]
-    , [(className =? x <||> title =? x <||> resource =? x) --> doShift "5:irc" | x <- my5Shifts]
-    , [(className =? x <||> title =? x <||> resource =? x) --> doShift "6:music" | x <- my6Shifts]
-    , [(className =? x <||> title =? x <||> resource =? x) --> doShift "7:sys" | x <- my7Shifts]
-    , [(className =? x <||> title =? x <||> resource =? x) --> doShift "8:misc" | x <- my8Shifts]
-    , [(className =? x <||> title =? x <||> resource =? x) --> doShift "9" | x <- my9Shifts]
+    , [matchApp x--> doSink | x <- mySinks]
+    , [matchApp x--> doFullFloat | x <- myFullscreens]
+    , [matchApp x--> doShift "1:term" | x <- my1Shifts]
+    , [matchApp x--> doShift "2:www" | x <- my2Shifts]
+    , [matchApp x--> doShift "3:dev" | x <- my3Shifts]
+    , [matchApp x--> doShift "4:news" | x <- my4Shifts]
+    , [matchApp x--> doShift "5:irc" | x <- my5Shifts]
+    , [matchApp x--> doShift "6:music" | x <- my6Shifts]
+    , [matchApp x--> doShift "7:sys" | x <- my7Shifts]
+    , [matchApp x--> doShift "8:misc" | x <- my8Shifts]
+    , [matchApp x--> doShift "9" | x <- my9Shifts]
     ]
     where
+        matchApp x = className =? x <||> title =? x <||> resource =? x
         -- Hook used to push floating windows back into the layout
         -- This is used for gimp windwos to force them into a layout.
         doSink = ask >>= \w -> liftX (reveal w) >> doF (W.sink w)
@@ -60,7 +64,7 @@ myManageHook = composeAll . concat $
         myTFloats = ["Downloads", "Save As..."]
         myRFloats = ["Dialog"]
         mySinks = ["gimp"]
-        myFullscreens = ["vlc", "Wine", "rdesktop"]
+        myFullscreens = ["vlc", "Wine", "rdesktop", "mplayer"]
         -- Define default workspaces for some programs
         my1Shifts = []
         my2Shifts = ["Iceweasel"]
@@ -83,8 +87,8 @@ myLayoutHook = onWorkspace "2:www" browseLayout $ defaultLayout
          spacedTall = spaced tall
          spacedMirrorTall = spaced $ Mirror tall
          spacedGrid = spaced Grid
-         browseLayout = simpleTabbed ||| Full ||| spacedTall ||| spacedMirrorTall ||| spacedGrid
-         defaultLayout = spacedTall ||| simpleTabbed ||| Full ||| spacedMirrorTall ||| spacedGrid   
+         browseLayout = smartBorders $ simpleTabbed ||| Full ||| spacedTall ||| spacedMirrorTall ||| spacedGrid
+         defaultLayout = smartBorders $ spacedTall ||| simpleTabbed ||| Full ||| spacedMirrorTall ||| spacedGrid   
 
 
 myDzenPP h = defaultPP
