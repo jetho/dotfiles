@@ -91,11 +91,11 @@ myLayoutHook =
      where
          tall = ResizableTall 1 (3/100) (3/5) []
          spaced = spacing 5
-         tiles = renamed [PrependWords "Tiles"] $ spaced tall
-         mirrorTiles = renamed [PrependWords "MirrorTiles"] $ Mirror tiles
-         magnifiedTiles = renamed [PrependWords "MagnifiedTiles"] $ magnifier' tiles
-         grid = renamed [PrependWords "Grid"] $ spaced Grid
-         tabs = renamed [PrependWords "Tabs"] simpleTabbed
+         tiles = renamed [Replace "Tiles"] $ spaced tall
+         mirrorTiles = renamed [Replace "MirrorTiles"] $ Mirror tiles
+         magnifiedTiles = renamed [Replace "MagnifiedTiles"] $ magnifier' tiles
+         grid = renamed [Replace "Grid"] $ spaced Grid
+         tabs = renamed [Replace "Tabs"] simpleTabbed
          devLayout = smartBorders $ magnifiedTiles ||| tabs ||| Full ||| tiles ||| mirrorTiles ||| grid
          browseLayout = smartBorders $ tabs ||| Full ||| magnifiedTiles ||| tiles ||| mirrorTiles ||| grid
          defaultLayout = smartBorders $ tiles ||| tabs ||| Full ||| magnifiedTiles ||| mirrorTiles ||| grid   
