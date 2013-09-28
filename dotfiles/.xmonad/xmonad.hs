@@ -151,9 +151,9 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask .|. shiftMask,      xK_v        ), spawn "gvim")
     , ((modMask,                    xK_v        ), spawn "urxvt -e vim")
     -- Media Keys
-    , ((0,                          0x1008ff12  ), spawn "amixer -q sset Headphone toggle")        -- XF86AudioMute
-    , ((0,                          0x1008ff11  ), spawn "amixer -q sset Headphone 5%-")   -- XF86AudioLowerVolume
-    , ((0,                          0x1008ff13  ), spawn "amixer -q sset Headphone 5%+")   -- XF86AudioRaiseVolume
+    , ((0,                          0x1008ff12  ), spawn "amixer -q sset Master toggle")        -- XF86AudioMute
+    , ((0,                          0x1008ff11  ), spawn "amixer -q sset Master 5%-")   -- XF86AudioLowerVolume
+    , ((0,                          0x1008ff13  ), spawn "amixer -q sset Master 5%+")   -- XF86AudioRaiseVolume
     , ((0,                          0x1008ff14  ), spawn "ncmpcpp toggle")
     , ((0,                          0x1008ff17  ), spawn "ncmpcpp next")
     , ((0,                          0x1008ff16  ), spawn "ncmpcpp prev")
