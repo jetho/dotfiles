@@ -1,0 +1,14 @@
+/script install buffers.pl
+/script install iset.pl
+/script install beep.pl
+/script install urlserver.py
+/script install allquery.py
+/script install vimode.py
+/set irc.server.freenode.nicks "jetho,jens"
+/set irc.server.freenode.username "jens"
+/set irc.server.freenode.realname "Jens Thomas"
+/set irc.server.freenode.autoconnect on
+/set irc.server.freenode.command "/msg nickserv identify xxxx"
+/set irc.server.freenode.autojoin "#haskell,#scala,#debian,#vim,#arduino,#xmonad,#ghc"
+/set irc.look.smart_filter on
+/filter add irc_smart * irc_smart_filter *
