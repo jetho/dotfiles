@@ -3,4 +3,4 @@
 # MIME types and programs that process those types
 #
 ###############################################################################
-image/*; /usr/sbin/feh '%s'; test=test -n "$DISPLAY"
+image/*; /usr/bin/feh '%s'; test=test -n "$DISPLAY"
