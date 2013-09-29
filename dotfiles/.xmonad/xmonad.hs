@@ -76,7 +76,7 @@ myManageHook = composeAll . concat $
         my4Shifts = ["newsbeuter", "mutt"]
         my5Shifts = ["weechat"]
         my6Shifts = ["ncmpcpp"]
-        my7Shifts = ["htop", "slurm", "nethogs"]
+        my7Shifts = ["htop", "slurm", "nethogs", "iotop"]
         my8Shifts = []
         my9Shifts = []
 
@@ -87,6 +87,7 @@ myUrgencyHook = withUrgencyHook dzenUrgencyHook { args = ["-y 1000"] }
 myLayoutHook = 
      onWorkspace "3:dev" devLayout $ 
      onWorkspace "2:www" browseLayout $ 
+     onWorkspace "7:sys" monitoringLayout $ 
      defaultLayout
      where
          tall = ResizableTall 1 (3/100) (3/5) []
@@ -98,6 +99,7 @@ myLayoutHook =
          tabs = renamed [Replace "Tabs"] simpleTabbed
          devLayout = smartBorders $ magnifiedTiles ||| tabs ||| Full ||| tiles ||| mirrorTiles ||| grid
          browseLayout = smartBorders $ tabs ||| Full ||| magnifiedTiles ||| tiles ||| mirrorTiles ||| grid
+         monitoringLayout = smartBorders $ grid ||| tiles ||| tabs ||| Full ||| magnifiedTiles ||| mirrorTiles   
          defaultLayout = smartBorders $ tiles ||| tabs ||| Full ||| magnifiedTiles ||| mirrorTiles ||| grid   
 
 

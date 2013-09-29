@@ -20,5 +20,7 @@ urxvt -name nethogs -e sudo nethogs -d3 eth0 &
 sleep 2  
 urxvt -name slurm -e slurm -i eth0 &
 sleep 2
+urxvt -name iotop -e sudo iotop &
+sleep 2
 urxvt -name htop -e htop &
 
