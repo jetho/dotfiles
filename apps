@@ -62,6 +62,8 @@ unclutter
 urlview
 vim
 vim-gtk
+virtualbox
+virtualbox-guest-additions-iso
 vlc
 vpnc
 volumeicon-alsa
