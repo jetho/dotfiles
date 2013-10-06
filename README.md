@@ -3,8 +3,7 @@
 My workstation setup with Debian (Testing) and the XMonad Window Manager. 
 
 #### Installing a minimal Debian System
-Use the Debian Netinstall ISO for installing a minimal Debian System: 
-http://www.debian.org/distrib/netinst
+Use the Debian Netinstall ISO for installing a minimal Debian System: http://www.debian.org/distrib/netinst
 
 Install only the "Standard System Utilities" and "Laptop" if needed!
 
