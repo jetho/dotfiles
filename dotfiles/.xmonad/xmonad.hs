@@ -111,7 +111,7 @@ myDzenPP h = defaultPP
     , ppUrgent = wrap "^fg(#ffffff)" "^fg()" 
     , ppSep = " | "
     , ppWsSep = " "
-    , ppTitle = wrap (bwWrapper "-[ ") (bwWrapper " ]-") . dzenColor ("#c8e7a8") "" 
+    , ppTitle = wrap (bwWrapper "-[ ") (bwWrapper " ]-") . dzenColor ("#c8e7a8") "" . shorten 30
     , ppLayout = dzenColor ("magenta") "" .
         (\x -> 
             (case x of
