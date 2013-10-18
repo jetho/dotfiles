@@ -30,9 +30,9 @@ myTerminal = "urxvt"
 conkyDir = userDir ++ ".conky/"
 
 
-myStatusBar = "dzen2 -ta l -x 0 -y 0 -w 720 -h 16 -fn inconsolata-12 -fg #ffffff -bg black"
-musicBar = "cat " ++ conkyDir ++ "musicBar | dzen2 -p -x 720 -y 0 -w 80 -h 16 -fn inconsolata-12 -fg yellow -bg black"
-rightBar = "conky -c " ++ conkyDir ++ "conkyrc | dzen2 -x 800 -h 16 -fn inconsolata-12 -y 0 -w 850 -ta r -fg #ffffff -bg black"
+myStatusBar = "dzen2 -ta l -x 0 -y 0 -w 720 -h 16 -fn inconsolata-12 -fg #ffffff -bg #000000"
+musicBar = "cat " ++ conkyDir ++ "musicBar | dzen2 -p -x 720 -y 0 -w 80 -h 16 -fn inconsolata-12 -fg yellow -bg #000000"
+rightBar = "conky -c " ++ conkyDir ++ "conkyrc | dzen2 -x 800 -h 16 -fn inconsolata-12 -y 0 -w 850 -ta r -fg #ffffff -bg #000000"
 
 
 myWorkspaces = ["1:term", "2:www", "3:dev", "4:news", "5:irc", "6:music", "7:sys", "8:misc"]
