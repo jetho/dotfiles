@@ -28,7 +28,7 @@ color1: #E84F4F
 *color15: #ffffff
 
 *transparent: true
-*shading: 50
+*shading: 60
 *font: xft:Monospace:pixelsize=12
 *boldFont: xft:Monospace:bold:pixelsize=12
 *tintColor: white
