@@ -23,6 +23,13 @@ chsh -s `which zsh`
 echo "Setting urxvt as default terminal emulator .."
 sudo update-alternatives --set x-terminal-emulator /usr/bin/urxvt
 
+echo "Installing dwb extensions .."
+dwb_extensions=( "autoquvi" "formfiller" "adblock_subscriptions" "contenthandler" "simplyread" "unique_tabs" )
+for i in "${dwb_extensions[@]}" 
+do
+    echo n | dwbem -i $i
+done
+
 echo "Pimping Vim .."
 git clone git://github.com/jetho/vimrc.git ~/.vim_runtime
 sh ~/.vim_runtime/install_awesome_vimrc.sh
