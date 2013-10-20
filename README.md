@@ -29,6 +29,7 @@ for i in "${dwb_extensions[@]}"
 do
     echo n | dwbem -i $i
 done
+chmod +x ~/.config/dwb/userscripts/*.js
 
 echo "Pimping Vim .."
 git clone git://github.com/jetho/vimrc.git ~/.vim_runtime
