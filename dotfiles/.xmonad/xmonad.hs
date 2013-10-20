@@ -26,7 +26,7 @@ import XMonad.Prompt.RunOrRaise (runOrRaisePrompt)
 
 userDir = "/home/jens/"
 bitmapDir = userDir ++ ".xmonad/xbm/"
-myTerminal = "urxvt"
+myTerminal = "urxvtc"
 conkyDir = userDir ++ ".conky/"
 
 
@@ -149,9 +149,9 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((0,                          xK_Print    ), spawn "scrot -e 'mv $f ~/Pictures/'")
     , ((modMask .|. shiftMask,      xK_i        ), spawn "firefox")
     , ((modMask .|. shiftMask,      xK_t        ), spawn "thunar")
-    , ((modMask .|. shiftMask,      xK_f        ), spawn "urxvt -e ranger")
+    , ((modMask .|. shiftMask,      xK_f        ), spawn "urxvtc -e ranger")
     , ((modMask .|. shiftMask,      xK_v        ), spawn "gvim")
-    , ((modMask,                    xK_v        ), spawn "urxvt -e vim")
+    , ((modMask,                    xK_v        ), spawn "urxvtc -e vim")
     -- Media Keys
     , ((0,                          0x1008ff12  ), spawn "amixer -q sset Master toggle")        -- XF86AudioMute
     , ((0,                          0x1008ff11  ), spawn "amixer -q sset Master 5%-")   -- XF86AudioLowerVolume
@@ -213,6 +213,7 @@ main = do
     dzen <- spawnPipe myStatusBar
     conkyexample <- spawnPipe rightBar
     musicConky <- spawnPipe musicBar
+    spawn "urxvtd &"
     spawn $ "sh " ++ userDir ++ ".xmonad/bin/autostart.sh"
     xmonad $ myUrgencyHook $ defaultConfig
         { manageHook = myManageHook
