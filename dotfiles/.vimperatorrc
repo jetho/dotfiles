@@ -2,3 +2,5 @@ map J gt
 map K gT
 map <Right> J
 map <Left> K
+
+set gui=tabs,addons,navigation
