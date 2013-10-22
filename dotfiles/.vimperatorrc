@@ -1,3 +1,6 @@
+nnoremap j 5j
+nnoremap k 5k
+
 map J gt
 map K gT
 map <Right> J
