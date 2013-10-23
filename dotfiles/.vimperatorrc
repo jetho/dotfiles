@@ -15,5 +15,6 @@ silent qmark t https://twitter.com/
 silent qmark s http://stackoverflow.com/
 silent qmark r http://reddit.com/
 silent qmark y https://news.ycombinator.com/
+silent qmark w https://en.wikipedia.org/
 
 set gui=none,tabs
