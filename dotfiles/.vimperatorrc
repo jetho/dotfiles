@@ -6,4 +6,11 @@ map K gT
 map <Right> J
 map <Left> K
 
-set gui=none,tabs,addons
+silent qmark g http://github.com/
+silent qmark G https://www.google.de/
+silent qmark h http://www.haskell.org/hoogle/
+silent qmark d https://duckduckgo.com/
+silent qmark p http://getpocket.com/a/queue/
+silent qmark t https://twitter.com/
+
+set gui=none,tabs
