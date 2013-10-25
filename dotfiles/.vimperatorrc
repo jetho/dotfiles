@@ -18,3 +18,4 @@ silent qmark y https://news.ycombinator.com/
 silent qmark w https://en.wikipedia.org/
 
 set gui=none,tabs
+colorscheme zenburn
