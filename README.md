@@ -78,6 +78,7 @@ USERS ALL=(ALL) NOPASSWD: MONITORING, SHUTDOWN
 - [DownThemAll!](https://addons.mozilla.org/en-us/firefox/addon/downthemall/)
 - [Session Manager](https://addons.mozilla.org/en-us/firefox/addon/session-manager/)
 - [BetterPrivacy](https://addons.mozilla.org/en-us/firefox/addon/betterprivacy/)
+- [FT DeepDark](https://addons.mozilla.org/de/firefox/addon/ft-deepdark/)
 
 #### Additional key bindings available
 - WIN + V => vim
