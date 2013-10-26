@@ -17,5 +17,8 @@ silent qmark r http://reddit.com/
 silent qmark y https://news.ycombinator.com/
 silent qmark w https://en.wikipedia.org/
 
+map s :open google 
+map S :tabopen google 
+
 set gui=none,tabs
 colorscheme zenburn
