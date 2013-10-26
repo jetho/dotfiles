@@ -6,7 +6,7 @@ echo "Installing Software .."
 echo "deb http://cdn.debian.net/debian unstable main" | sudo tee -a /etc/apt/sources.list
 sudo apt-get update
 sudo apt-get install $(< apps)
-# install iceweasel from unstable
+# install iceweasel from sid
 sudo apt-get install -t unstable iceweasel
 
 echo "Setting zsh as default shell .."
