@@ -37,6 +37,15 @@ rightBar = "conky -c " ++ conkyDir ++ "conkyrc | dzen2 -x 800 -h 16 -fn inconsol
 
 myWorkspaces = ["1:term", "2:www", "3:dev", "4:news", "5:irc", "6:music", "7:sys", "8:misc"]
 
+layoutImages = M.map (\s -> "^i(" ++ bitmapDir ++ s ++ ")") bitmaps
+    where 
+        bitmaps = M.fromList [("Full", "layout_full.xbm"),
+                              ("Tiles", "layout_tall.xbm"),
+                              ("MagnifiedTiles", "layout_mtall.xbm"),
+                              ("MirrorTiles", "layout_mirror_tall.xbm"),
+                              ("Tabs", "layout_tabbed.xbm"),
+                              ("Grid", "layout_grid.xbm")]
+
 
 myManageHook = composeAll . concat $
     [ [isDialog --> doFloat]
@@ -112,17 +121,7 @@ myDzenPP h = defaultPP
     , ppSep = " | "
     , ppWsSep = " "
     , ppTitle = wrap (bwWrapper "-[ ") (bwWrapper " ]-") . dzenColor ("#c8e7a8") "" . shorten 30
-    , ppLayout = dzenColor ("magenta") "" .
-        (\x -> 
-            (case x of
-                "Full" -> "^i(" ++ bitmapDir ++ "layout_full.xbm)"
-                "Tiles" -> "^i(" ++ bitmapDir ++ "layout_tall.xbm)"
-                "MagnifiedTiles" -> "^i(" ++ bitmapDir ++ "layout_mtall.xbm)"
-                "MirrorTiles" -> "^i(" ++ bitmapDir ++ "layout_mirror_tall.xbm)"
-                "Tabs" -> "^i(" ++ bitmapDir ++ "layout_tabbed.xbm)"
-                "Grid" -> "^i(" ++ bitmapDir ++ "layout_grid.xbm)"
-                _ -> x)
-        )
+    , ppLayout = dzenColor ("magenta") "" . (\x -> M.findWithDefault x x layoutImages)
     , ppOutput = hPutStrLn h
     }
     where 
