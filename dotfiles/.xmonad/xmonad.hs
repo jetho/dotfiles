@@ -117,12 +117,13 @@ myDzenPP h = defaultPP
     { ppCurrent = wrap ("^fg(#ffffff)^bg(#333333)^i(" ++ cornerIcon ++ ")^fg(orange)") "^bg()^fg()" 
     , ppVisible = wrap ("^fg(#ffffff)^i(" ++ cornerIcon ++ ")^fg(#ffffff)") "^fg()"
     , ppHidden = wrap ("^i(" ++ cornerIcon ++ ")^fg(#AAAAAA)") "^fg()"
-    , ppHiddenNoWindows = \wsId -> if wsId `notElem` myWorkspaces then "" else wrap ("^fg(#666666)^i(" ++ cornerIcon ++ ")") "^fg()" wsId 
+    , ppHiddenNoWindows = \wsId -> if wsId `notElem` myWorkspaces then "" 
+                                   else wrap ("^fg(#666666)^i(" ++ cornerIcon ++ ")") "^fg()" wsId 
     , ppUrgent = wrap "^fg(#ffffff)" "^fg()" 
     , ppSep = " | "
     , ppWsSep = " "
     , ppTitle = wrap (bwWrapper "-[ ") (bwWrapper " ]-") . dzenColor ("#c8e7a8") "" . shorten 30
-    , ppLayout = dzenColor ("magenta") "" . ("^i(" ++) . (++ ")") . lookupIcon
+    , ppLayout = dzenColor ("magenta") "" . wrap "^i(" ")" . lookupIcon
     , ppOutput = hPutStrLn h
     }
     where 
