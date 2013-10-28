@@ -94,8 +94,8 @@ myUrgencyHook = withUrgencyHook dzenUrgencyHook { args = ["-y 1000"] }
 
 
 myLayoutHook = 
-     onWorkspace "3:dev" devLayout $ 
      onWorkspace "2:www" browseLayout $ 
+     onWorkspace "3:dev" devLayout $
      onWorkspace "7:sys" monitoringLayout $ 
      defaultLayout
      where
@@ -228,5 +228,5 @@ main = do
         , borderWidth = 1
         }`additionalKeysP`
                 [ ("M-b", sendMessage ToggleStruts), 
-              ("<XF86ScreenSaver>", spawn "slock") ]
+                  ("<XF86ScreenSaver>", spawn "slock") ]
 
