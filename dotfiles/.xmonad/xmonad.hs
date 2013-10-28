@@ -37,14 +37,15 @@ rightBar = "conky -c " ++ conkyDir ++ "conkyrc | dzen2 -x 800 -h 16 -fn inconsol
 
 myWorkspaces = ["1:term", "2:www", "3:dev", "4:news", "5:irc", "6:music", "7:sys", "8:misc"]
 
-layoutImages = M.map (bitmapDir ++) bitmaps
+iconMap = M.map (bitmapDir ++) icons
     where 
-        bitmaps = M.fromList [("Full", "layout_full.xbm"),
-                              ("Tiles", "layout_tall.xbm"),
-                              ("MagnifiedTiles", "layout_mtall.xbm"),
-                              ("MirrorTiles", "layout_mirror_tall.xbm"),
-                              ("Tabs", "layout_tabbed.xbm"),
-                              ("Grid", "layout_grid.xbm")]
+        icons = M.fromList [("Full", "layout_full.xbm"),
+                            ("Tiles", "layout_tall.xbm"),
+                            ("MagnifiedTiles", "layout_mtall.xbm"),
+                            ("MirrorTiles", "layout_mirror_tall.xbm"),
+                            ("Tabs", "layout_tabbed.xbm"),
+                            ("Grid", "layout_grid.xbm"),
+                            ("corner", "corner.xbm")]
 
 
 myManageHook = composeAll . concat $
@@ -113,19 +114,21 @@ myLayoutHook =
 
 
 myDzenPP h = defaultPP
-    { ppCurrent = wrap ("^fg(#ffffff)^bg(#333333)^i(" ++ bitmapDir ++ "corner.xbm)^fg(orange)") "^bg()^fg()" 
-    , ppVisible = wrap ("^fg(#ffffff)^i(" ++ bitmapDir ++ "corner.xbm)^fg(#ffffff)") "^fg()"
-    , ppHidden = wrap ("^i(" ++ bitmapDir ++ "corner.xbm)^fg(#AAAAAA)") "^fg()"
-    , ppHiddenNoWindows = \wsId -> if wsId `notElem` myWorkspaces then "" else wrap ("^fg(#666666)^i(" ++ bitmapDir ++ "corner.xbm)") "^fg()" wsId 
+    { ppCurrent = wrap ("^fg(#ffffff)^bg(#333333)^i(" ++ cornerIcon ++ ")^fg(orange)") "^bg()^fg()" 
+    , ppVisible = wrap ("^fg(#ffffff)^i(" ++ cornerIcon ++ ")^fg(#ffffff)") "^fg()"
+    , ppHidden = wrap ("^i(" ++ cornerIcon ++ ")^fg(#AAAAAA)") "^fg()"
+    , ppHiddenNoWindows = \wsId -> if wsId `notElem` myWorkspaces then "" else wrap ("^fg(#666666)^i(" ++ cornerIcon ++ ")") "^fg()" wsId 
     , ppUrgent = wrap "^fg(#ffffff)" "^fg()" 
     , ppSep = " | "
     , ppWsSep = " "
     , ppTitle = wrap (bwWrapper "-[ ") (bwWrapper " ]-") . dzenColor ("#c8e7a8") "" . shorten 30
-    , ppLayout = dzenColor ("magenta") "" . (\x -> "^i(" ++ (M.findWithDefault x x layoutImages) ++ ")")
+    , ppLayout = dzenColor ("magenta") "" . ("^i(" ++) . (++ ")") . lookupIcon
     , ppOutput = hPutStrLn h
     }
     where 
         bwWrapper = dzenColor ("#ffffff") ("#000000") 
+        lookupIcon x = M.findWithDefault x x iconMap
+        cornerIcon = lookupIcon "corner"
 
 
 largeXPConfig = 
