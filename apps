@@ -52,6 +52,7 @@ slim
 slock
 slurm
 suckless-tools
+smartmontools
 tcpdump
 thunar
 tor
