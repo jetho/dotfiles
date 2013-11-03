@@ -118,8 +118,6 @@ map <leader>u :GundoToggle<CR>
 map <leader>p :CtrlP<CR>
 map <leader>h :HLint<CR>
 map <leader>c :NeoCompleteToggle<CR>
-au FileType haskell nnoremap <buffer> <leader>t :HdevtoolsType<CR>
-au FileType haskell nnoremap <buffer> <silent> <leader>tc :HdevtoolsClear<CR>
 
 " We don't want that kind here
 nnoremap <up> <nop>
@@ -191,3 +189,8 @@ map <leader>bd :Bclose<cr>
 
 " Close all buffers
 map <leader>ba :1,1000 bd!<cr>
+
+" Haskell shortcuts
+au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
+au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
+au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsInfo<CR>
