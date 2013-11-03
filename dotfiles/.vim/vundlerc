@@ -17,8 +17,6 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'godlygeek/tabular'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'L9'
-Bundle 'FuzzyFinder'
 Bundle 'https://github.com/scrooloose/syntastic.git'
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
@@ -29,5 +27,3 @@ Bundle 'Shougo/neocomplete.vim'
 Bundle 'bitc/vim-hdevtools'
 
 filetype plugin indent on
-
-
