@@ -10,15 +10,13 @@ sudo apt-get install $(< apps)
 sudo apt-get install -t unstable iceweasel
 
 echo "Setting zsh as default shell .."
-chsh -s `which zsh`    
+chsh -s `which zsh`
 
 echo "Setting urxvt as default terminal emulator .."
 sudo update-alternatives --set x-terminal-emulator /usr/bin/urxvt
 
 echo "Pimping Vim .."
-git clone git://github.com/jetho/vimrc.git ~/.vim_runtime
-sh ~/.vim_runtime/install_awesome_vimrc.sh
-git clone https://github.com/vim-scripts/Wombat.git ~/.vim_runtime/sources_non_forked/wombat
+git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
 echo "Oh my zsh!"
 curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
@@ -38,6 +36,10 @@ echo "Applying personal configs .."
 git clone git://github.com/jetho/debian-and-xmonad-Config.git ~/setup_tmp
 rsync -avh ~/setup_tmp/dotfiles/ ~
 sudo chmod u+x ~/.xmonad/bin/*.sh
-cd && sh .fehbg
+cd && sh .fehbg 
 rm -R ~/setup_tmp
+
+echo "Installing Vim Plugins .."
+vim +BundleInstall +qall
+
 echo "Setup finished! Please reboot!"
