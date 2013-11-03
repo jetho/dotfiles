@@ -21,7 +21,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'godlygeek/tabular'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'godlygeek/tabular'
-Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
 Bundle 'ujihisa/neco-ghc'
