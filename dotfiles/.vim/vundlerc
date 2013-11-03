@@ -7,17 +7,20 @@ call vundle#rc()
 
 " Bundles
 Bundle 'gmarik/vundle'
+Bundle 'scrooloose/syntastic'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'sjl/gundo.vim'
+Bundle 'mbbill/undotree'
+Bundle 'terryma/vim-multiple-cursors'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'godlygeek/tabular'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'https://github.com/scrooloose/syntastic.git'
+Bundle 'godlygeek/tabular'
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
@@ -25,5 +28,7 @@ Bundle 'ujihisa/neco-ghc'
 Bundle 'dag/vim2hs'
 Bundle 'Shougo/neocomplete.vim'
 Bundle 'bitc/vim-hdevtools'
+Bundle 'derekwyatt/vim-scala'
+Bundle 'derekwyatt/vim-sbt'
 
 filetype plugin indent on
