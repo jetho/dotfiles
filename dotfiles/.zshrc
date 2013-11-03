@@ -45,3 +45,4 @@ bindkey "^F" history-incremental-search-forward
 bindkey "^P" history-search-backward
 bindkey "^N" history-search-forward
 
+export PATH=$PATH:~/.cabal/bin:~/.xmonad/bin
