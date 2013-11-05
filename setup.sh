@@ -30,7 +30,7 @@ for d in ftdetect indent syntax ; do wget --no-check-certificate -O $DIR/$d/scal
 wget --no-check-certificate -O $DIR/plugin/31-create-scala.vim https://raw.github.com/scala/scala-dist/master/tool-support/src/vim/plugin/31-create-scala.vim
 
 echo "Installing basics for Haskell Dev .."
-cabal update && cabal install hoogle && cabal install pointfree && cabal install hlint 
+cabal update && cabal install hoogle && cabal install pointfree && cabal install hlint && cabal install hdevtools
 
 echo "Applying personal configs .."
 git clone git://github.com/jetho/debian-and-xmonad-Config.git ~/setup_tmp
