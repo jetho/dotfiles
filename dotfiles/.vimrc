@@ -181,9 +181,6 @@ map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
-" Fast saving
-nmap <leader>w :w!<cr>
-
 " Close current buffer
 map <leader>bd :Bclose<cr>
 
@@ -194,3 +191,6 @@ map <leader>ba :1,1000 bd!<cr>
 au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
 au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
 au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsInfo<CR>
+
+" use :make to check the current haskell file for errors 
+:let &makeprg='hdevtools check %'
