@@ -7,7 +7,7 @@ source ~/.vim/vundlerc
 if &t_Co > 2 || has("gui_running")
 " Syntax highlighting
     syntax enable
-    colorscheme Tomorrow-Night
+    colorscheme Tomorrow-Night-Eighties
 endif
 
 "set up man plugin
