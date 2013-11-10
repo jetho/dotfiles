@@ -23,12 +23,6 @@ curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | 
 mkdir -p ~/.oh-my-zsh/custom/plugins
 git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
-echo "Preparing Vim for Scala Dev .."
-DIR=~/.vim_runtime/sources_non_forked/vim-scala
-mkdir -p $DIR/{ftdetect,indent,syntax,plugin} 
-for d in ftdetect indent syntax ; do wget --no-check-certificate -O $DIR/$d/scala.vim https://raw.github.com/scala/scala-dist/master/tool-support/src/vim/$d/scala.vim ;done
-wget --no-check-certificate -O $DIR/plugin/31-create-scala.vim https://raw.github.com/scala/scala-dist/master/tool-support/src/vim/plugin/31-create-scala.vim
-
 echo "Installing basics for Haskell Dev .."
 cabal update && cabal install hoogle && cabal install pointfree && cabal install hlint && cabal install hdevtools
 
