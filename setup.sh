@@ -23,6 +23,12 @@ curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | 
 mkdir -p ~/.oh-my-zsh/custom/plugins
 git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
+echo "Installing dwb addons .."
+dwb_extensions=( "autoquvi" "formfiller" "adblock_subscriptions" "contenthandler" "simplyread" "unique_tabs" )
+for i in "${dwb_extensions[@]}"
+    do echo n | dwbem -i $i
+done
+
 echo "Installing basics for Haskell Dev .."
 cabal update && cabal install hoogle && cabal install pointfree && cabal install hlint && cabal install hdevtools
 

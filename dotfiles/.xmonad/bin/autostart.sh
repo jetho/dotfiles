@@ -8,7 +8,7 @@ sh ~/.fehbg &
 trayer --edge bottom --align right --SetDockType true --SetPartialStrut true --expand true --width 100 --widthtype percent --transparent true --tint black --alpha 50 --height 16 &
 
 # Programs which will run after Xmonad has started
-firefox &
+dwb &
 urxvtc &
 urxvtc -name weechat -e weechat-curses &
 urxvtc -name ncmpcpp -e ncmpcpp &
