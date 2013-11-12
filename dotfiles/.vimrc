@@ -172,7 +172,7 @@ map <C-l> <C-W>l
 
 " Buffers
 map <leader>n :new<cr>
-map <leader>bd :Bclose<cr>
+map <leader>bd :bdelete!<cr>
 map <leader>ba :1,1000 bd!<cr>
 
 " Useful mappings for managing tabs
@@ -197,24 +197,3 @@ au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsInfo<CR>
 " use :make to check the current haskell file for errors 
 :let &makeprg='hdevtools check %'
 
-
-" Don't close window, when deleting a buffer
-command! Bclose call <SID>BufcloseCloseIt()
-function! <SID>BufcloseCloseIt()
-   let l:currentBufNum = bufnr("%")
-   let l:alternateBufNum = bufnr("#")
-
-   if buflisted(l:alternateBufNum)
-     buffer #
-   else
-     bnext
-   endif
-
-   if bufnr("%") == l:currentBufNum
-     new
-   endif
-
-   if buflisted(l:currentBufNum)
-     execute("bdelete! ".l:currentBufNum)
-   endif
-endfunction
