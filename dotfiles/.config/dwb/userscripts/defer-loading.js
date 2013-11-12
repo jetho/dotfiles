@@ -7,3 +7,4 @@ Signal.connect('navigation', function(webview) {
         execute('local_set load-on-focus false');
         this.disconnect();
     }
+});
