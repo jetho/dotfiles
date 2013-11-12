@@ -118,8 +118,8 @@ map <leader>u :GundoToggle<CR>
 map <leader>p :CtrlP<CR>
 map <leader>h :HLint<CR>
 map <leader>c :NeoCompleteToggle<CR>
-map <leader>b :Ack
-map <leader>a :BufExplorer<CR>
+map <leader>a :Ack
+map <leader>b :BufExplorer<CR>
 
 " We don't want that kind here
 nnoremap <up> <nop>
