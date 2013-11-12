@@ -118,6 +118,8 @@ map <leader>u :GundoToggle<CR>
 map <leader>p :CtrlP<CR>
 map <leader>h :HLint<CR>
 map <leader>c :NeoCompleteToggle<CR>
+map <leader>b :Ack
+map <leader>a :BufExplorer<CR>
 
 " We don't want that kind here
 nnoremap <up> <nop>
@@ -181,11 +183,8 @@ map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
-" Close current buffer
-map <leader>bd :Bclose<cr>
-
-" Close all buffers
-map <leader>ba :1,1000 bd!<cr>
+" new buffer
+map <leader>n :new<cr>
 
 " Haskell shortcuts
 au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
