@@ -24,7 +24,7 @@ mkdir -p ~/.oh-my-zsh/custom/plugins
 git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
 echo "Installing dwb addons .."
-dwb_extensions=( "autoquvi" "formfiller" "adblock_subscriptions" "contenthandler" "simplyread" "unique_tabs" )
+dwb_extensions=( "autoquvi" "formfiller" "adblock_subscriptions" "contenthandler" "simplyread" "unique_tabs" "userscripts" )
 for i in "${dwb_extensions[@]}"
     do echo n | dwbem -i $i
 done

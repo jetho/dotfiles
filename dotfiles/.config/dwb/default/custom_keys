@@ -10,3 +10,5 @@ Control s :open http://stackoverflow.com/
 Control r :open http://reddit.com/
 Control y :open https://news.ycombinator.com/
 Control w :open https://en.wikipedia.org/
+
+xpp:toggle enable-private-browsing
