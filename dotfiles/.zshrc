@@ -42,3 +42,8 @@ bindkey "^F" history-incremental-search-forward
 bindkey "^P" history-search-backward
 bindkey "^N" history-search-forward
 
+# For renaming groups of files. Examples: 
+# zmv  'juliet-(*)' 'prospera-$1'
+# zmv '(*).sh' '$1'
+# Passing -n to zmv will show you what zmv would do, without doing anything. 
+autoload zmv
