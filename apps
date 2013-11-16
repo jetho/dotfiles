@@ -9,6 +9,7 @@ atop
 autojump
 bitlbee
 cabal-install
+caca-utils
 conky
 curl
 dstat
@@ -47,6 +48,7 @@ ngrep
 nmap
 openvpn
 p7zip
+poppler-utils
 ranger
 rxvt-unicode
 scrot
