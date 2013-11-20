@@ -229,7 +229,7 @@ main = do
         , modMask = mod4Mask
         , terminal = myTerminal
         , normalBorderColor = "#444444"
-        , focusedBorderColor = "red"
+        , focusedBorderColor = "#ffffff"
         , borderWidth = 1
         }`additionalKeysP`
                 [ ("M-b", sendMessage ToggleStruts), 
