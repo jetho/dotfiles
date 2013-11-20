@@ -177,7 +177,7 @@ state_line_color = "cyan"
 #
 state_flags_color = "green"
 #
-main_window_color = "blue"
+main_window_color = "yellow"
 #
 color1 = "yellow"
 #
@@ -185,9 +185,9 @@ color2 = "cyan"
 #
 main_window_highlight_color = "green"
 #
-progressbar_color = "yellow"
+progressbar_color = "magenta"
 #
-statusbar_color = "green"
+statusbar_color = "white"
 #
 active_column_color = "green"
 #
