@@ -21,7 +21,7 @@ mpd_crossfade_time = "5"
 #
 ## delay after playlist highlighting will be disabled (0 = don't disable)
 #
-playlist_disable_highlight_delay = "0"
+playlist_disable_highlight_delay = "5"
 #
 ## defines how long various messages are supposed to be visible
 #
