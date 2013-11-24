@@ -185,7 +185,7 @@ color2 = "cyan"
 #
 main_window_highlight_color = "green"
 #
-progressbar_color = "magenta"
+progressbar_color = "white"
 #
 statusbar_color = "white"
 #
