@@ -79,9 +79,11 @@ weechat-plugins
 weechat-scripts 
 wicd
 wireshark
+xclip
 xfce4-mixer
 xfce4-power-manager
 xmonad
 xorg
+xtightvncviewer
 zathura
 zsh
