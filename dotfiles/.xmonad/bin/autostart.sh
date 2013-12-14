@@ -5,7 +5,7 @@ xsetroot -cursor_name left_ptr
 
 # Programs to launch at startup
 sh ~/.fehbg &
-trayer --edge bottom --align right --SetDockType true --SetPartialStrut true --expand true --width 100 --widthtype percent --transparent true --tint black --alpha 50 --height 16 &
+trayer --edge bottom --align right --SetDockType true --SetPartialStrut true --expand true --width 10 --widthtype percent --transparent true --tint black --alpha 0 --height 20 &
 
 # Programs which will run after Xmonad has started
 dwb &

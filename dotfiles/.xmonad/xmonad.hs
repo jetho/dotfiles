@@ -30,12 +30,12 @@ myTerminal = "urxvtc"
 conkyDir = userDir ++ ".conky/"
 
 
-myStatusBar = "dzen2 -ta l -x 0 -y 0 -w 720 -h 16 -fn inconsolata-12 -fg #ffffff -bg #000000"
-musicBar = "cat " ++ conkyDir ++ "musicBar | dzen2 -p -x 720 -y 0 -w 80 -h 16 -fn inconsolata-12 -fg yellow -bg #000000"
-rightBar = "conky -c " ++ conkyDir ++ "conkyrc | dzen2 -x 800 -h 16 -fn inconsolata-12 -y 0 -w 850 -ta r -fg #ffffff -bg #000000"
+myStatusBar = "dzen2 -ta l -x 0 -y 0 -w 680 -h 16 -fn inconsolata-9 -fg #ffffff -bg #000000"
+rightBar = "conky -c " ++ conkyDir ++ "conkyrc | dzen2 -x 680 -h 16 -fn inconsolata-9 -y 0 -w 850 -ta r -fg #ffffff -bg #000000"
+musicBar = userDir ++ ".xmonad/bin/musicbar.sh"
+autoStart = userDir ++ ".xmonad/bin/autostart.sh"
 
-
-myWorkspaces = ["1:term", "2:www", "3:dev", "4:news", "5:irc", "6:music", "7:sys", "8:misc"]
+myWorkspaces = ["1:term", "2:www", "3:dev", "4:news", "5:irc", "6:music", "7:sys", "8:vnc", "9:misc"]
 
 iconMap = M.map (bitmapDir ++) icons
     where 
@@ -64,8 +64,8 @@ myManageHook = composeAll . concat $
     , [matchApp x --> doShift "5:irc" | x <- my5Shifts]
     , [matchApp x --> doShift "6:music" | x <- my6Shifts]
     , [matchApp x --> doShift "7:sys" | x <- my7Shifts]
-    , [matchApp x --> doShift "8:misc" | x <- my8Shifts]
-    , [matchApp x --> doShift "9" | x <- my9Shifts]
+    , [matchApp x --> doShift "8:vnc" | x <- my8Shifts]
+    , [matchApp x --> doShift "9:misc" | x <- my9Shifts]
     ]
     where
         matchApp x = className =? x <||> title =? x <||> resource =? x
@@ -87,7 +87,7 @@ myManageHook = composeAll . concat $
         my5Shifts = ["weechat"]
         my6Shifts = ["ncmpcpp"]
         my7Shifts = ["htop", "slurm", "nethogs", "iotop"]
-        my8Shifts = []
+        my8Shifts = ["TeamViewer.exe", "rdesktop", "Vncviewer"]
         my9Shifts = []
 
 
@@ -122,7 +122,7 @@ myDzenPP h = defaultPP
     , ppUrgent = wrap "^fg(#ffffff)" "^fg()" 
     , ppSep = " | "
     , ppWsSep = " "
-    , ppTitle = wrap (bwWrapper "-[ ") (bwWrapper " ]-") . dzenColor ("#c8e7a8") "" . shorten 30
+    , ppTitle = wrap (bwWrapper "-[ ") (bwWrapper " ]-") . dzenColor ("#c8e7a8") "" . shorten 20
     , ppLayout = dzenColor ("magenta") "" . wrap "^i(" ")" . lookupIcon
     , ppOutput = hPutStrLn h
     }
@@ -216,20 +216,20 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 main = do
     dzen <- spawnPipe myStatusBar
     conkyexample <- spawnPipe rightBar
-    musicConky <- spawnPipe musicBar
     spawn "urxvtd &"
-    spawn $ "sh " ++ userDir ++ ".xmonad/bin/autostart.sh"
+    spawn musicBar
+    spawn $ "sh " ++ autoStart
     xmonad $ myUrgencyHook $ defaultConfig
         { manageHook = myManageHook
         , layoutHook = avoidStruts $ myLayoutHook 
-        , workspaces =  myWorkspaces ++ (map show [9..10])
+        , workspaces =  myWorkspaces ++ ["10"] 
         , logHook = dynamicLogWithPP $ myDzenPP dzen 
         , focusFollowsMouse = True
         , keys = myKeys
         , modMask = mod4Mask
         , terminal = myTerminal
         , normalBorderColor = "#444444"
-        , focusedBorderColor = "#ffffff"
+        , focusedBorderColor = "red"
         , borderWidth = 1
         }`additionalKeysP`
                 [ ("M-b", sendMessage ToggleStruts), 
