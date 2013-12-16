@@ -7,7 +7,7 @@ SEPARATOR_COLOR='red'
 SONG_COLOR='#c8e7a8'
 SONG_PREFIX_COLOR='grey'
 FAILURE_COLOR='grey'
-FONT='inconsolata-10'
+FONT='inconsolata-9'
 
 X_POS='0'
 Y_POS='1024'
