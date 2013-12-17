@@ -97,3 +97,9 @@ USERS ALL=(ALL) NOPASSWD: MONITORING, SHUTDOWN
 - WIN + SHIFT + S => Shutdown
 - WIN + PageUp/PageDown => ncmpcpp Volume Up/Down
 - Print => create screenshot and save into ~/Pictures
+
+#### Screenshots
+
+[![clean](https://raw.github.com/jetho/debian-and-xmonad-Config/master/screenshots/clean_th.png)](https://raw.github.com/jetho/debian-and-xmonad-Config/master/screenshots/clean.png)
+[![dev](https://raw.github.com/jetho/debian-and-xmonad-Config/master/screenshots/dev_th.png)](https://raw.github.com/jetho/debian-and-xmonad-Config/master/screenshots/dev.png)
+[![sys](https://raw.github.com/jetho/debian-and-xmonad-Config/master/screenshots/sys_th.png)](https://raw.github.com/jetho/debian-and-xmonad-Config/master/screenshots/sys.png)
