@@ -22,6 +22,7 @@ filezilla
 ghc
 git-core
 gnome-icon-theme
+gvfs-backends
 haskell-platform
 highlight
 htop
@@ -59,6 +60,8 @@ suckless-tools
 smartmontools
 tcpdump
 thunar
+thunar-archive-plugin
+thunar-media-tags-plugin
 tor
 transmission-cli
 trayer
