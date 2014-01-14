@@ -8,7 +8,6 @@ atool
 atop
 autojump
 bitlbee
-cabal-install
 caca-utils
 conky
 curl
@@ -19,7 +18,6 @@ dzen2
 feh
 ffmpeg
 filezilla
-ghc
 git-core
 gnome-icon-theme
 gvfs-backends
