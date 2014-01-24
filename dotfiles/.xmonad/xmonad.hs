@@ -30,8 +30,8 @@ myTerminal = "urxvtc"
 conkyDir = userDir ++ ".conky/"
 
 
-myStatusBar = "dzen2 -ta l -x 0 -y 0 -w 680 -h 16 -fn inconsolata-9 -fg #ffffff -bg #000000"
-rightBar = "conky -c " ++ conkyDir ++ "conkyrc | dzen2 -x 680 -h 16 -fn inconsolata-9 -y 0 -w 850 -ta r -fg #ffffff -bg #000000"
+myStatusBar = "dzen2 -ta l -x 0 -y 0 -w 680 -h 18 -fn inconsolata-9 -fg #ffffff -bg #000000"
+rightBar = "conky -c " ++ conkyDir ++ "conkyrc | dzen2 -x 680 -h 18 -fn inconsolata-9 -y 0 -w 850 -ta r -fg #ffffff -bg #000000"
 musicBar = userDir ++ ".xmonad/bin/musicbar.sh"
 autoStart = userDir ++ ".xmonad/bin/autostart.sh"
 
