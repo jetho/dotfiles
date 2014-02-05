@@ -9,6 +9,6 @@
 /set irc.server.freenode.realname "Jens Thomas"
 /set irc.server.freenode.autoconnect on
 /set irc.server.freenode.command "/msg nickserv identify xxxx"
-/set irc.server.freenode.autojoin "#haskell,#scala,#debian,#vim,#arduino,#xmonad,#ghc"
+/set irc.server.freenode.autojoin "#haskell,#scala,#idris,#debian,#vim,#arduino,#xmonad,#ghc"
 /set irc.look.smart_filter on
 /filter add irc_smart * irc_smart_filter *
