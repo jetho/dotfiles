@@ -23,11 +23,11 @@ curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | 
 mkdir -p ~/.oh-my-zsh/custom/plugins
 git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
-echo "Installing dwb addons .."
-dwb_extensions=( "autoquvi" "formfiller" "adblock_subscriptions" "contenthandler" "simplyread" "unique_tabs" "userscripts" )
-for i in "${dwb_extensions[@]}"
-    do echo n | dwbem -i $i
-done
+echo "Installing luakit addons .."
+cp -r /etc/xdg/luakit/* ~/.config/luakit/
+mkdir -p ~/.local/share/luakit/adblock/
+wget -P ~/.local/share/luakit/adblock/ http://easylist-downloads.adblockplus.org/easylist.txt
+wget -P ~/.config/luakit/ "https://github.com/Plaque-fcc/luakit-adblock/raw/master/adblock.lua" "https://github.com/Plaque-fcc/luakit-adblock/raw/master/adblock_chrome.lua"
 
 echo "Installing basics for Haskell Dev .."
 cabal update && cabal install hoogle && cabal install pointfree && cabal install hlint && cabal install hdevtools
@@ -36,7 +36,6 @@ echo "Applying personal configs .."
 git clone git://github.com/jetho/debian-and-xmonad-Config.git ~/setup_tmp
 rsync -avh ~/setup_tmp/dotfiles/ ~
 sudo chmod u+x ~/.xmonad/bin/*.sh
-chmod +x ~/.config/dwb/userscripts/*.js
 cd && sh .fehbg 
 rm -R ~/setup_tmp
 
