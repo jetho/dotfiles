@@ -1,6 +1,6 @@
 articlelist-format "%4i %f %D %6L %?T?;%-17T; ?%t"
 auto-reload yes
-browser luakit
+browser firefox
 cache-file "~/.newsbeuter/cache.db"
 cleanup-on-quit yes
 download-retries 3

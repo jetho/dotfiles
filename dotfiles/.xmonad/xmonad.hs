@@ -81,7 +81,7 @@ myManageHook = composeAll . concat $
         myIgnores = ["trayer"]
         -- Define default workspaces for some programs
         my1Shifts = []
-        my2Shifts = ["Iceweasel", "luakit"]
+        my2Shifts = ["Iceweasel"]
         my3Shifts = ["Eclipse", "eclipse"]
         my4Shifts = ["newsbeuter", "mutt"]
         my5Shifts = ["weechat"]
@@ -150,8 +150,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask .|. shiftMask,      xK_c        ), kill)
     -- Programs
     , ((0,                          xK_Print    ), spawn "scrot -e 'mv $f ~/Pictures/'")
-    , ((modMask .|. shiftMask,      xK_i        ), spawn "firefox")
-    , ((modMask,                    xK_i        ), spawn "luakit")
+    , ((modMask,                    xK_i        ), spawn "firefox")
     , ((modMask .|. shiftMask,      xK_t        ), spawn "thunar")
     , ((modMask .|. shiftMask,      xK_f        ), spawn "urxvtc -e ranger")
     , ((modMask .|. shiftMask,      xK_v        ), spawn "gvim")
