@@ -46,8 +46,12 @@ bmark('Reddit' , 'http://www.reddit.com/search?q=%s', 'reddit');
 bmark('Startpage' , 'https://startpage.com/do/search?query=%s', 'sp');
 EOM
 
-map <Leader>b :bmark -folder Links/
 map <Leader>t :tabopen<CR>
+map <Leader>b :bmark -folder Links/
+map <Leader>nm :noscript popup<CR>
+map <Leader>np :noscript toggleperm<CR>
+map <Leader>nt :noscript toggletemp<CR>
+map <Leader>xpp :emenu File.New Private Window<CR>
 
 set gui=none,tabs
 colorscheme zenburn
