@@ -6,8 +6,12 @@ map K gT
 map <Right> J
 map <Left> K
 
-" Press ',' to go to next tab
-noremap , :tabnext<CR>
+map <S-Right> :tabmove! +1<CR>
+map <S-Left> :tabmove! -1<CR>
+
+set! browser.startup.homepage=http://www.startpage.com
+
+let mapleader = ","
  
 silent qmark G https://github.com/
 silent qmark g https://www.google.de/
@@ -23,7 +27,27 @@ silent qmark s http://startpage.com
 
 map s :open sp 
 map S :tabopen sp 
-:set defsearch=sp
+set defsearch=sp
+
+" BMarks {{{1
+javascript <<EOM
+function bmark(title, url, keyword) {
+    if (!bookmarks.isBookmarked(url)) {
+        bookmarks.add(false, title, url, keyword, ['keyword'], false);
+    }
+}
+bmark('Google' , 'https://www.google.de/search?output=search&sclient=psy-ab&q=%s&oq=&gs_l=&pbx=1', 'google');
+bmark('Github', 'https://github.com/search?q=%s&ref=cmdform', 'git');
+bmark('Hoogle', 'http://www.haskell.org/hoogle/?hoogle=%s', 'hoogle');
+bmark('DuckDuckGo', 'https://duckduckgo.com/?q=%s', 'duck');
+bmark('Wikipedia' , 'http://en.wikipedia.org/w/index.php?search=%s&title=Special:Search', 'wiki');
+bmark('Stackoverflow', 'http://stackoverflow.com/search?q=%s', 'stack');
+bmark('Reddit' , 'http://www.reddit.com/search?q=%s', 'reddit');
+bmark('Startpage' , 'https://startpage.com/do/search?query=%s', 'sp');
+EOM
+
+map <Leader>b :bmark -folder Links/
+map <Leader>t :tabopen<CR>
 
 set gui=none,tabs
 colorscheme zenburn
