@@ -113,6 +113,11 @@ endif
 nnoremap <silent> vv <C-w>v
 nnoremap <silent> ss <C-w>s
 
+" move rowwise, not linewise
+nmap j gj
+nmap k gk
+
+" Plugin Shortcuts
 map <leader>d :NERDTreeToggle<CR>
 map <leader>u :GundoToggle<CR>
 map <leader>p :CtrlP<CR>
