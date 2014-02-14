@@ -80,13 +80,13 @@ USERS ALL=(ALL) NOPASSWD: MONITORING, SHUTDOWN
 - [FT DeepDark](https://addons.mozilla.org/de/firefox/addon/ft-deepdark/)
 
 #### Additional key bindings available
-- WIN + P => dmenu
-- WIN + V => vim
-- WIN + SHIFT + V => gvim
-- WIN + I => firefox
-- WIN + SHIFT + F => ranger
-- WIN + SHIFT + T => thunar
-- WIN + SHIFT + S => Shutdown
+- WIN + p => dmenu
+- WIN + v => vim
+- WIN + SHIFT + v => gvim
+- WIN + i => firefox
+- WIN + r => ranger
+- WIN + SHIFT + t => thunar
+- WIN + SHIFT + s => Shutdown
 - WIN + PageUp/PageDown => ncmpcpp Volume Up/Down
 - Print => create screenshot and save into ~/Pictures
 

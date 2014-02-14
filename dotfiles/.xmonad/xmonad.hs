@@ -152,7 +152,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((0,                          xK_Print    ), spawn "scrot -e 'mv $f ~/Pictures/'")
     , ((modMask,                    xK_i        ), spawn "firefox")
     , ((modMask .|. shiftMask,      xK_t        ), spawn "thunar")
-    , ((modMask .|. shiftMask,      xK_f        ), spawn "urxvtc -e ranger")
+    , ((modMask,                    xK_r        ), spawn "urxvtc -e ranger")
     , ((modMask .|. shiftMask,      xK_v        ), spawn "gvim")
     , ((modMask,                    xK_v        ), spawn "urxvtc -e vim")
     -- Media Keys
@@ -201,15 +201,15 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     [((m .|. modMask, k), windows $ f i)
         | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
         , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
-    ++
+    -- ++
  
     --
     -- mod-{w,e,r}, Switch to physical/Xinerama screens 1, 2, or 3
     -- mod-shift-{w,e,r}, Move client to screen 1, 2, or 3
     --
-    [((m .|. modMask, key), screenWorkspace sc >>= flip whenJust (windows . f))
-        | (key, sc) <- zip [xK_w, xK_e, xK_r] [0..]
-        , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
+    --[((m .|. modMask, key), screenWorkspace sc >>= flip whenJust (windows . f))
+    --    | (key, sc) <- zip [xK_w, xK_e, xK_r] [0..]
+    --    , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
 
 
 main = do
