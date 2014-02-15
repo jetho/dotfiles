@@ -35,7 +35,7 @@ rightBar = "conky -c " ++ conkyDir ++ "conkyrc | dzen2 -x 680 -h 18 -fn inconsol
 musicBar = userDir ++ ".xmonad/bin/musicbar.sh"
 autoStart = userDir ++ ".xmonad/bin/autostart.sh"
 
-myWorkspaces = ["1:term", "2:www", "3:dev", "4:news", "5:irc", "6:music", "7:sys", "8:vnc", "9:misc"]
+myWorkspaces = ["1:tmux", "2:www", "3:dev", "4:news", "5:im", "6:music", "7:sys", "8:vnc", "9:files"]
 
 iconMap = M.map (bitmapDir ++) icons
     where 
@@ -57,15 +57,15 @@ myManageHook = composeAll . concat $
     , [matchApp x --> doIgnore | x <- myIgnores]
     , [matchApp x --> doSink | x <- mySinks]
     , [matchApp x --> doFullFloat | x <- myFullscreens]
-    , [matchApp x --> doShift "1:term" | x <- my1Shifts]
+    , [matchApp x --> doShift "1:tmux" | x <- my1Shifts]
     , [matchApp x --> doShift "2:www" | x <- my2Shifts]
     , [matchApp x --> doShift "3:dev" | x <- my3Shifts]
     , [matchApp x --> doShift "4:news" | x <- my4Shifts]
-    , [matchApp x --> doShift "5:irc" | x <- my5Shifts]
+    , [matchApp x --> doShift "5:im" | x <- my5Shifts]
     , [matchApp x --> doShift "6:music" | x <- my6Shifts]
     , [matchApp x --> doShift "7:sys" | x <- my7Shifts]
     , [matchApp x --> doShift "8:vnc" | x <- my8Shifts]
-    , [matchApp x --> doShift "9:misc" | x <- my9Shifts]
+    , [matchApp x --> doShift "9:files" | x <- my9Shifts]
     ]
     where
         matchApp x = className =? x <||> title =? x <||> resource =? x
@@ -80,7 +80,7 @@ myManageHook = composeAll . concat $
         myFullscreens = ["vlc", "Wine", "rdesktop", "mplayer"]
         myIgnores = ["trayer"]
         -- Define default workspaces for some programs
-        my1Shifts = []
+        my1Shifts = ["tmux"]
         my2Shifts = ["Iceweasel"]
         my3Shifts = ["Eclipse", "eclipse"]
         my4Shifts = ["newsbeuter", "mutt"]
@@ -88,7 +88,7 @@ myManageHook = composeAll . concat $
         my6Shifts = ["ncmpcpp"]
         my7Shifts = ["htop", "slurm", "nethogs", "iotop"]
         my8Shifts = ["TeamViewer.exe", "rdesktop", "Vncviewer"]
-        my9Shifts = []
+        my9Shifts = ["ranger"]
 
 
 myUrgencyHook = withUrgencyHook dzenUrgencyHook { args = ["-y 1000"] }
