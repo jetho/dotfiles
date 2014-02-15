@@ -98,6 +98,7 @@ myLayoutHook =
      onWorkspace "2:www" browseLayout $ 
      onWorkspace "3:dev" devLayout $
      onWorkspace "7:sys" monitoringLayout $ 
+     onWorkspace "9:files" filesLayout $ 
      defaultLayout
      where
          tall = ResizableTall 1 (3/100) (3/5) []
@@ -110,6 +111,7 @@ myLayoutHook =
          devLayout = smartBorders $ magnifiedTiles ||| tabs ||| Full ||| tiles ||| mirrorTiles ||| grid
          browseLayout = smartBorders $ tabs ||| Full ||| magnifiedTiles ||| tiles ||| mirrorTiles ||| grid
          monitoringLayout = smartBorders $ grid ||| tiles ||| tabs ||| Full ||| magnifiedTiles ||| mirrorTiles   
+         filesLayout = smartBorders $ Full ||| tiles ||| tabs ||| magnifiedTiles ||| mirrorTiles ||| grid
          defaultLayout = smartBorders $ tiles ||| tabs ||| Full ||| magnifiedTiles ||| mirrorTiles ||| grid   
 
 
