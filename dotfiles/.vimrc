@@ -66,6 +66,7 @@ set showcmd
 
 " Show pattern match halfway
 set incsearch
+set hlsearch
 set ignorecase
 set smartcase
 
