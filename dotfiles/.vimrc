@@ -37,7 +37,6 @@ set backspace=indent,eol,start
 
 " show statusline at all times
 set laststatus=2
-set statusline=%f%m%r%h%w\ [%n:%{&ff}/%Y]\ %{fugitive#statusline()}%=[0x\%04.4B][%03v][%03p%%\ %l/%L]
 
 " show right margin at 80
 " set cc=80
