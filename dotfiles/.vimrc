@@ -199,6 +199,8 @@ map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
+" EasyMotion
+let g:EasyMotion_leader_key = '<Space>'
 
 " Haskell shortcuts
 au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
