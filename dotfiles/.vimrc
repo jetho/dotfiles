@@ -109,6 +109,8 @@ if has('autocmd')
 endif
 
 " keybinds
+let mapleader=","
+
 " Split windows with vv or ss
 nnoremap <silent> vv <C-w>v
 nnoremap <silent> ss <C-w>s
@@ -180,6 +182,9 @@ map <C-l> <C-W>l
 map <leader>n :new<cr>
 map <leader>bd :bdelete!<cr>
 map <leader>ba :1,1000 bd!<cr>
+
+" Save using sudo
+noremap <Leader>W :w !sudo tee % > /dev/null
 
 " Useful mappings for managing tabs
 map <leader>tn :tabnew<cr>
