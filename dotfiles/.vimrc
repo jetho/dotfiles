@@ -50,6 +50,9 @@ set linebreak
 " Force utf8 encoding
 set enc=utf-8
 
+" Enable Powerline fonts for Airline
+let g:airline_powerline_fonts = 1
+
 " Set tabstop to 4 by default
 set tabstop=4
 set shiftwidth=4
