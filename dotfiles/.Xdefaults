@@ -36,10 +36,4 @@ color1: #E84F4F
 *scrollBar_right: false
 *scrollstyle: rxvt
 
-URxvt.font: xft:inconsolata for powerline:pixelsize=15:antialias=true:hinting=true,xft:dejavu sans mono:pixelsize=15:antialias=true:hinting=true
-URxvt.boldFont: xft:inconsolata for powerline:bold:pixelsize=15:antialias=true:hinting=true,xft:dejavu sans mono:bold:pixelsize=15:antialias=true:hinting=true
-URxvt.italicFont: xft:inconsolata for powerline:italic:pixelsize=15:antialias=true:hinting=true,xft:dejavu sans mono:italic:pixelsize=15:antialias=true:hinting=true
-URxvt.boldItalicFont: xft:inconsolata for powerline:bold:italic:pixelsize=15:antialias=true:hinting=true,xft:dejavu sans mono:bold:italic:pixelsize=15:antialias=true:hinting=true
-URxvt.letterSpace: -1
-
-
+URxvt.font: xft:inconsolata for powerline:size=12:antialias=true
