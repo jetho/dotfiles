@@ -26,6 +26,11 @@ chsh -s `which zsh`
 echo "Setting urxvt as default terminal emulator .."
 sudo update-alternatives --set x-terminal-emulator /usr/bin/urxvt
 
+echo "Getting patched font for Powerline .."
+wget https://github.com/Lokaltog/powerline-fonts/raw/master/Inconsolata/Inconsolata%20for%20Powerline.otf
+sudo mv "Inconsolata for Powerline.otf" /usr/share/fonts
+sudo fc-cache -vf
+
 echo "Pimping Vim .."
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
