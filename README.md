@@ -86,6 +86,7 @@ USERS ALL=(ALL) NOPASSWD: MONITORING, SHUTDOWN
 
 #### Additional key bindings available
 - WIN + p => dmenu
+- WIN + t => tmux
 - WIN + v => vim
 - WIN + SHIFT + v => gvim
 - WIN + i => firefox

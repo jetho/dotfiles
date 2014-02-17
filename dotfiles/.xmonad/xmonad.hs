@@ -153,6 +153,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- Programs
     , ((0,                          xK_Print    ), spawn "scrot -e 'mv $f ~/Pictures/'")
     , ((modMask,                    xK_i        ), spawn "firefox")
+    , ((modMask,                    xK_t        ), spawn "urxvtc -e tmux")
     , ((modMask .|. shiftMask,      xK_t        ), spawn "thunar")
     , ((modMask,                    xK_r        ), spawn "urxvtc -e ranger")
     , ((modMask .|. shiftMask,      xK_v        ), spawn "gvim")
@@ -179,7 +180,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask .|. shiftMask,      xK_j        ), windows W.swapDown)                          -- swap the focused window with the next window
     , ((modMask .|. shiftMask,      xK_k        ), windows W.swapUp)                            -- swap the focused window with the previous window
     , ((modMask,                    xK_Return   ), windows W.swapMaster)
-    , ((modMask,                    xK_t        ), withFocused $ windows . W.sink)              -- Push window back into tiling
+    , ((modMask .|. controlMask,    xK_t        ), withFocused $ windows . W.sink)              -- Push window back into tiling
     , ((modMask,                    xK_h        ), sendMessage Shrink)                          -- %! Shrink a master area
     , ((modMask,                    xK_l        ), sendMessage Expand)                          -- %! Expand a master area
     , ((modMask,                    xK_comma    ), sendMessage (IncMasterN 1))
