@@ -80,7 +80,7 @@ myManageHook = composeAll . concat $
         myFullscreens = ["vlc", "Wine", "rdesktop", "mplayer"]
         myIgnores = ["trayer"]
         -- Define default workspaces for some programs
-        my1Shifts = ["tmux"]
+        my1Shifts = []
         my2Shifts = ["Iceweasel"]
         my3Shifts = ["Eclipse", "eclipse"]
         my4Shifts = ["newsbeuter", "mutt"]
