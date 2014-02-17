@@ -36,4 +36,4 @@ color1: #E84F4F
 *scrollBar_right: false
 *scrollstyle: rxvt
 
-URxvt*font: xft:Inconsolata\ for\ Powerline:size=11
+URxvt*font: xft:Inconsolata\ for\ Powerline:size=10
