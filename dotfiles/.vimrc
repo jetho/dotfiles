@@ -217,9 +217,23 @@ au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsInfo<CR>
 " use :make to check the current haskell file for errors 
 :let &makeprg='hdevtools check %'
 
-" Rainbow Parantheses
+" Rainbow Parentheses
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
+" Syntastic
+" Toggle between passive and active type checking
+map <silent> <Leader>e :Errors<CR>
+map <Leader>s :SyntasticToggleMode<CR>
+" Always show error list when editing
+let g:syntastic_auto_loc_list=1
+
+" Vim-slime: use CTRL-C CTRL-C to send the current visual
+" selection to the  tmux session (running ghci).
+" socket_name: default 
+" target_pane: session:window.pane for example "jens:1.2"
+" (Show pane numbers in tmux by using CTRL-A Q)
+let g:slime_target = "tmux"
+let g:slime_paste_file = tempname()
