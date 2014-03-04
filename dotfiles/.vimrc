@@ -121,6 +121,10 @@ nnoremap <silent> - <C-w>s
 " move rowwise, not linewise
 nmap j gj
 nmap k gk
+ 
+" Allow using the repeat operator with a visual selection (!)
+" http://stackoverflow.com/a/8064607/127816
+vnoremap . :normal .<CR>
 
 " Plugin Shortcuts
 map <leader>d :NERDTreeToggle<CR>
