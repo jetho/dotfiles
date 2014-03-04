@@ -126,6 +126,14 @@ nmap k gk
 " http://stackoverflow.com/a/8064607/127816
 vnoremap . :normal .<CR>
 
+" Copy text to end-of-line
+nnoremap Y y$
+
+" Copy an entire line and paste it before the current line
+" Use a count to specify the line number (default is line 1). 
+" For example, 12_ would copy line 12 to before the current line. 
+nnoremap _ ggY``P
+
 " Plugin Shortcuts
 map <leader>d :NERDTreeToggle<CR>
 map <leader>u :GundoToggle<CR>
