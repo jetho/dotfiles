@@ -114,9 +114,9 @@ endif
 " keybinds
 let mapleader=","
 
-" Split windows with vv or ss
-nnoremap <silent> vv <C-w>v
-nnoremap <silent> ss <C-w>s
+" Split windows with | and -
+nnoremap <silent> \| <C-w>v
+nnoremap <silent> - <C-w>s
 
 " move rowwise, not linewise
 nmap j gj
@@ -130,7 +130,7 @@ map <leader>h :HLint<CR>
 map <leader>c :NeoCompleteToggle<CR>
 map <leader>a :Ack 
 map <leader>b :BufExplorer<CR>
-map <leader>z :NarrowRegion<CR>
+map <eader>z :NarrowRegion<CR>
 
 " We don't want that kind here
 nnoremap <up> <nop>
