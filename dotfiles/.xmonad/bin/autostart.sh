@@ -9,7 +9,7 @@ trayer --edge bottom --align right --SetDockType true --SetPartialStrut true --e
 
 # Programs which will run after Xmonad has started
 sleep 1
-urxvtc +bc +uc -cr Green -name tmux -e tmux attach &
+urxvtc +bc +uc -cr Green -name tmux -e tmux -2 attach &
 urxvtc -name ranger -e ranger &
 firefox &
 urxvtc -name weechat -e weechat-curses &

@@ -10,6 +10,9 @@ if &t_Co > 2 || has("gui_running")
     colorscheme Tomorrow-Night-Eighties
 endif
 
+" Support for 256 colors
+set t_Co=256
+
 "set up man plugin
 source /usr/share/vim/vim74/ftplugin/man.vim
 
@@ -252,3 +255,4 @@ let g:slime_paste_file = tempname()
 " Default target: Current Session, Current Window, Pane 2
 " Change by using :SlimeConfig
 let g:slime_default_config = {"socket_name": "default", "target_pane": "2"}
+

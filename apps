@@ -48,7 +48,7 @@ openvpn
 p7zip
 poppler-utils
 ranger
-rxvt-unicode
+rxvt-unicode-256color
 scrot
 slim
 slock

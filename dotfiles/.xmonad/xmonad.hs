@@ -153,7 +153,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- Programs
     , ((0,                          xK_Print    ), spawn "scrot -e 'mv $f ~/Pictures/'")
     , ((modMask,                    xK_i        ), spawn "firefox")
-    , ((modMask,                    xK_t        ), spawn "urxvtc -e tmux")
+    , ((modMask,                    xK_t        ), spawn "urxvtc -e tmux -2")
     , ((modMask .|. shiftMask,      xK_t        ), spawn "thunar")
     , ((modMask,                    xK_r        ), spawn "urxvtc -e ranger")
     , ((modMask .|. shiftMask,      xK_v        ), spawn "gvim")
