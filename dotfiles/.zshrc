@@ -5,7 +5,6 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-# ZSH_THEME="clean"
 ZSH_THEME="miloshadzic"
 
 # Example aliases
@@ -48,3 +47,5 @@ bindkey "^N" history-search-forward
 # zmv '(*).sh' '$1'
 # Passing -n to zmv will show you what zmv would do, without doing anything. 
 autoload zmv
+
+alias tmux=tmux -2
