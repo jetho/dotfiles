@@ -4,6 +4,7 @@ ack-grep
 aide
 alsa-base
 alsa-utils
+apt-listbugs
 atool
 atop
 autojump
