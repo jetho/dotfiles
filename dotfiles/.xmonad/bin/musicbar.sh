@@ -9,14 +9,17 @@ SONG_PREFIX_COLOR='grey'
 FAILURE_COLOR='grey'
 FONT='inconsolata-9'
 
-X_POS='0'
-Y_POS='1024'
+SCREEN_WIDTH=$(xrandr | grep -Po --color=never "(?<=\ connected )[\d]+(?=x[\d]+)")
+SCREEN_HEIGHT=$(xrandr | grep -Po --color=never "(?<=\ connected )[\d]+x[\d]+" | sed -r "s/[0-9]+x//")
+
 GEOMETRY='+0+0'
-WIDTH=1280
+WIDTH=${SCREEN_WIDTH}
 HEIGHT=20
 EXPAND='left'
 TEXT_ALIGN='c'
 SCREEN_ALIGN='l'
+X_POS='0'
+Y_POS=$(echo ${SCREEN_HEIGHT} - ${HEIGHT} | bc)
 
 INTERVAL=3.0 # SLEEP INTERVAL
 
