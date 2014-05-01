@@ -27,3 +27,5 @@ urxvtc -name iotop -e sudo iotop &
 sleep 2
 urxvtc -name htop -e htop &
 
+# Unison Syncing
+unison -ui text unison &

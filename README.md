@@ -68,13 +68,6 @@ USERS ALL=(ALL) NOPASSWD: MONITORING, SHUTDOWN
 </pre>
 
 
-#### Scheduled Syncing with Unison
-- exec "crontab -e" and add the following line:
-<pre>
-0 * * * * /usr/bin/flock -n /tmp/unison.lockfile unison -ui text unison
-</pre>
-
-
 #### Favorite Firefox Add-ons
 - [HTTPS Everywhere](https://www.eff.org/https-everywhere)
 - [Adblock Edge](https://addons.mozilla.org/en-us/firefox/addon/adblock-edge/)

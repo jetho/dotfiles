@@ -12,6 +12,8 @@ prefer = newer
 confirmbigdeletes = true
 fastcheck = true 
 retry = 2
+repeat = 600
+killserver = true
 
 log = true
 logfile = /home/jens/.unison/unison.log
