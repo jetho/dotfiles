@@ -9,9 +9,6 @@ sudo apt-get install $(< apps)
 # install iceweasel from sid
 sudo apt-get install -t unstable iceweasel
 
-echo "Setting zsh as default shell .."
-chsh -s `which zsh`
-
 echo "Setting urxvt as default terminal emulator .."
 sudo update-alternatives --set x-terminal-emulator /usr/bin/urxvt
 
@@ -20,13 +17,16 @@ wget https://github.com/Lokaltog/powerline-fonts/raw/master/Inconsolata/Inconsol
 sudo mv "Inconsolata for Powerline.otf" /usr/share/fonts
 sudo fc-cache -vf
 
+echo "Configuring ZSH and Prezto .."
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+zsh -c 'setopt EXTENDED_GLOB; 
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do 
+    ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done'
+chsh -s /bin/zsh
+
 echo "Pimping Vim .."
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-
-echo "Oh my zsh!"
-curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
-mkdir -p ~/.oh-my-zsh/custom/plugins
-git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
 echo "Installing basics for Haskell Dev .."
 cabal update && cabal install hoogle && cabal install pointfree && cabal install hlint && cabal install hdevtools
@@ -42,3 +42,4 @@ echo "Installing Vim Plugins .."
 vim +BundleInstall +qall
 
 echo "Setup finished! Please reboot!"
+
