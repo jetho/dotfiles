@@ -17,15 +17,13 @@ firefox &
 urxvtc -name weechat -e weechat-curses &
 urxvtc -name ncmpcpp -e ncmpcpp &
 urxvtc -name mutt -e mutt &
-sleep 2 
+sleep 1 
 urxvtc -name newsbeuter -e newsbeuter & 
-urxvtc -name nethogs -e sudo nethogs -d3 eth0 &
-sleep 2  
+urxvtc -name unison -e unison -repeat 600 unison &
+sleep 1 
 urxvtc -name slurm -e slurm -i eth0 &
-sleep 2
-urxvtc -name iotop -e sudo iotop &
-sleep 2
+#urxvtc -name nethogs -e sudo nethogs -d3 eth0 &
+#urxvtc -name iftop -e sudo iftop -i eth0 &
+sleep 1
 urxvtc -name htop -e htop &
 
-# Unison Syncing
-unison -repeat 600 unison &

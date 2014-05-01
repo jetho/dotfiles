@@ -82,7 +82,7 @@ myManageHook = composeAll . concat $
         my4Shifts = ["newsbeuter", "mutt"]
         my5Shifts = ["weechat"]
         my6Shifts = ["ncmpcpp"]
-        my7Shifts = ["htop", "slurm", "nethogs", "iotop"]
+        my7Shifts = ["htop", "slurm", "nethogs", "iftop", "unison"]
         my8Shifts = ["TeamViewer.exe", "rdesktop", "Vncviewer"]
         my9Shifts = ["ranger"]
 
@@ -106,7 +106,7 @@ myLayoutHook =
          tabs = renamed [Replace "Tabs"] simpleTabbed
          devLayout = smartBorders $ magnifiedTiles ||| tabs ||| Full ||| tiles ||| mirrorTiles ||| grid
          browseLayout = smartBorders $ tabs ||| Full ||| magnifiedTiles ||| tiles ||| mirrorTiles ||| grid
-         monitoringLayout = smartBorders $ grid ||| tiles ||| tabs ||| Full ||| magnifiedTiles ||| mirrorTiles   
+         monitoringLayout = smartBorders $ tiles ||| grid ||| tabs ||| Full ||| magnifiedTiles ||| mirrorTiles   
          filesLayout = smartBorders $ Full ||| tiles ||| tabs ||| magnifiedTiles ||| mirrorTiles ||| grid
          defaultLayout = smartBorders $ tiles ||| tabs ||| Full ||| magnifiedTiles ||| mirrorTiles ||| grid   
 
