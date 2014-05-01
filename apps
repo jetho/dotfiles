@@ -51,6 +51,8 @@ openvpn
 p7zip
 poppler-utils
 ranger
+rsync
+rsnapshot
 rxvt-unicode-256color
 scrot
 slim
