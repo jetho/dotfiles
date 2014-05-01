@@ -49,7 +49,7 @@ bindkey "^N" history-search-forward
 autoload zmv
 
 alias tmux=tmux -2
-alias usync="/usr/bin/flock -n /tmp/unison.lockfile unison -ui text unison"
+alias usync="unison unison"
 
 
 # show Cabal sandbox status

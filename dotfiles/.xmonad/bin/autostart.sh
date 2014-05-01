@@ -28,4 +28,4 @@ sleep 2
 urxvtc -name htop -e htop &
 
 # Unison Syncing
-unison -ui text unison &
+unison -repeat 600 unison &
