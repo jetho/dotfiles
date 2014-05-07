@@ -37,10 +37,9 @@ done'
 chsh -s /bin/zsh
 
 echo "Installing screenfetch .."
-git clone git://github.com/KittyKatt/screenFetch.git screenfetch
-sudo cp screenfetch/screenfetch-dev /usr/bin/screenfetch
-sudo chmod 755 /usr/bin/screenfetch
-rm -R screenfetch
+wget -O screenfetch 'https://raw.github.com/KittyKatt/screenFetch/master/screenfetch-dev'
+chmod +x screenfetch
+sudo mv screenfetch /usr/bin/
 
 echo "Pimping Vim .."
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
