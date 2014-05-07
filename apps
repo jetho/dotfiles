@@ -1,7 +1,6 @@
 abcde
 abook
 ack-grep
-aide
 alsa-base
 alsa-utils
 apt-listbugs
@@ -24,8 +23,6 @@ gvfs-backends
 haskell-platform
 highlight
 htop
-icedove
-iceweasel
 iftop
 iotop
 keepassx
@@ -34,8 +31,6 @@ libghc-xmonad-contrib-dev
 libghc-xmonad-dev
 lshw
 mediainfo
-mpc
-mpd
 mplayer
 mtr
 multitail
