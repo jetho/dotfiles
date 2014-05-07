@@ -25,6 +25,12 @@ for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
 done'
 chsh -s /bin/zsh
 
+echo "Installing screenfetch .."
+git clone git://github.com/KittyKatt/screenFetch.git screenfetch
+sudo cp screenfetch/screenfetch-dev /usr/bin/screenfetch
+sudo chmod 755 /usr/bin/screenfetch
+rm -R screenfetch
+
 echo "Pimping Vim .."
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
