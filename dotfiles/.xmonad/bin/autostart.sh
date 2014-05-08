@@ -19,7 +19,7 @@ urxvtc -name ncmpcpp -e ncmpcpp &
 urxvtc -name mutt -e mutt &
 sleep 1 
 urxvtc -name newsbeuter -e newsbeuter & 
-urxvtc -name unison -e unison -repeat 600 unison &
+urxvtc -name unison -e unison -repeat 600 raspi &
 sleep 1 
 urxvtc -name slurm -e slurm -i eth0 &
 #urxvtc -name nethogs -e sudo nethogs -d3 eth0 &

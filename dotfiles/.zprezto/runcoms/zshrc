@@ -19,7 +19,7 @@ alias tmn='tmux new -s $(basename $(pwd))'
 alias tml='tmux list-sessions'
 
 # Unison
-alias usync='unison unison'
+alias usync='unison raspi'
 
 # For renaming groups of files. Examples: 
 # zmv  'juliet-(*)' 'prospera-$1'
