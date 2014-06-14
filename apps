@@ -10,7 +10,10 @@ autojump
 bitlbee
 caca-utils
 conky
+cryptmount
+cryptsetup
 curl
+dmsetup
 dstat
 dtrx
 dzen2
