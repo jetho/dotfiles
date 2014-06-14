@@ -40,6 +40,7 @@ echo "Applying personal configs .."
 git clone git://github.com/jetho/debian-and-xmonad-Config.git ~/setup_tmp
 rsync -avh ~/setup_tmp/dotfiles/ ~
 sudo chmod u+x ~/.xmonad/bin/*.sh
+chmod u+x ~/bin/*.sh
 cd && sh .fehbg 
 rm -R ~/setup_tmp
 
