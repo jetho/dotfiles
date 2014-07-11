@@ -21,6 +21,9 @@ alias tml='tmux list-sessions'
 # Unison
 alias usync='unison raspi'
 
+# rsnapshot
+alias backup='rsnapshot -c ~/.rsnapshot.conf manual'
+
 # For renaming groups of files. Examples: 
 # zmv  'juliet-(*)' 'prospera-$1'
 # zmv '(*).sh' '$1'
