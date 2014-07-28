@@ -3,9 +3,9 @@
 My workstation setup with Debian (Testing) and the XMonad Window Manager. 
 
 #### Installing a minimal Debian System
-Use the Debian Netinstall ISO for installing a minimal Debian System: http://www.debian.org/distrib/netinst
+Get a Debian Netinstall Image: https://www.debian.org/devel/debian-installer/
 
-Install only the "Standard System Utilities" and "Laptop" if needed!
+Install only the "Standard System Utilities" (and "Laptop" if needed)!
 
 #### Setup Script (see setup.sh)
 ```bash
@@ -89,6 +89,7 @@ USERS ALL=(ALL) NOPASSWD: MONITORING, SHUTDOWN
 - [DownThemAll!](https://addons.mozilla.org/en-us/firefox/addon/downthemall/)
 - [Session Manager](https://addons.mozilla.org/en-us/firefox/addon/session-manager/)
 - [BetterPrivacy](https://addons.mozilla.org/en-us/firefox/addon/betterprivacy/)
+- [Send to XBMC](https://addons.mozilla.org/en-US/firefox/addon/send-to-xbmc/)
 - [FT DeepDark](https://addons.mozilla.org/de/firefox/addon/ft-deepdark/)
 
 #### Additional key bindings available
