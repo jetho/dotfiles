@@ -7,10 +7,12 @@ root = ssh://pi@192.168.0.101//home/pi/sync
 
 batch = true
 auto=true
+perms = 0
 times = true
 prefer = newer
 confirmbigdeletes = true
 fastcheck = true 
+silent = true
 retry = 2
 
 log = true
