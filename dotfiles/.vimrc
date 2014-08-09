@@ -145,7 +145,7 @@ map <leader>h :HLint<CR>
 map <leader>c :NeoCompleteToggle<CR>
 map <leader>a :Ack 
 map <leader>b :BufExplorer<CR>
-map <eader>z :NarrowRegion<CR>
+map <leader>z :NarrowRegion<CR>
 
 " We don't want that kind here
 nnoremap <up> <nop>
