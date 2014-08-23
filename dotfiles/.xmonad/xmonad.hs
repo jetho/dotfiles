@@ -19,6 +19,8 @@ import XMonad.Layout.Grid
 import XMonad.Layout.Magnifier
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Renamed
+import XMonad.Layout.Maximize
+import XMonad.Layout.MagicFocus
 import XMonad.Actions.CycleWS
 import System.Exit
 import XMonad.Prompt.RunOrRaise (runOrRaisePrompt)
@@ -28,7 +30,7 @@ userDir = "/home/jens/"
 bitmapDir = userDir ++ ".xmonad/xbm/"
 myTerminal = "urxvtc"
 
-myStatusBar = "dzen2 -ta l -x 0 -y 0 -w 680 -h 18 -fn inconsolata-9 -fg #ffffff -bg #000000"
+myStatusBar = "dzen2 -ta l -x 0 -y 0 -w 1200 -h 20 -fn inconsolata-11 -fg #ffffff -bg #000000"
 autoStart = userDir ++ ".xmonad/bin/autostart.sh"
 
 myWorkspaces = ["1:tmux", "2:www", "3:dev", "4:news", "5:im", "6:music", "7:sys", "8:vnc", "9:files"]
@@ -41,6 +43,7 @@ iconMap = M.map (bitmapDir ++) icons
                             ("MirrorTiles", "layout_mirror_tall.xbm"),
                             ("Tabs", "layout_tabbed.xbm"),
                             ("Grid", "layout_grid.xbm"),
+                            ("MagicFocus", "layout_focus.xbm"),
                             ("corner", "corner.xbm")]
 
 
@@ -99,16 +102,17 @@ myLayoutHook =
      where
          tall = ResizableTall 1 (3/100) (3/5) []
          spaced = spacing 5
-         tiles = renamed [Replace "Tiles"] $ spaced tall
+         tiles = renamed [Replace "Tiles"] $ maximize $ spaced tall
          mirrorTiles = renamed [Replace "MirrorTiles"] $ Mirror tiles
          magnifiedTiles = renamed [Replace "MagnifiedTiles"] $ magnifiercz' 1.2 tiles
-         grid = renamed [Replace "Grid"] $ spaced Grid
+         grid = renamed [Replace "Grid"] $ maximize $ spaced Grid
          tabs = renamed [Replace "Tabs"] simpleTabbed
-         devLayout = smartBorders $ magnifiedTiles ||| tabs ||| Full ||| tiles ||| mirrorTiles ||| grid
-         browseLayout = smartBorders $ tabs ||| Full ||| magnifiedTiles ||| tiles ||| mirrorTiles ||| grid
-         monitoringLayout = smartBorders $ tiles ||| grid ||| tabs ||| Full ||| magnifiedTiles ||| mirrorTiles   
-         filesLayout = smartBorders $ Full ||| tiles ||| tabs ||| magnifiedTiles ||| mirrorTiles ||| grid
-         defaultLayout = smartBorders $ tiles ||| tabs ||| Full ||| magnifiedTiles ||| mirrorTiles ||| grid   
+         focus = renamed [Replace "MagicFocus"] $ magicFocus tiles
+         devLayout = smartBorders $ magnifiedTiles ||| focus ||| tabs ||| Full ||| tiles ||| mirrorTiles ||| grid
+         browseLayout = smartBorders $ tabs ||| Full ||| magnifiedTiles ||| focus ||| tiles ||| mirrorTiles ||| grid
+         monitoringLayout = smartBorders $ tiles ||| grid ||| tabs ||| Full ||| magnifiedTiles ||| focus ||| mirrorTiles   
+         filesLayout = smartBorders $ Full ||| tiles ||| tabs ||| magnifiedTiles ||| focus ||| mirrorTiles ||| grid
+         defaultLayout = smartBorders $ tiles ||| tabs ||| Full ||| magnifiedTiles ||| focus ||| mirrorTiles ||| grid   
 
 
 myDzenPP h = defaultPP
@@ -120,7 +124,7 @@ myDzenPP h = defaultPP
     , ppUrgent = wrap "^fg(#ffffff)" "^fg()" 
     , ppSep = " | "
     , ppWsSep = " "
-    , ppTitle = wrap (bwWrapper "-[ ") (bwWrapper " ]-") . dzenColor ("#c8e7a8") "" . shorten 20
+    , ppTitle = wrap (bwWrapper "-[ ") (bwWrapper " ]-") . dzenColor ("#c8e7a8") "" . shorten 50
     , ppLayout = dzenColor ("magenta") "" . wrap "^i(" ")" . lookupIcon
     , ppOutput = hPutStrLn h
     }
@@ -181,8 +185,10 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask,                    xK_l        ), sendMessage Expand)                          -- %! Expand a master area
     , ((modMask,                    xK_comma    ), sendMessage (IncMasterN 1))
     , ((modMask,                    xK_period   ), sendMessage (IncMasterN (-1)))
- 
- 
+    , ((modMask .|. shiftMask,      xK_plus     ), sendMessage MagnifyMore)
+    , ((modMask .|. shiftMask,      xK_minus    ), sendMessage MagnifyLess)
+    , ((modMask,                    xK_Up       ), withFocused (sendMessage . maximizeRestore)) 
+
     -- workspaces
     , ((modMask .|. controlMask,   xK_Right     ), nextWS)
     , ((modMask .|. shiftMask,     xK_Right     ), shiftToNext)
