@@ -14,6 +14,7 @@ confirmbigdeletes = true
 fastcheck = true 
 silent = true
 retry = 2
+copythreshold = 1024
 
 log = true
 logfile = /home/jens/.unison/unison.log
