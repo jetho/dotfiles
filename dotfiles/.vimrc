@@ -115,7 +115,7 @@ if has('autocmd')
 endif
 
 " keybinds
-let mapleader=","
+let mapleader="\<Space>"
 
 " Split windows with | and -
 nnoremap <silent> \| <C-w>v
@@ -220,9 +220,6 @@ noremap <leader>yy "*Y
 
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
-
-" EasyMotion
-let g:EasyMotion_leader_key = '<Space>'
 
 " Haskell shortcuts
 au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
