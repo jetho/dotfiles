@@ -41,6 +41,9 @@ wget -O screenfetch 'https://raw.github.com/KittyKatt/screenFetch/master/screenf
 chmod +x screenfetch
 sudo mv screenfetch /usr/bin/
 
+echo "Installing Tmuxinator .."
+sudo gem install tmuxinator
+
 echo "Pimping Vim .."
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 

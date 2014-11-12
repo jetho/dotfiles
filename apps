@@ -4,6 +4,7 @@ ack-grep
 alsa-base
 alsa-utils
 apt-listbugs
+apt-listchanges
 atool
 atop
 autojump
@@ -13,6 +14,7 @@ conky
 cryptmount
 cryptsetup
 curl
+default-jre
 dmsetup
 dstat
 dtrx
@@ -20,12 +22,16 @@ dzen2
 feh
 ffmpeg
 filezilla
+firmware-linux
+firmware-linux-nonfree
 git-core
+flashplugin-nonfree
 gnome-icon-theme
 gvfs-backends
 haskell-platform
 highlight
 htop
+icedtea-plugin
 iftop
 iotop
 keepassx
@@ -68,6 +74,11 @@ tor
 transmission-cli
 trayer
 tree
+ttf-bitstream-vera 
+ttf-dejavu 
+ttf-freefont 
+ttf-liberation
+ttf-mscorefonts-installer 
 unclutter
 unison
 urlview
@@ -88,6 +99,9 @@ wireshark
 xclip
 xfce4-mixer
 xfce4-power-manager
+xfonts-terminus 
+xfonts-terminus-dos
+xfonts-terminus-oblique
 xmonad
 xorg
 xtightvncviewer
