@@ -146,6 +146,7 @@ map <leader>c :NeoCompleteToggle<CR>
 map <leader>a :Ack 
 map <leader>b :BufExplorer<CR>
 map <leader>z :NarrowRegion<CR>
+nmap <F8> :TagbarToggle<CR>
 
 " We don't want that kind here
 nnoremap <up> <nop>
