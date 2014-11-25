@@ -37,7 +37,7 @@ echo "Pimping Vim .."
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
 echo "Installing basics for Haskell Dev .."
-cabal update && cabal install hoogle && cabal install pointfree && cabal install hlint && cabal install hdevtools
+cabal update && cabal install hoogle && cabal install pointfree && cabal install hlint && cabal install hdevtools && cabal install lushtags
 
 echo "Applying personal configs .."
 git clone git://github.com/jetho/debian-and-xmonad-Config.git ~/setup_tmp

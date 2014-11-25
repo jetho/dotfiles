@@ -13,6 +13,7 @@ caca-utils
 conky
 cryptmount
 cryptsetup
+ctags
 curl
 default-jre
 dmsetup
