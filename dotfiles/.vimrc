@@ -254,5 +254,5 @@ let g:slime_target = "tmux"
 let g:slime_paste_file = tempname()
 " Default target: Current Session, Current Window, Pane 2
 " Change by using :SlimeConfig
-let g:slime_default_config = {"socket_name": "default", "target_pane": "2"}
+let g:slime_default_config = {"socket_name": "default", "target_pane": "repl.1"}
 
