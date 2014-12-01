@@ -7,7 +7,7 @@ source ~/.vim/vundlerc
 if &t_Co > 2 || has("gui_running")
 " Syntax highlighting
     syntax enable
-    colorscheme Tomorrow-Night-Eighties
+    colorscheme Tomorrow-Night
 endif
 
 " Support for 256 colors
