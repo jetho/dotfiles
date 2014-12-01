@@ -37,7 +37,8 @@ echo "Pimping Vim .."
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
 echo "Installing basics for Haskell Dev .."
-cabal update && cabal install hoogle && cabal install pointfree && cabal install hlint && cabal install hdevtools && cabal install lushtags
+cabal update && cabal install hoogle && cabal install pointfree && cabal install hlint && cabal install hdevtools && cabal install lushtags && cabal install ghc-mod
+hoogle data
 
 echo "Applying personal configs .."
 git clone git://github.com/jetho/debian-and-xmonad-Config.git ~/setup_tmp
@@ -49,6 +50,9 @@ rm -R ~/setup_tmp
 
 echo "Installing Vim Plugins .."
 vim +BundleInstall +qall
+cd ~/.vim/bundle/vimproc.vim
+make
+cd
 
 echo "Setup finished! Please reboot!"
 

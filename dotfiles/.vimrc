@@ -226,6 +226,8 @@ map <leader>cd :cd %:p:h<cr>:pwd<cr>
 au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
 au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
 au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsInfo<CR>
+au FileType haskell nnoremap <buffer> <F4> :GhcModLint<CR>
+au FileType haskell nnoremap <buffer> <F5> :GhcModCheck<CR>
 
 " use :make to check the current haskell file for errors 
 :let &makeprg='hdevtools check %'
