@@ -112,9 +112,6 @@ if has('autocmd')
 " mail-specific settings
     autocmd FileType mail set noautoindent
     autocmd FileType mail 9
-
-" start Tagbar
-    autocmd VimEnter * TagbarOpen
 endif
 
 " keybinds
@@ -232,6 +229,8 @@ au FileType haskell nnoremap <buffer> <F4> :GhcModLint<CR>
 au FileType haskell nnoremap <buffer> <F5> :GhcModCheck<CR>
 au FileType haskell nnoremap <buffer> <F6> :HLint<CR>
 au FileType haskell nnoremap <buffer> <F7> :%!stylish-haskell<CR>
+" start Tagbar 
+au FileType haskell nested :TagbarOpen
 
 " use :make to check the current haskell file for errors 
 :let &makeprg='hdevtools check %'
