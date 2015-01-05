@@ -28,7 +28,7 @@ import XMonad.Prompt.RunOrRaise (runOrRaisePrompt)
 
 userDir = "/home/jens/"
 bitmapDir = userDir ++ ".xmonad/xbm/"
-myTerminal = "urxvtc"
+myTerminal = "xfce4-terminal"
 
 myStatusBar = "dzen2 -ta l -x 0 -y 0 -w 1200 -h 20 -fn inconsolata-11 -fg #ffffff -bg #000000"
 autoStart = userDir ++ ".xmonad/bin/autostart.sh"
@@ -153,11 +153,11 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- Programs
     , ((0,                          xK_Print    ), spawn "scrot -e 'mv $f ~/Pictures/'")
     , ((modMask,                    xK_i        ), spawn "firefox")
-    , ((modMask,                    xK_t        ), spawn "urxvtc -e tmux -2")
+    , ((modMask,                    xK_t        ), spawn "xfce4-terminal -e \"tmux -2\"")
     , ((modMask .|. shiftMask,      xK_t        ), spawn "thunar")
-    , ((modMask,                    xK_r        ), spawn "urxvtc -e ranger")
+    , ((modMask,                    xK_r        ), spawn "xfce4-terminal -e ranger")
     , ((modMask .|. shiftMask,      xK_v        ), spawn "gvim")
-    , ((modMask,                    xK_v        ), spawn "urxvtc -e vim")
+    , ((modMask,                    xK_v        ), spawn "xfce4-terminal -e vim")
     -- Media Keys
     , ((0,                          0x1008ff12  ), spawn "amixer -q sset Master toggle")        -- XF86AudioMute
     , ((0,                          0x1008ff11  ), spawn "amixer -q sset Master 5%-")   -- XF86AudioLowerVolume
@@ -219,7 +219,6 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
 main = do
     dzen <- spawnPipe myStatusBar
-    spawn "urxvtd &"
     spawn $ "sh " ++ autoStart
     xmonad $ myUrgencyHook $ defaultConfig
         { manageHook = myManageHook

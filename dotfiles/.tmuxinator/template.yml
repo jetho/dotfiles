@@ -1,0 +1,27 @@
+# ~/.tmuxinator/template.yml
+
+name: template
+root: ~/data/repositories/template/
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+pre_window: export PATH=/opt/ghc-7.8.3/bin:$PATH
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+tmux_options: -2
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+windows:
+  - git: git pull && tmux send-keys -t 3.1 "cabal repl" C-m 
+  - editor:
+      layout: main-vertical
+      panes:
+        - vim
+  - repl: 

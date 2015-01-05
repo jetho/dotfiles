@@ -11,19 +11,19 @@ trayer --edge bottom --align right --SetDockType true --SetPartialStrut true --e
 
 # Programs which will run after Xmonad has started
 sleep 1
-urxvtc +bc +uc -cr Green -name tmux -e tmux -2 attach &
-urxvtc -name ranger -e ranger &
+xfce4-terminal +bc +uc -cr Green --title=tmux -e tmux -2 attach &
+xfce4-terminal --title=ranger -e ranger &
 firefox &
-urxvtc -name weechat -e weechat-curses &
-urxvtc -name ncmpcpp -e ncmpcpp &
-urxvtc -name mutt -e mutt &
+xfce4-terminal --title=weechat -e weechat-curses &
+xfce4-terminal --title=ncmpcpp -e ncmpcpp &
+xfce4-terminal --title=mutt -e mutt &
 sleep 1 
-urxvtc -name newsbeuter -e newsbeuter & 
-urxvtc -name unison -e unison -repeat 600 raspi &
+xfce4-terminal --title=newsbeuter -e newsbeuter & 
+xfce4-terminal --title=unison -e unison -repeat 600 raspi &
 sleep 1 
-urxvtc -name slurm -e slurm -i eth0 &
-#urxvtc -name nethogs -e sudo nethogs -d3 eth0 &
-#urxvtc -name iftop -e sudo iftop -i eth0 &
+xfce4-terminal --title=slurm -e "slurm -i eth0" &
+#xfce4-terminal --title=nethogs -e sudo nethogs -d3 eth0 &
+#xfce4-terminal --title=iftop -e sudo iftop -i eth0 &
 sleep 1
-urxvtc -name htop -e htop &
+xfce4-terminal --title=htop -e htop &
 
