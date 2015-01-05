@@ -9,8 +9,8 @@ sudo apt-get install $(< apps)
 # install iceweasel from sid
 sudo apt-get install -t unstable iceweasel
 
-echo "Setting urxvt as default terminal emulator .."
-sudo update-alternatives --set x-terminal-emulator /usr/bin/urxvt
+echo "Setting xfce4-terminal as default terminal emulator .."
+sudo update-alternatives --set x-terminal-emulator /usr/bin/xfce4-terminal.wrapper
 
 echo "Getting patched font for Powerline .."
 wget https://github.com/Lokaltog/powerline-fonts/raw/master/Inconsolata/Inconsolata%20for%20Powerline.otf
