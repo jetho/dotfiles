@@ -34,7 +34,6 @@ USERS ALL=(ALL) NOPASSWD: MONITORING, SHUTDOWN
 - [Custom Tab Width](https://addons.mozilla.org/en-us/firefox/addon/custom-tab-width/)
 - [Tile Tabs](https://addons.mozilla.org/en-us/firefox/addon/tile-tabs/)
 - [GreaseMonkey](https://addons.mozilla.org/en-us/firefox/addon/greasemonkey/)
-- [Pocket](https://addons.mozilla.org/en-us/firefox/addon/read-it-later/)
 - [DownThemAll!](https://addons.mozilla.org/en-us/firefox/addon/downthemall/)
 - [Session Manager](https://addons.mozilla.org/en-us/firefox/addon/session-manager/)
 - [BetterPrivacy](https://addons.mozilla.org/en-us/firefox/addon/betterprivacy/)
