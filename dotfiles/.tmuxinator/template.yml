@@ -20,8 +20,11 @@ tmux_options: -2
 
 windows:
   - git: git pull && tmux send-keys -t 3.1 "cabal repl" C-m 
-  - editor:
-      layout: main-vertical
+  - vim:
       panes:
         - vim
-  - repl: 
+  - cabal: 
+      layout: even-horizontal
+      panes:
+        - 
+        -

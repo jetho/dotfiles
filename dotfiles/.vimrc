@@ -7,7 +7,7 @@ source ~/.vim/vundlerc
 if &t_Co > 2 || has("gui_running")
 " Syntax highlighting
     syntax enable
-    colorscheme Tomorrow-Night
+    colorscheme molokai
 endif
 
 " Support for 256 colors
@@ -42,7 +42,7 @@ set backspace=indent,eol,start
 set laststatus=2
 
 " show right margin at 80
-" set cc=80
+set cc=80
 
 " Enable line-numbers by default
 set number
@@ -257,5 +257,5 @@ let g:slime_target = "tmux"
 let g:slime_paste_file = tempname()
 " Default target: Current Session, Current Window, Pane 2
 " Change by using :SlimeConfig
-let g:slime_default_config = {"socket_name": "default", "target_pane": "repl.1"}
+let g:slime_default_config = {"socket_name": "default", "target_pane": "cabal.1"}
 

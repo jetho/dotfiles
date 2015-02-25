@@ -41,6 +41,6 @@ Bundle 'Shougo/neocomplete.vim'
 Bundle 'bitc/vim-hdevtools'
 Bundle 'eagletmt/ghcmod-vim'
 Bundle 'Twinside/vim-hoogle'
-Bundle 'chriskempson/vim-tomorrow-theme'
+Bundle 'tomasr/molokai'
 
 filetype plugin indent on
