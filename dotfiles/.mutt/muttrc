@@ -66,3 +66,5 @@ color header blue default ^Cc:
 color header brightgreen default ^Subject:
 color body brightblue default [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
 color body brightblue default (https?|ftp)://[\-\.\,/%~_:?\#a-zA-Z0-9]+ 
+
+source ~/.mutt/gpg.rc
