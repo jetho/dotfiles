@@ -4,21 +4,21 @@ cd
 
 echo "Preparing environment .."
 sudo apt-get update
-sudo apt-get install git-core
+sudo apt-get install -y git-core
 git clone git://github.com/jetho/debian-and-xmonad-Config.git ~/setup_tmp
 
 echo "Installing Software .."
 sudo cp -Rf setup_tmp/apt/* /etc/apt/
 sudo apt-get update
-sudo apt-get install $(< setup_tmp/apps)
+sudo apt-get install -y $(< setup_tmp/apps)
 # install iceweasel from sid
-sudo apt-get install -t unstable iceweasel
+sudo apt-get install -y -t unstable iceweasel
 
 echo "Setting roxterm as default terminal emulator .."
 sudo update-alternatives --set x-terminal-emulator /usr/bin/roxterm
 
 echo "Installing Powerline .."
-sudo apt-get install python-pip
+sudo apt-get install -y python-pip
 pip install --user git+git://github.com/Lokaltog/powerline
 wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf 
 wget https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
