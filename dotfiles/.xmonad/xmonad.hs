@@ -153,11 +153,11 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- Programs
     , ((0,                          xK_Print    ), spawn "scrot -e 'mv $f ~/Pictures/'")
     , ((modMask,                    xK_i        ), spawn "firefox")
-    , ((modMask,                    xK_t        ), spawn "roxterm" -e \"tmux -2\"")
+    , ((modMask,                    xK_t        ), spawn "roxterm -e \"tmux -2\"")
     , ((modMask .|. shiftMask,      xK_t        ), spawn "thunar")
-    , ((modMask,                    xK_r        ), spawn "roxterm" -e ranger")
+    , ((modMask,                    xK_r        ), spawn "roxterm -e ranger")
     , ((modMask .|. shiftMask,      xK_v        ), spawn "gvim")
-    , ((modMask,                    xK_v        ), spawn "roxterm" -e vim")
+    , ((modMask,                    xK_v        ), spawn "roxterm -e vim")
     -- Media Keys
     , ((0,                          0x1008ff12  ), spawn "amixer -q sset Master toggle")        -- XF86AudioMute
     , ((0,                          0x1008ff11  ), spawn "amixer -q sset Master 5%-")   -- XF86AudioLowerVolume

@@ -3,12 +3,18 @@
 My workstation setup with Debian (Testing) and the XMonad Window Manager. 
 
 #### Installing a minimal Debian System
-Get a Debian Netinstall Image: https://www.debian.org/devel/debian-installer/
+- Get the Debian Netinstall Image: https://www.debian.org/devel/debian-installer/
+- Choose "Advanced Options" -> "Expert Install"
+- Disable root login
+- Install only the "Standard System Utilities"!
 
-Install only the "Standard System Utilities" (and "Laptop" if needed)!
-
-#### Setup Script 
-see [setup.sh](https://github.com/jetho/debian-and-xmonad-Config/blob/master/setup.sh)
+#### Setup
+<pre>
+cd
+wget https://raw.githubusercontent.com/jetho/debian-and-xmonad-Config/master/setup.sh
+chmod u+x setup.sh
+./setup.sh
+</pre>
 
 #### Enable password-less sudo for reboot, shutdown and network monitoring
 - append the following lines to /etc/sudoers using "sudo visudo":
