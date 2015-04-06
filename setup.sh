@@ -19,7 +19,7 @@ sudo update-alternatives --set x-terminal-emulator /usr/bin/roxterm
 
 echo "Installing Powerline .."
 sudo apt-get install -y python-pip
-pip install --user git+git://github.com/Lokaltog/powerline
+sudo pip install git+git://github.com/Lokaltog/powerline
 wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf 
 wget https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
 sudo mv PowerlineSymbols.otf /usr/share/fonts/
