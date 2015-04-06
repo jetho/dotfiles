@@ -36,4 +36,3 @@ color1: #E84F4F
 *scrollBar_right: false
 *scrollstyle: rxvt
 
-URxvt*font: xft:Inconsolata\ for\ Powerline:pixelsize=16:antialias=true:hinting=true:hintstyle=hintfull

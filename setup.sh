@@ -2,20 +2,29 @@
 
 cd
 
-echo "Installing Software .."
-echo "deb http://cdn.debian.net/debian unstable main" | sudo tee -a /etc/apt/sources.list
+echo "Preparing environment .."
 sudo apt-get update
-sudo apt-get install $(< apps)
+sudo apt-get install git-core
+git clone git://github.com/jetho/debian-and-xmonad-Config.git ~/setup_tmp
+
+echo "Installing Software .."
+sudo cp -Rf setup_tmp/apt/* /etc/apt/
+sudo apt-get update
+sudo apt-get install $(< setup_tmp/apps)
 # install iceweasel from sid
 sudo apt-get install -t unstable iceweasel
 
-echo "Setting xfce4-terminal as default terminal emulator .."
-sudo update-alternatives --set x-terminal-emulator /usr/bin/xfce4-terminal.wrapper
+echo "Setting roxterm as default terminal emulator .."
+sudo update-alternatives --set x-terminal-emulator /usr/bin/roxterm
 
-echo "Getting patched font for Powerline .."
-wget https://github.com/Lokaltog/powerline-fonts/raw/master/Inconsolata/Inconsolata%20for%20Powerline.otf
-sudo mv "Inconsolata for Powerline.otf" /usr/share/fonts
+echo "Installing Powerline .."
+sudo apt-get install python-pip
+pip install --user git+git://github.com/Lokaltog/powerline
+wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf 
+wget https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
+sudo mv PowerlineSymbols.otf /usr/share/fonts/
 sudo fc-cache -vf
+sudo mv 10-powerline-symbols.conf /etc/fonts/conf.d/
 
 echo "Configuring ZSH and Prezto .."
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
@@ -38,14 +47,12 @@ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
 echo "Installing basics for Haskell Dev .."
 cabal update && cabal install hoogle && cabal install pointfree && cabal install hlint && cabal install hdevtools && cabal install lushtags && cabal install ghc-mod && cabal install stylish-haskell
-hoogle data
 
 echo "Applying personal configs .."
-git clone git://github.com/jetho/debian-and-xmonad-Config.git ~/setup_tmp
 rsync -avh ~/setup_tmp/dotfiles/ ~
 sudo chmod u+x ~/.xmonad/bin/*.sh
 chmod u+x ~/bin/*.sh
-cd && sh .fehbg 
+sh .fehbg 
 rm -R ~/setup_tmp
 
 echo "Installing Vim Plugins .."
