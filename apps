@@ -24,8 +24,8 @@ feh
 filezilla
 firmware-linux
 firmware-linux-nonfree
-git-core
 flashplugin-nonfree
+git-core
 gnome-icon-theme
 gvfs-backends
 haskell-platform
@@ -55,7 +55,9 @@ nmap
 ntp
 openvpn
 p7zip
+parallel
 poppler-utils
+pv
 ranger
 roxterm
 rsync
@@ -90,7 +92,6 @@ virtualbox
 virtualbox-guest-additions-iso
 vlc
 vpnc
-volumeicon-alsa
 w3m
 watch
 weechat
