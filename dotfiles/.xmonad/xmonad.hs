@@ -85,7 +85,7 @@ myManageHook = composeAll . concat $
         my4Shifts = ["newsbeuter", "mutt"]
         my5Shifts = ["weechat"]
         my6Shifts = ["ncmpcpp"]
-        my7Shifts = ["htop", "slurm", "nethogs", "iftop", "unison"]
+        my7Shifts = ["htop", "slurm", "nethogs", "iftop", "unison", "sysmail"]
         my8Shifts = ["TeamViewer.exe", "rdesktop", "Vncviewer"]
         my9Shifts = ["ranger"]
 

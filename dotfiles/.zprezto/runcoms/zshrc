@@ -23,6 +23,7 @@ alias usync='unison raspi'
 
 # rsnapshot
 alias backup='rsnapshot -c ~/.rsnapshot.conf manual'
+alias backup_nfs='rsnapshot -c ~/.rsnapshot_nfs.conf manual'
 
 # For renaming groups of files. Examples: 
 # zmv  'juliet-(*)' 'prospera-$1'

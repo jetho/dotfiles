@@ -19,7 +19,8 @@ roxterm --title=ncmpcpp -e ncmpcpp &
 roxterm --title=mutt -e mutt &
 sleep 1 
 roxterm --title=newsbeuter -e newsbeuter & 
-roxterm --title=unison -e unison -repeat 600 raspi &
+#roxterm --title=unison -e unison -repeat 600 raspi &
+roxterm --title=sysmail -e "mutt -f /var/mail/$USER" &
 sleep 1 
 roxterm --title=slurm -e "slurm -i eth0" &
 #roxterm --title=nethogs -e sudo nethogs -d3 eth0 &
