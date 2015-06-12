@@ -15,6 +15,7 @@ cryptmount
 cryptsetup
 ctags
 curl
+debian-handbook
 default-jre
 dmsetup
 dstat
