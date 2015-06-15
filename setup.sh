@@ -17,6 +17,13 @@ sudo apt-get install -y -t unstable iceweasel
 echo "Setting roxterm as default terminal emulator .."
 sudo update-alternatives --set x-terminal-emulator /usr/bin/roxterm
 
+echo "Enable S.M.A.R.T daemon .."
+sudo sed -i 's/#start_smartd=yes/start_smartd=yes/g' /etc/default/smartmontools
+sudo sed -i 's/#smartd_opts="--interval=1800"/smartd_opts="--interval=3600"/g' /etc/default/smartmontools
+sudo sed -i 's/^DEVICESCAN /#DEVICESCAN /g' /etc/smartd.conf
+sudo echo "DEVICESCAN -a -o on -S on -n standby,q -s (S/../.././02|L/../../6/03) -m $USER" | sudo tee -a /etc/smartd.conf > /dev/null
+sudo /etc/init.d/smartmontools restart
+
 echo "Installing Powerline .."
 sudo apt-get install -y python-pip
 sudo pip install git+git://github.com/Lokaltog/powerline
