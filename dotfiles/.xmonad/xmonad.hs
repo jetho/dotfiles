@@ -95,7 +95,6 @@ myUrgencyHook = withUrgencyHook dzenUrgencyHook { args = ["-y 1000"] }
 
 myLayoutHook = 
      onWorkspace "2:www" browseLayout $ 
-     onWorkspace "3:dev" devLayout $
      onWorkspace "7:sys" monitoringLayout $ 
      onWorkspace "9:files" filesLayout $ 
      defaultLayout
@@ -108,9 +107,8 @@ myLayoutHook =
          grid = renamed [Replace "Grid"] $ maximize $ spaced Grid
          tabs = renamed [Replace "Tabs"] simpleTabbed
          focus = renamed [Replace "MagicFocus"] $ magicFocus tiles
-         devLayout = smartBorders $ magnifiedTiles ||| focus ||| tabs ||| Full ||| tiles ||| mirrorTiles ||| grid
          browseLayout = smartBorders $ tabs ||| Full ||| magnifiedTiles ||| focus ||| tiles ||| mirrorTiles ||| grid
-         monitoringLayout = smartBorders $ tiles ||| grid ||| tabs ||| Full ||| magnifiedTiles ||| focus ||| mirrorTiles   
+         monitoringLayout = smartBorders $ focus ||| magnifiedTiles ||| tabs ||| Full ||| tiles ||| mirrorTiles ||| grid
          filesLayout = smartBorders $ Full ||| tiles ||| tabs ||| magnifiedTiles ||| focus ||| mirrorTiles ||| grid
          defaultLayout = smartBorders $ tiles ||| tabs ||| Full ||| magnifiedTiles ||| focus ||| mirrorTiles ||| grid   
 
