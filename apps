@@ -32,6 +32,7 @@ gvfs-backends
 haskell-platform
 highlight
 htop
+httpie
 httrack
 icedtea-plugin
 iftop
@@ -98,7 +99,8 @@ w3m
 watch
 weechat
 weechat-plugins
-weechat-scripts 
+weechat-scripts
+wget
 wicd
 wireshark
 xclip
