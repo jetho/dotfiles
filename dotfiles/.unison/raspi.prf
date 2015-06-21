@@ -3,7 +3,7 @@
 # http://www.pedramhayati.com/2011/05/22/how-to-setup-your-real-dropbox-file-service-using-shared-hosts/
 
 root = /home/jens/sync
-root = ssh://pi@192.168.0.101//home/pi/sync
+root = ssh://pi@raspberrypi.lan//home/pi/sync
 
 batch = true
 auto=true
