@@ -7,10 +7,10 @@ root: ~/data/repositories/template/
 # socket_name: foo
 
 # Runs before everything. Use it to start daemons etc.
-# pre: sudo /etc/rc.d/mysqld start
+pre: git pull
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
-pre_window: export PATH=/opt/ghc-7.8.3/bin:$PATH
+pre_window: export PATH=/opt/ghc-7.10.1/bin:$PATH
 
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.
 tmux_options: -2
@@ -19,12 +19,14 @@ tmux_options: -2
 # tmux_command: byobu
 
 windows:
-  - git: git pull && tmux send-keys -t 3.1 "cabal repl" C-m 
+  - git: 
   - vim:
+      layout: 552d,190x53,0,0[190x44,0,0,7,190x8,0,45,10]
       panes:
         - vim
+        - ghcid --height=8
   - cabal: 
       layout: even-horizontal
       panes:
-        - 
+        - cabal repl
         -

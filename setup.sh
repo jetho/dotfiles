@@ -53,7 +53,7 @@ echo "Pimping Vim .."
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
 echo "Installing basics for Haskell Dev .."
-cabal update && cabal install hoogle && cabal install pointfree && cabal install hlint && cabal install hdevtools && cabal install lushtags && cabal install ghc-mod && cabal install stylish-haskell
+cabal update && cabal install hoogle pointfree hlint hdevtools lushtags ghc-mod stylish-haskell ghcid
 
 echo "Applying personal configs .."
 rsync -avh ~/setup_tmp/dotfiles/ ~
