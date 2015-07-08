@@ -7,7 +7,6 @@ source ~/.vim/vundlerc
 if &t_Co > 2 || has("gui_running")
 " Syntax highlighting
     syntax enable
-    colorscheme molokai
 endif
 
 " Support for 256 colors
@@ -259,3 +258,5 @@ let g:slime_paste_file = tempname()
 " Change by using :SlimeConfig
 let g:slime_default_config = {"socket_name": "default", "target_pane": "cabal.1"}
 
+let g:zenburn_transparent = 1
+colorscheme zenburn

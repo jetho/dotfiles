@@ -43,5 +43,6 @@ Bundle 'bitc/vim-hdevtools'
 Bundle 'eagletmt/ghcmod-vim'
 Bundle 'Twinside/vim-hoogle'
 Bundle 'tomasr/molokai'
+Bundle 'jnurmine/Zenburn'
 
 filetype plugin indent on
