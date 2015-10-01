@@ -49,11 +49,11 @@ sudo mv screenfetch /usr/bin/
 echo "Installing Tmuxinator .."
 sudo gem install tmuxinator
 
-echo "Pimping Vim .."
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+# TODO: Install GHC and Cabal
 
-echo "Installing basics for Haskell Dev .."
-cabal update && cabal install hoogle pointfree hlint hdevtools lushtags ghc-mod stylish-haskell ghcid
+echo "Setting up Vim for Haskell"
+sudo apt-get install libcurl4-openssl-dev
+bash <(curl -sL http://git.io/haskell-vim-now)
 
 echo "Applying personal configs .."
 rsync -avh ~/setup_tmp/dotfiles/ ~
