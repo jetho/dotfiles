@@ -50,19 +50,16 @@ echo "Installing Tmuxinator .."
 sudo gem install tmuxinator
 
 echo "Setting up Vim for Haskell .."
-cp ~/setup_tmp/dotfiles/.vimrc.local ~/.vimrc.local
-cp ~/setup_tmp/dotfiles/.vim.local/ ~/.vim.local
+mv ~/setup_tmp/dotfiles/.vimrc.local ~/.vimrc.local
+mv ~/setup_tmp/dotfiles/.vim.local/ ~/.vim.local
 bash <(curl -sL http://git.io/haskell-vim-now)
-cd ~/.vim/bundle/vimproc.vim
-make
 cabal update && cabal install ghcid
 
 echo "Applying personal configs .."
-cd
 rsync -avh ~/setup_tmp/dotfiles/ ~
 sudo chmod u+x ~/.xmonad/bin/*.sh
 chmod u+x ~/bin/*.sh
-sh .fehbg 
+sh ~/.fehbg 
 rm -R ~/setup_tmp
 
 echo "Setup finished! Please reboot!"
