@@ -49,12 +49,13 @@ sudo mv screenfetch /usr/bin/
 echo "Installing Tmuxinator .."
 sudo gem install tmuxinator
 
-echo "Setting up Vim for Haskell"
+echo "Setting up Vim for Haskell .."
 cp ~/setup_tmp/dotfiles/.vimrc.local ~/.vimrc.local
 cp ~/setup_tmp/dotfiles/.vim.local/ ~/.vim.local
 bash <(curl -sL http://git.io/haskell-vim-now)
 cd ~/.vim/bundle/vimproc.vim
 make
+cabal update && cabal install ghcid
 
 echo "Applying personal configs .."
 cd
