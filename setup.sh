@@ -49,24 +49,20 @@ sudo mv screenfetch /usr/bin/
 echo "Installing Tmuxinator .."
 sudo gem install tmuxinator
 
-# TODO: Install GHC and Cabal
-
 echo "Setting up Vim for Haskell"
-sudo apt-get install libcurl4-openssl-dev
+cp ~/setup_tmp/dotfiles/.vimrc.local ~/.vimrc.local
+cp ~/setup_tmp/dotfiles/.vim.local/ ~/.vim.local
 bash <(curl -sL http://git.io/haskell-vim-now)
+cd ~/.vim/bundle/vimproc.vim
+make
 
 echo "Applying personal configs .."
+cd
 rsync -avh ~/setup_tmp/dotfiles/ ~
 sudo chmod u+x ~/.xmonad/bin/*.sh
 chmod u+x ~/bin/*.sh
 sh .fehbg 
 rm -R ~/setup_tmp
-
-echo "Installing Vim Plugins .."
-vim +BundleInstall +qall
-cd ~/.vim/bundle/vimproc.vim
-make
-cd
 
 echo "Setup finished! Please reboot!"
 
