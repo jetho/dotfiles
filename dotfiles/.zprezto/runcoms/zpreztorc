@@ -26,22 +26,21 @@ zstyle ':prezto:*:*' color 'yes'
 # prezto modules
 zstyle ':prezto:load' pmodule \
   'environment' \
+  'utility' \
   'archive' \
   'terminal' \
   'editor' \
   'history' \
-  'history-substring-search' \
   'directory' \
   'spectrum' \
-  'utility' \
   'completion' \
   'dpkg' \
   'fasd' \
   'git' \
   'haskell' \
-  'syntax-highlighting' \
   'tmux' \
-  'utility' \
+  'syntax-highlighting' \
+  'history-substring-search' \
   'prompt'
 
 
