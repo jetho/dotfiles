@@ -1,6 +1,6 @@
-" show right margin at 80
+" Different background color past 80 columns
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
-set cc=80
+execute "set colorcolumn=" . join(range(81,335), ',')
 
 " enable showbreak and show the character in between lines
 let &showbreak = '+++ '
