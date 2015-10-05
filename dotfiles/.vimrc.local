@@ -1,4 +1,5 @@
 " show right margin at 80
+highlight ColorColumn ctermbg=235 guibg=#2c2d27
 set cc=80
 
 " enable showbreak and show the character in between lines
@@ -43,5 +44,3 @@ map <leader>A :Ack
 map <leader>B :BufExplorer<CR>
 map <leader>Z :NarrowRegion<CR>
 
-" Colorscheme
-colorscheme molokai
