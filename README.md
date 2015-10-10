@@ -45,7 +45,8 @@ USERS ALL=(ALL) NOPASSWD: MONITORING, SHUTDOWN, TAILS
 - [Session Manager](https://addons.mozilla.org/en-us/firefox/addon/session-manager/)
 - [BetterPrivacy](https://addons.mozilla.org/en-us/firefox/addon/betterprivacy/)
 - [Send to XBMC](https://addons.mozilla.org/en-US/firefox/addon/send-to-xbmc/)
-- [FT DeepDark](https://addons.mozilla.org/de/firefox/addon/ft-deepdark/)
+- [Stylus Blue](https://addons.mozilla.org/de/firefox/addon/stylus-blue/)
+
 
 #### Additional key bindings available
 - WIN + p => dmenu
