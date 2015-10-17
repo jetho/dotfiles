@@ -11,22 +11,20 @@ map <S-Right> :tabmove! +1<CR>
 map <S-Left> :tabmove! -1<CR>
 
 set hintchars=0123456789abcdefghijklmnopqrstuvwxyz
-highlight Hint font-size:150%;color:white;background-color:red;padding:2px;
+set highlight Hint font-size:150%;color:white;background-color:red;padding:2px;
 
 set! browser.startup.homepage=http://www.startpage.com
 
 let mapleader = ","
 
-silent qmark G https://github.com/
-silent qmark g https://www.google.de/
-silent qmark H http://www.haskell.org/hoogle/
+silent qmark g https://github.com/
+silent qmark h http://www.haskell.org/hoogle/
 silent qmark d https://duckduckgo.com/
-silent qmark T https://twitter.com/
-silent qmark S http://stackoverflow.com/
-silent qmark R http://reddit.com/
-silent qmark Y https://news.ycombinator.com/
+silent qmark t https://twitter.com/
+silent qmark s http://stackoverflow.com/
+silent qmark r http://reddit.com/
+silent qmark y https://news.ycombinator.com/
 silent qmark w https://en.wikipedia.org/
-silent qmark s http://startpage.com
 
 map s :open sp<space>
 map S :tabopen sp<space>
