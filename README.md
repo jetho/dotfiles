@@ -31,19 +31,20 @@ USERS ALL=(ALL) NOPASSWD: MONITORING, SHUTDOWN, TAILS
 
 
 #### Favorite Firefox Add-ons
-- [HTTPS Everywhere](https://www.eff.org/https-everywhere)
-- [Adblock Edge](https://addons.mozilla.org/en-us/firefox/addon/adblock-edge/)
-- [Omnibar](https://addons.mozilla.org/en-us/firefox/addon/omnibar/)
-- [Disconnect](https://disconnect.me/)
-- [RequestPolicy](https://addons.mozilla.org/en-us/firefox/addon/requestpolicy/)
+- [uBlock Origin](https://addons.mozilla.org/pt-br/firefox/addon/ublock-origin/)
 - [NoScript](https://addons.mozilla.org/en-us/firefox/addon/noscript/)
+- [HTTPS Everywhere](https://www.eff.org/https-everywhere)
+- [Privacy Badger](https://addons.mozilla.org/pt-br/firefox/addon/privacy-badger-firefox/)
+- [BetterPrivacy](https://addons.mozilla.org/en-us/firefox/addon/betterprivacy/)
+- [Self Destruction Cookies](https://addons.mozilla.org/pt-br/firefox/addon/self-destructing-cookies/)
+- [Random Agent Spoofer](https://addons.mozilla.org/pt-br/firefox/addon/random-agent-spoofer/)
+- [Tree Style Tab](https://addons.mozilla.org/pt-br/firefox/addon/tree-style-tab/)
 - [Vimperator](https://addons.mozilla.org/en-us/firefox/addon/vimperator/)
-- [Custom Tab Width](https://addons.mozilla.org/en-us/firefox/addon/custom-tab-width/)
+- [Omnibar](https://addons.mozilla.org/en-us/firefox/addon/omnibar/)
 - [Tile Tabs](https://addons.mozilla.org/en-us/firefox/addon/tile-tabs/)
 - [GreaseMonkey](https://addons.mozilla.org/en-us/firefox/addon/greasemonkey/)
 - [DownThemAll!](https://addons.mozilla.org/en-us/firefox/addon/downthemall/)
 - [Session Manager](https://addons.mozilla.org/en-us/firefox/addon/session-manager/)
-- [BetterPrivacy](https://addons.mozilla.org/en-us/firefox/addon/betterprivacy/)
 - [Send to XBMC](https://addons.mozilla.org/en-US/firefox/addon/send-to-xbmc/)
 - [Stylus Blue](https://addons.mozilla.org/de/firefox/addon/stylus-blue/)
 
