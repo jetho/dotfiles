@@ -53,5 +53,5 @@ map <Leader>np :noscript toggleperm<CR>
 map <Leader>nt :noscript toggletemp<CR>
 map <Leader>xpp :emenu File.New Private Window<CR>
 
-set gui=none,tabs
+set gui=none,navigation,tabs
 colorscheme zenburn
