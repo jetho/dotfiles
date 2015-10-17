@@ -11,7 +11,6 @@ map <S-Right> :tabmove! +1<CR>
 map <S-Left> :tabmove! -1<CR>
 
 set hintchars=0123456789abcdefghijklmnopqrstuvwxyz
-set highlight Hint font-size:150%;color:white;background-color:red;padding:2px;
 
 set! browser.startup.homepage=http://www.startpage.com
 
