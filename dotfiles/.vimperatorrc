@@ -6,18 +6,21 @@ map K gT
 map <Right> J
 map <Left> K
 
+map T :tabopen!<space>
 map <S-Right> :tabmove! +1<CR>
 map <S-Left> :tabmove! -1<CR>
+
+set hintchars=0123456789abcdefghijklmnopqrstuvwxyz
+highlight Hint font-size:150%;color:white;background-color:red;padding:2px;
 
 set! browser.startup.homepage=http://www.startpage.com
 
 let mapleader = ","
- 
+
 silent qmark G https://github.com/
 silent qmark g https://www.google.de/
 silent qmark H http://www.haskell.org/hoogle/
 silent qmark d https://duckduckgo.com/
-silent qmark P http://getpocket.com/a/queue/
 silent qmark T https://twitter.com/
 silent qmark S http://stackoverflow.com/
 silent qmark R http://reddit.com/
@@ -25,8 +28,8 @@ silent qmark Y https://news.ycombinator.com/
 silent qmark w https://en.wikipedia.org/
 silent qmark s http://startpage.com
 
-map s :open sp 
-map S :tabopen sp 
+map s :open sp<space>
+map S :tabopen sp<space>
 set defsearch=sp
 
 " BMarks {{{1
@@ -55,3 +58,4 @@ map <Leader>xpp :emenu File.New Private Window<CR>
 
 set gui=none,navigation,tabs
 colorscheme zenburn
+
