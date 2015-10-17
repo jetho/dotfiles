@@ -39,12 +39,13 @@ USERS ALL=(ALL) NOPASSWD: MONITORING, SHUTDOWN, TAILS
 - [Random Agent Spoofer](https://addons.mozilla.org/pt-br/firefox/addon/random-agent-spoofer/)
 - [Tree Style Tab](https://addons.mozilla.org/pt-br/firefox/addon/tree-style-tab/)
 - [Vimperator](https://addons.mozilla.org/en-us/firefox/addon/vimperator/)
+- [NumberedTabs](https://addons.mozilla.org/En-us/firefox/addon/numberedtabs/)
 - [Omnibar](https://addons.mozilla.org/en-us/firefox/addon/omnibar/)
 - [Tile Tabs](https://addons.mozilla.org/en-us/firefox/addon/tile-tabs/)
 - [GreaseMonkey](https://addons.mozilla.org/en-us/firefox/addon/greasemonkey/)
 - [DownThemAll!](https://addons.mozilla.org/en-us/firefox/addon/downthemall/)
 - [Session Manager](https://addons.mozilla.org/en-us/firefox/addon/session-manager/)
-- [Send to XBMC](https://addons.mozilla.org/en-US/firefox/addon/send-to-xbmc/)
+- [Send to XBMC/Kodi](https://addons.mozilla.org/en-US/firefox/addon/send-to-xbmc/)
 - [Stylus Blue](https://addons.mozilla.org/de/firefox/addon/stylus-blue/)
 
 
