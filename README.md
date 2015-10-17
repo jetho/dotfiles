@@ -32,11 +32,10 @@ USERS ALL=(ALL) NOPASSWD: MONITORING, SHUTDOWN, TAILS
 
 #### Favorite Firefox Add-ons
 - [uBlock Origin](https://addons.mozilla.org/pt-br/firefox/addon/ublock-origin/)
-- [NoScript](https://addons.mozilla.org/en-us/firefox/addon/noscript/)
 - [HTTPS Everywhere](https://www.eff.org/https-everywhere)
 - [Privacy Badger](https://addons.mozilla.org/pt-br/firefox/addon/privacy-badger-firefox/)
-- [BetterPrivacy](https://addons.mozilla.org/en-us/firefox/addon/betterprivacy/)
 - [Self Destruction Cookies](https://addons.mozilla.org/pt-br/firefox/addon/self-destructing-cookies/)
+- [NoScript](https://addons.mozilla.org/en-us/firefox/addon/noscript/)
 - [Random Agent Spoofer](https://addons.mozilla.org/pt-br/firefox/addon/random-agent-spoofer/)
 - [Tree Style Tab](https://addons.mozilla.org/pt-br/firefox/addon/tree-style-tab/)
 - [Vimperator](https://addons.mozilla.org/en-us/firefox/addon/vimperator/)
