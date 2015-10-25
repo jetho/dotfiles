@@ -1,3 +1,7 @@
+" set leader
+let mapleader = ","
+
+" Mappings
 nnoremap j 5j
 nnoremap k 5k
 
@@ -9,16 +13,62 @@ nnoremap H h
 nnoremap L l
 nnoremap h :back<CR>
 nnoremap l :forward<CR>
-
 map <S-Right> :tabmove! +1<CR>
 map <S-Left> :tabmove! -1<CR>
 map T :tabopen!<space>
 
+map <Leader>t :tabopen<CR>
+map <Leader>b :bmark -folder Links/
+map <Leader>nm :noscript popup<CR>
+map <Leader>np :noscript toggleperm<CR>
+map <Leader>nt :noscript toggletemp<CR>
+map <Leader>xpp :emenu File.New Private Window<CR>
+map <silent> <leader>a :emenu Tools.Add-ons<CR>
+map <silent> <leader>p :emenu Edit.Preferences<CR>
+map <silent> <leader>B :emenu Bookmarks.Show All Bookmarks<CR>
+map <silent> <leader>d :emenu Tools.Downloads<CR>
+
+map <A-1> <C-[>g0
+map <A-2> <C-[>2gt
+map <A-3> <C-[>3gt
+map <A-4> <C-[>4gt
+map <A-5> <C-[>5gt
+map <A-6> <C-[>6gt
+map <A-7> <C-[>7gt
+map <A-8> <C-[>8gt
+map <A-9> <C-[>9gt
+map <A-0> <C-[>10gt
+map <A-q> <C-[>11gt
+map <A-w> <C-[>12gt
+map <A-e> <C-[>13gt
+map <A-r> <C-[>14gt
+map <A-t> <C-[>15gt
+map <A-z> <C-[>16gt
+map <A-u> <C-[>17gt
+map <A-i> <C-[>18gt
+map <A-o> <C-[>19gt
+map <A-p> <C-[>20gt
+map <A-a> <C-6>
+map <M-a> <C-6>
+
+map s :open google<space>
+map S :tabopen google<space>
+set defsearch=google
+
+
+" Gui
 set hintchars=0123456789abcdefghijklmnopqrstuvwxyz
 
-set! browser.startup.homepage=http://www.startpage.com
+set gui=none,tabs
+set noscrollbars
 
-let mapleader = ","
+colorscheme zenburn
+
+highlight Hint font-size:15px;color:white;background-color:red;padding:2px;
+
+
+" Startpage, bookmarks and quickmarks
+set! browser.startup.homepage=http://www.startpage.com
 
 silent qmark g https://github.com/
 silent qmark h http://www.haskell.org/hoogle/
@@ -28,10 +78,6 @@ silent qmark s http://stackoverflow.com/
 silent qmark r http://reddit.com/
 silent qmark y https://news.ycombinator.com/
 silent qmark w https://en.wikipedia.org/
-
-map s :open google<space>
-map S :tabopen google<space>
-set defsearch=google
 
 " BMarks {{{1
 javascript <<EOM
@@ -49,22 +95,4 @@ bmark('Stackoverflow', 'http://stackoverflow.com/search?q=%s', 'stack');
 bmark('Reddit' , 'http://www.reddit.com/search?q=%s', 'reddit');
 bmark('Startpage' , 'https://startpage.com/do/search?query=%s', 'sp');
 EOM
-
-map <Leader>t :tabopen<CR>
-map <Leader>b :bmark -folder Links/
-map <Leader>nm :noscript popup<CR>
-map <Leader>np :noscript toggleperm<CR>
-map <Leader>nt :noscript toggletemp<CR>
-map <Leader>xpp :emenu File.New Private Window<CR>
-map <silent> <leader>a :emenu Tools.Add-ons<CR>
-map <silent> <leader>p :emenu Edit.Preferences<CR>
-map <silent> <leader>B :emenu Bookmarks.Show All Bookmarks<CR>
-map <silent> <leader>d :emenu Tools.Downloads<CR>
-
-
-set gui=none,tabs
-set noscrollbars
-colorscheme zenburn
-
-highlight Hint font-size:15px;color:white;background-color:red;padding:2px;
 
