@@ -5,10 +5,14 @@ map J gt
 map K gT
 map <Right> J
 map <Left> K
+nnoremap H h
+nnoremap L l
+nnoremap h :back<CR>
+nnoremap l :forward<CR>
 
-map T :tabopen!<space>
 map <S-Right> :tabmove! +1<CR>
 map <S-Left> :tabmove! -1<CR>
+map T :tabopen!<space>
 
 set hintchars=0123456789abcdefghijklmnopqrstuvwxyz
 
@@ -25,9 +29,9 @@ silent qmark r http://reddit.com/
 silent qmark y https://news.ycombinator.com/
 silent qmark w https://en.wikipedia.org/
 
-map s :open sp<space>
-map S :tabopen sp<space>
-set defsearch=sp
+map s :open google<space>
+map S :tabopen google<space>
+set defsearch=google
 
 " BMarks {{{1
 javascript <<EOM
@@ -52,8 +56,14 @@ map <Leader>nm :noscript popup<CR>
 map <Leader>np :noscript toggleperm<CR>
 map <Leader>nt :noscript toggletemp<CR>
 map <Leader>xpp :emenu File.New Private Window<CR>
+map <silent> <leader>a :emenu Tools.Add-ons<CR>
+map <silent> <leader>p :emenu Edit.Preferences<CR>
+map <silent> <leader>B :emenu Bookmarks.Show All Bookmarks<CR>
+map <silent> <leader>d :emenu Tools.Downloads<CR>
+
 
 set gui=none,tabs
+set noscrollbars
 colorscheme zenburn
 
 highlight Hint font-size:15px;color:white;background-color:red;padding:2px;
