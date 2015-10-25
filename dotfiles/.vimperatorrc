@@ -58,12 +58,8 @@ set defsearch=google
 
 " Gui
 set hintchars=0123456789abcdefghijklmnopqrstuvwxyz
-
 set gui=none,tabs
-set noscrollbars
-
 colorscheme zenburn
-
 highlight Hint font-size:15px;color:white;background-color:red;padding:2px;
 
 
