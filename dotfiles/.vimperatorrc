@@ -51,15 +51,18 @@ map <A-p> <C-[>20gt
 map <A-a> <C-6>
 map <M-a> <C-6>
 
-map s :open google<space>
-map S :tabopen google<space>
-set defsearch=google
+map s :open startpage<space>
+map S :tabopen startpage<space>
+set defsearch=startpage
 
 
 " Gui
 set hintchars=0123456789abcdefghijklmnopqrstuvwxyz
+
 set gui=none,tabs
+
 colorscheme zenburn
+
 highlight Hint font-size:15px;color:white;background-color:red;padding:2px;
 
 
@@ -89,6 +92,6 @@ bmark('DuckDuckGo', 'https://duckduckgo.com/?q=%s', 'duck');
 bmark('Wikipedia' , 'http://en.wikipedia.org/w/index.php?search=%s&title=Special:Search', 'wiki');
 bmark('Stackoverflow', 'http://stackoverflow.com/search?q=%s', 'stack');
 bmark('Reddit' , 'http://www.reddit.com/search?q=%s', 'reddit');
-bmark('Startpage' , 'https://startpage.com/do/search?query=%s', 'sp');
+bmark('Startpage' , 'https://startpage.com/do/metasearch.pl?prf=d22eecf910162d9c26865c91039cda4e&query=%s', 'startpage');
 EOM
 
