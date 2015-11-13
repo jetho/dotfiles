@@ -1,4 +1,4 @@
-## debian-and-xmonad-Config
+## dotfiles
 
 My workstation setup with Debian (Testing) and the XMonad Window Manager. 
 
