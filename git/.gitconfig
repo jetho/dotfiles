@@ -1,0 +1,7 @@
+[user]
+	email = jetho@gmx.de
+	name = jetho
+[core]
+	editor = /usr/bin/vim
+[push]
+	default = simple
