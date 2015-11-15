@@ -80,6 +80,7 @@ sh ~/.fehbg
 </pre>
 
 12. Enable password-less sudo for reboot, shutdown and network monitoring
+
 Append the following lines to /etc/sudoers using "sudo visudo":
 <pre>
 # User alias specification
