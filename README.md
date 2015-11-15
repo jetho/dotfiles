@@ -32,7 +32,7 @@ sudo mv 10-powerline-symbols.conf /etc/fonts/conf.d/
 
 4. Install prezto
 <pre>
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto
 </pre>
 
 5. Set zsh as default shell
