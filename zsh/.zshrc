@@ -37,6 +37,7 @@ function cabal_sandbox_info() {
     fi
 }
  
+PROMPT='%F{59}[$HISTCMD] '$PROMPT
 RPROMPT="\$(cabal_sandbox_info) $RPROMPT"
 
 alias grep="/usr/bin/grep $GREP_OPTIONS"
