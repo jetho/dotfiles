@@ -18,6 +18,11 @@ alias tma='tmux attach -d -t'
 alias tmn='tmux new -s $(basename $(pwd))'
 alias tml='tmux list-sessions'
 
+# ssh connections
+alias qnap=ssht\ admin@qnap
+alias raspberry=ssht\ pi@raspberrypi
+alias volumio=ssht\ volumio@volumio
+
 
 # For renaming groups of files. Examples: 
 # zmv  'juliet-(*)' 'prospera-$1'
