@@ -1,7 +1,24 @@
-" set leader
+"------------------------------------------------------------------------------
+" Vimperator settings
+"------------------------------------------------------------------------------
 let mapleader = ","
+set titlestring=Firefox
+set editor='gvim -f'
+set newtab=all
+set animations=false
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
+" set focuscontent
+set defsearch=startpage
+set hintchars=0123456789abcdefghijklmnopqrstuvwxyz
+set gui=none,tabs
 
+
+"------------------------------------------------------------------------------
 " Mappings
+"------------------------------------------------------------------------------
 nnoremap j 5j
 nnoremap k 5k
 
@@ -9,10 +26,6 @@ map J gt
 map K gT
 map <Right> J
 map <Left> K
-nnoremap H h
-nnoremap L l
-nnoremap h :back<CR>
-nnoremap l :forward<CR>
 map <S-Right> :tabmove! +1<CR>
 map <S-Left> :tabmove! -1<CR>
 map T :tabopen!<space>
@@ -53,22 +66,31 @@ map <M-a> <C-6>
 
 map s :open startpage<space>
 map S :tabopen startpage<space>
-set defsearch=startpage
 
 
-" Gui
-set hintchars=0123456789abcdefghijklmnopqrstuvwxyz
-
-set gui=none,tabs
-
+"------------------------------------------------------------------------------
+" Colors & Fonts
+"------------------------------------------------------------------------------
 colorscheme zenburn
-
 highlight Hint font-size:15px;color:white;background-color:red;padding:2px;
 
 
-" Startpage, bookmarks and quickmarks
+"------------------------------------------------------------------------------
+" Firefox settings
+"------------------------------------------------------------------------------
+set! browser.newtab.url=about:blank
+set! browser.tabs.closeWindowWithLastTab=true
+set! browser.shell.checkDefaultBrowser=false
+set! browser.tabs.warnOnClose=false
+set! browser.tabs.warnOnCloseOtherTabs=false
+set! browser.tabs.warnOnOpen=false
+set! general.warnOnAboutConfig=false
 set! browser.startup.homepage=http://www.startpage.com
 
+
+"------------------------------------------------------------------------------
+" Bookmarks and quickmarks
+"------------------------------------------------------------------------------
 silent qmark g https://github.com/
 silent qmark h http://www.haskell.org/hoogle/
 silent qmark d https://duckduckgo.com/
@@ -77,6 +99,7 @@ silent qmark s http://stackoverflow.com/
 silent qmark r http://reddit.com/
 silent qmark y https://news.ycombinator.com/
 silent qmark w https://en.wikipedia.org/
+silent qmark x http://qnap.lan/shaarli/
 
 " BMarks {{{1
 javascript <<EOM
@@ -94,4 +117,34 @@ bmark('Stackoverflow', 'http://stackoverflow.com/search?q=%s', 'stack');
 bmark('Reddit' , 'http://www.reddit.com/search?q=%s', 'reddit');
 bmark('Startpage' , 'https://startpage.com/do/metasearch.pl?prf=d22eecf910162d9c26865c91039cda4e&query=%s', 'startpage');
 EOM
+
+
+"------------------------------------------------------------------------------
+" Shaarli
+"------------------------------------------------------------------------------
+javascript <<EOM
+  commands.addUserCommand(
+    ['shaarli'],
+    'Add Shaarli bookmark',
+    function (args) {
+      var url = content.document.location.href;
+      var title = content.document.title || url;
+      var width = 600;
+      var height = 390;
+      var left = window.mozInnerScreenX + (window.innerWidth - width) / 2;
+      var top = window.mozInnerScreenY + (window.innerHeight - height) / 2;
+      window.open('http://qnap.lan/shaarli/?post=' + encodeURIComponent(url) + "&title=" + encodeURIComponent(title) + "&source=bookmarklet",
+      "", "height=" + height + ",width=" + width + ",top=" + top + ",left=" + left + ",toolbar=no,menubar=no,scrollbars=no,status=no,dialog,modal");
+    }
+);
+EOM
+
+nmap xa :shaarli<CR>
+
+
+"------------------------------------------------------------------------------
+" Startup
+"------------------------------------------------------------------------------
+" Start in normal mode
+normal <esc>
 
