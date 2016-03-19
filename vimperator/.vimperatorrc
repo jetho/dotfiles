@@ -40,6 +40,7 @@ map <silent> <leader>a :emenu Tools.Add-ons<CR>
 map <silent> <leader>p :emenu Edit.Preferences<CR>
 map <silent> <leader>B :emenu Bookmarks.Show All Bookmarks<CR>
 map <silent> <leader>d :emenu Tools.Downloads<CR>
+nmap xa :shaarli<CR>
 
 map <A-1> <C-[>g0
 map <A-2> <C-[>2gt
@@ -78,7 +79,7 @@ highlight Hint font-size:15px;color:white;background-color:red;padding:2px;
 "------------------------------------------------------------------------------
 " Firefox settings
 "------------------------------------------------------------------------------
-set! browser.newtab.url=about:blank
+" set! browser.newtab.url=about:blank
 set! browser.tabs.closeWindowWithLastTab=true
 set! browser.shell.checkDefaultBrowser=false
 set! browser.tabs.warnOnClose=false
@@ -116,6 +117,7 @@ bmark('Wikipedia' , 'http://en.wikipedia.org/w/index.php?search=%s&title=Special
 bmark('Stackoverflow', 'http://stackoverflow.com/search?q=%s', 'stack');
 bmark('Reddit' , 'http://www.reddit.com/search?q=%s', 'reddit');
 bmark('Startpage' , 'https://startpage.com/do/metasearch.pl?prf=d22eecf910162d9c26865c91039cda4e&query=%s', 'startpage');
+bmark('Shaarli' , 'http://qnap.lan/shaarli/?searchterm=%s', 'shaarli');
 EOM
 
 
@@ -138,8 +140,6 @@ javascript <<EOM
     }
 );
 EOM
-
-nmap xa :shaarli<CR>
 
 
 "------------------------------------------------------------------------------
