@@ -94,7 +94,8 @@ set! browser.startup.homepage=http://www.startpage.com
 "------------------------------------------------------------------------------
 silent qmark g https://github.com/
 silent qmark h http://www.haskell.org/hoogle/
-silent qmark d https://duckduckgo.com/
+silent qmark D https://duckduckgo.com/
+silent qmark d https://search.disconnect.me/
 silent qmark t https://twitter.com/
 silent qmark s http://stackoverflow.com/
 silent qmark r http://reddit.com/
@@ -117,6 +118,7 @@ bmark('Wikipedia' , 'http://en.wikipedia.org/w/index.php?search=%s&title=Special
 bmark('Stackoverflow', 'http://stackoverflow.com/search?q=%s', 'stack');
 bmark('Reddit' , 'http://www.reddit.com/search?q=%s', 'reddit');
 bmark('Startpage' , 'https://startpage.com/do/metasearch.pl?prf=d22eecf910162d9c26865c91039cda4e&query=%s', 'startpage');
+bmark('Disconnect' , 'https://search.disconnect.me/searchTerms/search?location=DE&query=%s&ses=Google', 'disconnect');
 bmark('Shaarli' , 'http://qnap.lan/shaarli/?searchterm=%s', 'shaarli');
 EOM
 
