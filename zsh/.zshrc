@@ -18,6 +18,10 @@ alias tma='tmux attach -d -t'
 alias tmn='tmux new -s $(basename $(pwd))'
 alias tml='tmux list-sessions'
 
+# history
+alias h='history 0'
+alias hg='history 0 | egrep '
+
 # ssh connections
 alias qnap=ssht\ admin@qnap
 alias raspberry=ssht\ pi@raspberrypi
