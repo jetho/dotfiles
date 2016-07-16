@@ -3,7 +3,8 @@
 #### Install steps on a fresh Debian (Testing) machine
 
 1. Install base software
-<pre>
+
+```bash
 sudo apt-get update
 sudo apt-get install git-core stow
 git clone git://github.com/jetho/dotfiles.git ~/dotfiles
@@ -13,15 +14,17 @@ sudo apt-get update
 sudo apt-get install -y $(< ~/dotfiles/apps)
 # install iceweasel from sid
 sudo apt-get install -y -t unstable iceweasel
-</pre>
+```
 
 2. Set xfce4-terminal as default terminal emulator
-<pre>
+
+```bash
 sudo update-alternatives --set x-terminal-emulator /usr/bin/xfce4-terminal.wrapper
-</pre>
+```
 
 3. Install Powerline
-<pre>
+
+```bash
 sudo apt-get install -y python-pip
 sudo pip install git+git://github.com/Lokaltog/powerline
 wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf 
@@ -29,53 +32,61 @@ wget https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols
 sudo mv PowerlineSymbols.otf /usr/share/fonts/
 sudo fc-cache -vf
 sudo mv 10-powerline-symbols.conf /etc/fonts/conf.d/
-</pre>
+```
 
 4. Install prezto
-<pre>
+
+```bash
 git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto
-</pre>
+```
 
 5. Set zsh as default shell
-<pre>
+
+```bash
 chsh -s /bin/zsh
-</pre>
+```
 
 
 6. Install screenfetch
-<pre>
+
+```bash
 wget -O screenfetch 'https://raw.github.com/KittyKatt/screenFetch/master/screenfetch-dev'
 chmod +x screenfetch
 sudo mv screenfetch /usr/bin/
-</pre>
+```
 
 7. Install Tmuxinator
-<pre>
+
+```bash
 sudo gem install tmuxinator
-</pre>
+```
 
 8. Stow dotfiles
-<pre>
+
+```bash
 cd ~/dotfiles
 stow $(ls -d ^etc(/))
-</pre>
+```
 
 9. Haskell-Vim-Now
-<pre>
+
+```bash
 bash <(curl -sL http://git.io/haskell-vim-now)
 cabal update && cabal install ghcid
-</pre>
+```
 
 10. Set permissions
-<pre>
+
+```bash
 sudo chmod u+x ~/.xmonad/bin/*.sh
 chmod u+x ~/bin/*.sh
-</pre>
+```
 
 11. Set Wallpaper
-<pre>
+
+```bash
 sh ~/.fehbg 
-</pre>
+```
 
 12. Enable password-less sudo for reboot, shutdown and network monitoring
 
