@@ -68,11 +68,11 @@
     stow $(ls -d ^etc(/))
     ```
 
-9. Haskell-Vim-Now
+9. Haskell Tools (optional)
 
     ```bash
-    bash <(curl -sL http://git.io/haskell-vim-now)
-    cabal update && cabal install ghcid
+    curl -sSL https://get.haskellstack.org/ | sh
+    stack install ghc-mod hlint hasktags codex hscope pointfree pointful hoogle hindent apply-refact
     ```
 
 10. Set permissions
@@ -91,16 +91,17 @@
 12. Enable password-less sudo for reboot, shutdown and network monitoring
 
 Append the following lines to /etc/sudoers using "sudo visudo":
-<pre>
-# User alias specification
-User_Alias      USERS  = user1, user2     # replace user1, user2 etc. with real user names
-# Cmnd alias specification
-Cmnd_Alias      SHUTDOWN = /sbin/shutdown, /sbin/reboot, /sbin/halt
-Cmnd_Alias      MONITORING = /usr/sbin/iftop, /usr/sbin/iotop, /usr/sbin/nethogs
-Cmnd_Alias      TAILS = /usr/bin/tail -f -n * /var/log/*
-# User privilege specification
-USERS ALL=(ALL) NOPASSWD: MONITORING, SHUTDOWN, TAILS
-</pre>
+
+    <pre>
+    # User alias specification
+    User_Alias      USERS  = user1, user2     # replace user1, user2 etc. with real user names
+    # Cmnd alias specification
+    Cmnd_Alias      SHUTDOWN = /sbin/shutdown, /sbin/reboot, /sbin/halt
+    Cmnd_Alias      MONITORING = /usr/sbin/iftop, /usr/sbin/iotop, /usr/sbin/nethogs
+    Cmnd_Alias      TAILS = /usr/bin/tail -f -n * /var/log/*
+    # User privilege specification
+    USERS ALL=(ALL) NOPASSWD: MONITORING, SHUTDOWN, TAILS
+    </pre>
 
 
 
