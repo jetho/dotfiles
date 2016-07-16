@@ -92,16 +92,16 @@
 
 Append the following lines to /etc/sudoers using "sudo visudo":
 
-    ```
-    # User alias specification
-    User_Alias      USERS  = user1, user2     # replace user1, user2 etc. with real user names
-    # Cmnd alias specification
-    Cmnd_Alias      SHUTDOWN = /sbin/shutdown, /sbin/reboot, /sbin/halt
-    Cmnd_Alias      MONITORING = /usr/sbin/iftop, /usr/sbin/iotop, /usr/sbin/nethogs
-    Cmnd_Alias      TAILS = /usr/bin/tail -f -n * /var/log/*
-    # User privilege specification
-    USERS ALL=(ALL) NOPASSWD: MONITORING, SHUTDOWN, TAILS
-    ```
+<pre>
+# User alias specification
+User_Alias      USERS  = user1, user2     # replace user1, user2 etc. with real user names
+# Cmnd alias specification
+Cmnd_Alias      SHUTDOWN = /sbin/shutdown, /sbin/reboot, /sbin/halt
+Cmnd_Alias      MONITORING = /usr/sbin/iftop, /usr/sbin/iotop, /usr/sbin/nethogs
+Cmnd_Alias      TAILS = /usr/bin/tail -f -n * /var/log/*
+# User privilege specification
+USERS ALL=(ALL) NOPASSWD: MONITORING, SHUTDOWN, TAILS
+</pre>
 
 
 
