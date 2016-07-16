@@ -4,89 +4,89 @@
 
 1. Install base software
 
-```bash
-sudo apt-get update
-sudo apt-get install git-core stow
-git clone git://github.com/jetho/dotfiles.git ~/dotfiles
-cd ~/dotfiles
-sudo stow -t / etc
-sudo apt-get update
-sudo apt-get install -y $(< ~/dotfiles/apps)
-# install iceweasel from sid
-sudo apt-get install -y -t unstable iceweasel
-```
+    ```bash
+    sudo apt-get update
+    sudo apt-get install git-core stow
+    git clone git://github.com/jetho/dotfiles.git ~/dotfiles
+    cd ~/dotfiles
+    sudo stow -t / etc
+    sudo apt-get update
+    sudo apt-get install -y $(< ~/dotfiles/apps)
+    # install iceweasel from sid
+    sudo apt-get install -y -t unstable iceweasel
+    ```
 
 2. Set xfce4-terminal as default terminal emulator
 
-```bash
-sudo update-alternatives --set x-terminal-emulator /usr/bin/xfce4-terminal.wrapper
-```
+    ```bash
+    sudo update-alternatives --set x-terminal-emulator /usr/bin/xfce4-terminal.wrapper
+    ```
 
 3. Install Powerline
 
-```bash
-sudo apt-get install -y python-pip
-sudo pip install git+git://github.com/Lokaltog/powerline
-wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf 
-wget https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
-sudo mv PowerlineSymbols.otf /usr/share/fonts/
-sudo fc-cache -vf
-sudo mv 10-powerline-symbols.conf /etc/fonts/conf.d/
-```
+    ```bash
+    sudo apt-get install -y python-pip
+    sudo pip install git+git://github.com/Lokaltog/powerline
+    wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf 
+    wget https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
+    sudo mv PowerlineSymbols.otf /usr/share/fonts/
+    sudo fc-cache -vf
+    sudo mv 10-powerline-symbols.conf /etc/fonts/conf.d/
+    ```
 
 4. Install prezto
 
-```bash
-git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto
-```
+    ```bash
+    git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto
+    ```
 
 5. Set zsh as default shell
 
-```bash
-chsh -s /bin/zsh
-```
+    ```bash
+    chsh -s /bin/zsh
+    ```
 
 
 6. Install screenfetch
 
-```bash
-wget -O screenfetch 'https://raw.github.com/KittyKatt/screenFetch/master/screenfetch-dev'
-chmod +x screenfetch
-sudo mv screenfetch /usr/bin/
-```
+    ```bash
+    wget -O screenfetch 'https://raw.github.com/KittyKatt/screenFetch/master/screenfetch-dev'
+    chmod +x screenfetch
+    sudo mv screenfetch /usr/bin/
+    ```
 
 7. Install Tmuxinator
 
-```bash
-sudo gem install tmuxinator
-```
+    ```bash
+    sudo gem install tmuxinator
+    ```
 
 8. Stow dotfiles
 
-```bash
-cd ~/dotfiles
-stow $(ls -d ^etc(/))
-```
+    ```bash
+    cd ~/dotfiles
+    stow $(ls -d ^etc(/))
+    ```
 
 9. Haskell-Vim-Now
 
-```bash
-bash <(curl -sL http://git.io/haskell-vim-now)
-cabal update && cabal install ghcid
-```
+    ```bash
+    bash <(curl -sL http://git.io/haskell-vim-now)
+    cabal update && cabal install ghcid
+    ```
 
 10. Set permissions
 
-```bash
-sudo chmod u+x ~/.xmonad/bin/*.sh
-chmod u+x ~/bin/*.sh
-```
+    ```bash
+    sudo chmod u+x ~/.xmonad/bin/*.sh
+    chmod u+x ~/bin/*.sh
+    ```
 
 11. Set Wallpaper
 
-```bash
-sh ~/.fehbg 
-```
+    ```bash
+    sh ~/.fehbg 
+    ```
 
 12. Enable password-less sudo for reboot, shutdown and network monitoring
 
