@@ -55,11 +55,9 @@ sudo gem install tmuxinator
 
 8. Stow dotfiles
 <pre>
-stow ~/dotfiles/zsh
-stow ~/dotfiles/vim
-stow ~/dotfiles/xmonad
-stow ~/dotfiles/wallpaper
-etc.
+cd ~/dotfiles
+sudo stow -t / etc
+stow $(ls -d ^etc(/))
 </pre>
 
 9. Haskell-Vim-Now
