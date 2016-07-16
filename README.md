@@ -5,18 +5,19 @@
 1. Install base software
 <pre>
 sudo apt-get update
-sudo apt-get install git-core
+sudo apt-get install git-core stow
 git clone git://github.com/jetho/dotfiles.git ~/dotfiles
-sudo cp -Rf ~/dotfiles/apt/* /etc/apt/
+cd ~/dotfiles
+sudo stow -t / etc
 sudo apt-get update
 sudo apt-get install -y $(< ~/dotfiles/apps)
 # install iceweasel from sid
 sudo apt-get install -y -t unstable iceweasel
 </pre>
 
-2. Set roxterm as default terminal emulator
+2. Set xfce4-terminal as default terminal emulator
 <pre>
-sudo update-alternatives --set x-terminal-emulator /usr/bin/roxterm
+sudo update-alternatives --set x-terminal-emulator /usr/bin/xfce4-terminal.wrapper
 </pre>
 
 3. Install Powerline
@@ -56,7 +57,6 @@ sudo gem install tmuxinator
 8. Stow dotfiles
 <pre>
 cd ~/dotfiles
-sudo stow -t / etc
 stow $(ls -d ^etc(/))
 </pre>
 
