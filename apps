@@ -63,7 +63,6 @@ parallel
 poppler-utils
 pv
 ranger
-roxterm
 rsync
 rsnapshot
 rxvt-unicode-256color
@@ -108,6 +107,7 @@ wicd
 wireshark
 xclip
 xfce4-mixer
+xfce4-terminal
 xfonts-terminus 
 xfonts-terminus-dos
 xfonts-terminus-oblique
