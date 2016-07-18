@@ -58,6 +58,7 @@ Plug 'chrisbra/NrrwRgn'
 Plug 'majutsushi/tagbar'
 Plug 'SirVer/ultisnips'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'Konfekt/FastFold'
 
 " Haskell
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
