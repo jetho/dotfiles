@@ -1,6 +1,6 @@
 " General {{{
-set completeopt+=longest
-set wildignore+=*\\tmp\\*,*.swp,*.swo,*.zip,.git,.cabal-sandbox,.stack-work
+setlocal completeopt+=longest
+setlocal wildignore+=*\\tmp\\*,*.swp,*.swo,*.zip,.git,.cabal-sandbox,.stack-work
 
 augroup whitespace
   autocmd!
