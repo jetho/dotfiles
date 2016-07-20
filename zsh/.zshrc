@@ -51,3 +51,6 @@ RPROMPT="\$(cabal_sandbox_info) $RPROMPT"
 
 alias grep="/usr/bin/grep $GREP_OPTIONS"
 unset GREP_OPTIONS
+
+# Always start with 256 colors
+export TERM=xterm-256color
