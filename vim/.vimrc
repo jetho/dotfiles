@@ -235,6 +235,15 @@ set undofile
 set undolevels=1000
 set undoreload=10000
 
+" Switch CWD to the directory of the open buffer
+map <leader>cd :cd %:p:h<cr>:pwd<cr>
+
+" Opens a new file with the current buffer's path
+map <leader>e :edit <c-r>=expand("%:p:h")<cr>/
+
+" Expand %% to the active file directory in command line mode
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
 " http://vim.wikia.com/wiki/Restore_cursor_to_file_position_in_previous_editing_session
 function! ResCur()
   if line("'\"") <= line("$")
@@ -348,12 +357,6 @@ map <leader>Bd :Bdelete<CR>
 
 " " Close all the buffers
 map <leader>ba :1,1000 bd!<cr>
-
-" Switch CWD to the directory of the open buffer
-map <leader>cd :cd %:p:h<cr>:pwd<cr>
-
-" Opens a new file with the current buffer's path
-map <leader>e :edit <c-r>=expand("%:p:h")<cr>/
 "}}}
 
 
