@@ -38,7 +38,6 @@ icedtea-plugin
 iftop
 iotop
 iperf
-keepassx
 lftp
 libghc-xmonad-contrib-dev
 libghc-xmonad-dev
@@ -59,6 +58,7 @@ ntp
 openvpn
 p7zip
 parallel
+pass
 poppler-utils
 pv
 ranger
