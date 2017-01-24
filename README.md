@@ -40,14 +40,21 @@
     git clone --recursive https://github.com/sorin-ionescu/prezto.git ~/.zprezto
     ```
 
-5. Set zsh as default shell
+5. Install fasd
+
+    ```bash
+    git clone git@github.com:clvv/fasd.git
+    sudo make -C fasd install
+    rm -Rf fasd
+    ```
+
+6. Set zsh as default shell
 
     ```bash
     chsh -s /bin/zsh
     ```
 
-
-6. Install screenfetch
+7. Install screenfetch
 
     ```bash
     wget -O screenfetch 'https://raw.github.com/KittyKatt/screenFetch/master/screenfetch-dev'
@@ -55,40 +62,40 @@
     sudo mv screenfetch /usr/bin/
     ```
 
-7. Install Tmuxinator
+8. Install Tmuxinator
 
     ```bash
     sudo gem install tmuxinator
     ```
 
-8. Stow dotfiles
+9. Stow dotfiles
 
     ```bash
     cd ~/dotfiles
     stow $(ls -d ^etc(/))
     ```
 
-9. Haskell Tools (optional)
+10. Haskell Tools (optional)
 
     ```bash
     curl -sSL https://get.haskellstack.org/ | sh
     stack install ghc-mod hlint hasktags codex hscope pointfree pointful hoogle hindent apply-refact
     ```
 
-10. Set permissions
+11. Set permissions
 
     ```bash
     sudo chmod u+x ~/.xmonad/bin/*.sh
     chmod u+x ~/bin/*.sh
     ```
 
-11. Set Wallpaper
+12. Set Wallpaper
 
     ```bash
     sh ~/.fehbg 
     ```
 
-12. Enable password-less sudo for reboot, shutdown and network monitoring
+13. Enable password-less sudo for reboot, shutdown and network monitoring
 
 Append the following lines to /etc/sudoers using "sudo visudo":
 
