@@ -12,6 +12,10 @@ fi
 
 # Customize to your needs...
 
+# fasd
+eval "$(fasd --init auto)"
+alias v='f -e vim' # quick opening files with vim
+
 # tmux
 alias tmux='tmux -2'
 alias tma='tmux attach -d -t'
