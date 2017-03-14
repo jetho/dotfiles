@@ -1,0 +1,13 @@
+#!/bin/bash
+
+BMARKS_DIR=~/bookmarks
+GIT="git -C $BMARKS_DIR"
+
+$GIT pull
+vim -c "cd $BMARKS_DIR" $BMARKS_DIR
+
+if [[ $($GIT diff) || $($GIT ls-files . --exclude-standard --others) ]]; then
+  $GIT add -A . 
+  $GIT commit -m "Update bookmarks" 
+  $GIT push
+fi
