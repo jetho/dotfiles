@@ -30,7 +30,7 @@ cdf() {
 
 # fh - repeat history
 fh() {
-  eval $(('fc' -l 1 || 'history') | fzf +s | sed 's/ *[0-9]* *//')
+  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
 }
 
 # fs [FUZZY PATTERN] - Select selected tmux session
