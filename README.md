@@ -48,13 +48,19 @@
     rm -Rf fasd
     ```
 
-6. Set zsh as default shell
+6. Install fzf
+    ```bash
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    ~/.fzf/install
+    ```
+
+7. Set zsh as default shell
 
     ```bash
     chsh -s /bin/zsh
     ```
 
-7. Install screenfetch
+8. Install screenfetch
 
     ```bash
     wget -O screenfetch 'https://raw.github.com/KittyKatt/screenFetch/master/screenfetch-dev'
@@ -62,40 +68,40 @@
     sudo mv screenfetch /usr/bin/
     ```
 
-8. Install Tmuxinator
+9. Install Tmuxinator
 
     ```bash
     sudo gem install tmuxinator
     ```
 
-9. Stow dotfiles
+10. Stow dotfiles
 
     ```bash
     cd ~/dotfiles
     stow $(ls -d ^etc(/))
     ```
 
-10. Haskell Tools (optional)
+11. Haskell Tools (optional)
 
     ```bash
     curl -sSL https://get.haskellstack.org/ | sh
     stack install ghc-mod hlint hasktags codex hscope pointfree pointful hoogle hindent apply-refact
     ```
 
-11. Set permissions
+12. Set permissions
 
     ```bash
     sudo chmod u+x ~/.xmonad/bin/*.sh
     chmod u+x ~/bin/*.sh
     ```
 
-12. Set Wallpaper
+13. Set Wallpaper
 
     ```bash
     sh ~/.fehbg 
     ```
 
-13. Enable password-less sudo for reboot, shutdown and network monitoring
+14. Enable password-less sudo for reboot, shutdown and network monitoring
 
 Append the following lines to /etc/sudoers using "sudo visudo":
 

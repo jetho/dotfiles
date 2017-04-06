@@ -16,6 +16,9 @@ fi
 eval "$(fasd --init auto)"
 alias v='f -e vim' # quick opening files with vim
 
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh && source ~/.fzf_functions.zsh
+
 # tmux
 alias tmux='tmux -2'
 alias tma='tmux attach -d -t'
