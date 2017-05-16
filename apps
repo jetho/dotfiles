@@ -46,6 +46,7 @@ mplayer
 mtr
 multitail
 mutt
+ncdu
 ncmpcpp
 nfs-common
 netcat
@@ -76,6 +77,7 @@ tcpdump
 thunar
 thunar-archive-plugin
 thunar-media-tags-plugin
+tig
 tmux
 tor
 transmission-cli
