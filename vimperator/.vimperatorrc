@@ -42,7 +42,7 @@ map <silent> <leader>B :emenu Bookmarks.Show All Bookmarks<CR>
 map <silent> <leader>d :emenu Tools.Downloads<CR>
 
 " copy bookmark to clipboard (markdown format)
-nmap xy :js util.copyToClipboard("* [" + buffer.title + "](" + buffer.URL + ")")<CR>
+nmap xy :js util.copyToClipboard(("* [" + buffer.title + "](" + services.get("textToSubURI").unEscapeURIForUI(buffer.charset, buffer.URL).replace(/ /g, "%20") + ")"), true)<CR>
 
 map <A-1> <C-[>g0
 map <A-2> <C-[>2gt
