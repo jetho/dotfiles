@@ -34,9 +34,6 @@ alias qnap=ssht\ admin@qnap
 alias raspberry=ssht\ pi@raspberrypi
 alias volumio=ssht\ volumio@volumio
 
-# youtube-dl
-alias youtube-download="youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4'"
-
 
 # For renaming groups of files. Examples: 
 # zmv  'juliet-(*)' 'prospera-$1'
